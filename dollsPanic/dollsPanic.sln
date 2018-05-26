@@ -1,7 +1,7 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2015
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dollsPanic.CSharp", "dollsPanic.CSharp.csproj", "{0DF19DF2-5826-88B1-98E2-78282E05A447}"
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dollsPanic", "Assembly-CSharp.csproj", "{A4A6BC25-4733-6724-3A62-C63C97413A82}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,12 +9,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0DF19DF2-5826-88B1-98E2-78282E05A447}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0DF19DF2-5826-88B1-98E2-78282E05A447}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0DF19DF2-5826-88B1-98E2-78282E05A447}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0DF19DF2-5826-88B1-98E2-78282E05A447}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4A6BC25-4733-6724-3A62-C63C97413A82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4A6BC25-4733-6724-3A62-C63C97413A82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4A6BC25-4733-6724-3A62-C63C97413A82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4A6BC25-4733-6724-3A62-C63C97413A82}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal
