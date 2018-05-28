@@ -51,6 +51,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\main\Script\Ability.cs" />
+     <Compile Include="Assets\main\Script\CameraMove.cs" />
+     <Compile Include="Assets\main\Script\Jump.cs" />
+     <Compile Include="Assets\main\Script\Move.cs" />
+     <Compile Include="Assets\main\Script\Player.cs" />
+     <Compile Include="Assets\main\Script\PlayerArea.cs" />
+     <Compile Include="Assets\main\Script\Turn.cs" />
      <Compile Include="Assets\script\SceneObject.cs" />
      <Compile Include="Assets\script\stageSelect.cs" />
      <Compile Include="Assets\script\title.cs" />
