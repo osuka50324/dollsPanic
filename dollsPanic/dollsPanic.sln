@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.0
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dollsPanic.CSharp", "dollsPanic.CSharp.csproj", "{0DF19DF2-5826-88B1-98E2-78282E05A447}"
 EndProject
 Global
