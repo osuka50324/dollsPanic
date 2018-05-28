@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextScene:
-    m_SceneName: stage
+    m_SceneName: stageSelect
 --- !u!4 &102724518
 Transform:
   m_ObjectHideFlags: 0
