@@ -246,9 +246,11 @@
     <Compile Include="Assets\main\Script\Player.cs" />
     <Compile Include="Assets\main\Script\PlayerArea.cs" />
     <Compile Include="Assets\main\Script\Turn.cs" />
+    <Compile Include="Assets\Manager.cs" />
     <Compile Include="Assets\script\SceneObject.cs" />
     <Compile Include="Assets\script\stageSelect.cs" />
     <Compile Include="Assets\script\title.cs" />
+    <Compile Include="Assets\Timer.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
