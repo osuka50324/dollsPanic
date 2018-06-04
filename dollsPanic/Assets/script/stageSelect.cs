@@ -2,98 +2,105 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class stageSelect : MonoBehaviour {
 
-    //****************************************************************
+    //************************************
     // 定義
     [System.Serializable]
     struct StageData
     {
+        public int stageNumber;
         public SceneObject sceneObject;
         public Sprite sprite;
         public GameObject gameObject;
     }
 
-    //****************************************************************
+    //************************************
     // 変数
     [SerializeField]
-    StageData[] stageData;
+    List<StageData> stageData;
     
-    int currentStageNumber;
-    bool isChanging;
     int widthInterval;
+    float moveValue;
 
-    //****************************************************************
+    //************************************
     // メソッド
-	void Start ()
+    void Start ()
     {
-        currentStageNumber = 0;
         widthInterval = 1080;
-        isChanging = false;
+        moveValue = 0.0f;
 
         // ステージ画像生成
         CreateStageImage();
-
     }
 
 	void Update ()
     {
-        // 右
-        for (int i = 0; i < stageData.Length; i++)
+        if (moveValue == 0.0f)
         {
-            RectTransform rect = stageData[i].gameObject.GetComponent<RectTransform>();
-            Vector2 position = rect.anchoredPosition;
-            position.x += 5.0f;
-
-            if(position.x > (Screen.width * 0.5f + widthInterval * 0.5f))
+            if (Input.GetKeyDown(KeyCode.RightArrow))
             {
-                position.x -= widthInterval * stageData.Length;
+                moveValue = -widthInterval;
+                StageRotation(-1);
             }
-
-            rect.anchoredPosition = position;
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                moveValue = widthInterval;
+                StageRotation(1);
+            }
+            if( Input.GetKeyDown(KeyCode.Space))
+            {
+                SceneManager.LoadScene(stageData[0].sceneObject);
+            }
         }
-        /*
-        // 左
-        for (int i = 0; i < stageData.Length; i++)
+        else
+        {
+            Move();
+        }
+    }
+
+    void Move()
+    {
+        // 進行方向 * 全体の移動距離 * 時間
+        float move = Mathf.Sign(moveValue) * widthInterval * Time.deltaTime;
+
+        // 移動量の反映
+        moveValue -= move;
+
+        // 進行方向と移動量の符号が異なれば行き過ぎ
+        if (Mathf.Sign(move) != Mathf.Sign(moveValue))
+        {
+            moveValue = 0.0f;
+            SetPositions(0);
+            return;
+        }
+
+        // 移動
+        for (int i = 0; i < stageData.Count; i++)
         {
             RectTransform rect = stageData[i].gameObject.GetComponent<RectTransform>();
             Vector2 position = rect.anchoredPosition;
-            position.x -= 5.0f;
 
+            position.x += move;
+
+            if (position.x > (Screen.width * 0.5f + widthInterval * 0.5f))
+            {
+                position.x -= widthInterval * stageData.Count;
+            }
             if (position.x < -(Screen.width * 0.5f + widthInterval * 0.5f))
             {
-                position.x += widthInterval * stageData.Length;
+                position.x += widthInterval * stageData.Count;
             }
-
             rect.anchoredPosition = position;
         }
-        */
-
-        /*
-		if(Input.GetKey(KeyCode.RightArrow))
-        {
-            currentStageNumber++;
-            if(stgageScene.Length > currentStageNumber)
-            {
-                currentStageNumber = 0;
-            }
-        }
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            currentStageNumber--;
-            if (stgageScene.Length < 0)
-            {
-                currentStageNumber = stgageScene.Length - 1;
-            }
-        }
-        */
     }
 
     void CreateStageImage()
     {
         Transform canvas = GameObject.Find("Canvas").transform;
-        for (int i = 0; i < stageData.Length; i++)
+        for (int i = 0; i < stageData.Count; i++)
         {
             // オブジェクト生成
             GameObject empty = new GameObject("Stage" + (i + 1));
@@ -113,19 +120,51 @@ public class stageSelect : MonoBehaviour {
             // 親設定
             empty.transform.SetParent(canvas);
 
-            // 座標設定
+            // スケール設定
             RectTransform rect = empty.GetComponent<RectTransform>();
-            rect.anchoredPosition = new Vector2(widthInterval * i, 50);
             rect.sizeDelta = new Vector2(960, 540);
 
-            // 最後だけ座標が違う
-            if (stageData.Length - 1 == i)
-            {
-                rect.anchoredPosition = new Vector2(-widthInterval, 50);
-            }
-
             // オブジェクトのセット
-            stageData[i].gameObject = empty;
+            StageData tmp = stageData[i];
+            tmp.gameObject = empty;
+            tmp.stageNumber = i + 1;    // ステージ番号セット
+            stageData[i] = tmp;
+        }
+
+        // 座標のセット
+        SetPositions(0);
+    }
+
+    void SetPositions(int count)
+    {
+        StageRotation(count);
+
+        for (int i = 0; i < stageData.Count - 1; i++)
+        {
+            stageData[i].gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(widthInterval * i, 50.0f);
+        }
+        stageData[stageData.Count - 1].gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(-widthInterval, 50.0f);
+    }
+
+    void StageRotation(int count)
+    {
+        int lastIndex = stageData.Count - 1;
+        int addIndex = lastIndex;
+        int removeIndex = 0;
+
+        // 回転方向によって変更
+        if (Mathf.Sign(count) > 0)
+        {
+            addIndex = 0;
+            removeIndex = lastIndex;
+        }
+
+        // 実際にデータの入れ替え
+        for (int i = 0; i < Mathf.Abs(count); i++)
+        {
+            StageData tmp = stageData[removeIndex];
+            stageData.RemoveAt(removeIndex);
+            stageData.Insert(addIndex, tmp);
         }
     }
 }
