@@ -21,7 +21,9 @@ public class stageSelect : MonoBehaviour {
     // 変数
     [SerializeField]
     List<StageData> stageData;
-    
+    [SerializeField]
+    GameObject[] clearTime;
+
     int widthInterval;
     float moveValue;
 
@@ -36,7 +38,7 @@ public class stageSelect : MonoBehaviour {
         CreateStageImage();
     }
 
-	void Update ()
+	void Update()
     {
         if (moveValue == 0.0f)
         {
@@ -59,6 +61,21 @@ public class stageSelect : MonoBehaviour {
         {
             Move();
         }
+
+        //**************************************
+        // Debug
+#if UNITY_EDITOR
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            float time = Random.Range(0.0f, 120.0f);
+            gameDataManager.Instance.Save(stageData[0].stageNumber, time);
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            gameDataManager.Instance.DeleteAll();
+        }
+#endif
+        //***************************************
     }
 
     void Move()
@@ -144,6 +161,8 @@ public class stageSelect : MonoBehaviour {
             stageData[i].gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(widthInterval * i, 50.0f);
         }
         stageData[stageData.Count - 1].gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(-widthInterval, 50.0f);
+
+        DrawClearTime();
     }
 
     void StageRotation(int count)
@@ -166,5 +185,43 @@ public class stageSelect : MonoBehaviour {
             stageData.RemoveAt(removeIndex);
             stageData.Insert(addIndex, tmp);
         }
+    }
+
+    void DrawClearTime()
+    {
+        float time = gameDataManager.Instance.Load(stageData[0].stageNumber);      
+        
+        int Minute, TenMin, OneMin;
+        int Second, TenSec, OneSec;
+        int Decimal, OneDec, TwoDec;
+        Minute = CalcMinute(time);
+        TenMin = Minute / 10;
+        OneMin = Minute - TenMin * 10;
+        Second = CalcSecond(time);
+        TenSec = Second / 10;
+        OneSec = Second - TenSec * 10;
+        Decimal = CalcDecimal(time);
+        OneDec = Decimal / 100;
+        TwoDec = (Decimal - OneDec * 100) / 10;
+        
+        clearTime[0].GetComponent<scoreSprite>().SetNumber(TenMin);
+        clearTime[1].GetComponent<scoreSprite>().SetNumber(OneMin);
+        clearTime[2].GetComponent<scoreSprite>().SetNumber(TenSec);
+        clearTime[3].GetComponent<scoreSprite>().SetNumber(OneSec);
+        clearTime[4].GetComponent<scoreSprite>().SetNumber(OneDec);
+        clearTime[5].GetComponent<scoreSprite>().SetNumber(TwoDec);
+        
+    }
+    public int CalcMinute(float time)
+    {
+        return Mathf.FloorToInt(time) / 60;
+    }
+    public int CalcSecond(float time)
+    {
+        return Mathf.FloorToInt(time) % 60;
+    }
+    public int CalcDecimal(float fTime)
+    {
+        return Mathf.FloorToInt(fTime * 1000 - Mathf.FloorToInt(fTime) * 1000);
     }
 }

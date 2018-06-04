@@ -8,12 +8,12 @@ public class title : MonoBehaviour {
     [SerializeField]
     SceneObject nextScene;
 
-    void Update()
-    {
-    }
-
     public void NewGame()
     {
+        // セーブデータ削除
+        gameDataManager.Instance.DeleteAll();
+
+        // シーン読み込み
         SceneManager.LoadScene(nextScene);
     }
 
