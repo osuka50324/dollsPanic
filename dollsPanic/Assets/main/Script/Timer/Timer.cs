@@ -95,8 +95,8 @@ public class Timer : MonoBehaviour {
         g_fCurrentTime = g_fMaxTime = fMaxTime;
         for (int i = 0; i < 7; i++)
         {
-            image[i].GetComponent<RectTransform>().anchoredPosition = new Vector3(-200 + i * 140, 40, 0);
-            image[i].GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
+            image[i].GetComponent<RectTransform>().anchoredPosition = new Vector3(-100 + i * 28, 100, 0);
+            image[i].GetComponent<RectTransform>().localScale = new Vector3(0.2f, 0.2f, 0.2f);
         }
 
     }

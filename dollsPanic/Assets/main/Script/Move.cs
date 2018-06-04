@@ -5,6 +5,7 @@ using UnityEngine;
 public class Move : MonoBehaviour {
     private float MovePow = 10;
     private Rigidbody rb;
+    private bool MoveFlag;
     // Use this for initialization
     void Start ()
     {
@@ -19,13 +20,34 @@ public class Move : MonoBehaviour {
     // Update is called once per frame
     void Update ()
     {
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (MoveFlag)
         {
-            rb.AddForce(transform.forward * MovePow);
-        }
-        else if (Input.GetKey(KeyCode.DownArrow))
+            if (Input.GetKey(KeyCode.UpArrow))
+            {
+                rb.AddForce(transform.forward * MovePow);
+            }
+            else if (Input.GetKey(KeyCode.DownArrow))
+            {
+                rb.AddForce(transform.forward * -MovePow);
+            }
+        }else
         {
-            rb.AddForce(transform.forward * -MovePow);
+            if (Input.GetKey(KeyCode.UpArrow))
+            {
+                rb.AddForce(transform.forward * MovePow / 5);
+            }
+            else if (Input.GetKey(KeyCode.DownArrow))
+            {
+                rb.AddForce(transform.forward * -MovePow / 5);
+            }
         }
+    }
+    void OnCollisionExit(Collision col)
+    {
+        MoveFlag = false;
+    }
+    void OnCollisionEnter(Collision col)
+    {
+        MoveFlag = true;
     }
 }
