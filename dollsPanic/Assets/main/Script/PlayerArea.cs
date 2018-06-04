@@ -8,12 +8,8 @@ public class PlayerArea : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         PlayerScript =  transform.parent.GetComponent<Player>();
-        GetComponent<MeshRenderer>().enabled = false;
         transform.localScale *= 1.5f;
-        for(int i = 0; i < transform.childCount;)
-        {
-            Destroy(transform.GetChild(0).transform);
-        }
+        Destroy(transform.GetChild(0).gameObject);
     }
 	
 	// Update is called once per frame
