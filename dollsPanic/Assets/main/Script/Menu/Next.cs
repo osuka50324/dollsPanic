@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Help : MonoBehaviour
+public class Next : MonoBehaviour
 {
     public int g_Number;
     // Use this for initialization
@@ -11,12 +11,11 @@ public class Help : MonoBehaviour
         switch (transform.parent.GetComponent<OptionScript>().g_nMode)
         {
             case 0:
-                g_Number = 3;
                 break;
             case 1:
+                g_Number = 0;
                 break;
             case 2:
-                g_Number = 1;
                 break;
         }
 
