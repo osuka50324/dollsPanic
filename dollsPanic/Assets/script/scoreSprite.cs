@@ -12,7 +12,7 @@ public class scoreSprite : MonoBehaviour
         sprites = new Sprite[10];
         for (int i = 0; i < 10; i++)
         {
-            string str = "number" + i;
+            string str = "number_UI/" + i;
             sprites[i] = Resources.Load(str, typeof(Sprite)) as Sprite;
         }
         SetNumber(0);
