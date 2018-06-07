@@ -67,7 +67,7 @@ public class stageSelect : MonoBehaviour {
 #if UNITY_EDITOR
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            float time = Random.Range(0.0f, 120.0f);
+            float time = Random.Range(0.0f, 1200.0f);
             gameDataManager.Instance.Save(stageData[0].stageNumber, time);
         }
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -208,8 +208,8 @@ public class stageSelect : MonoBehaviour {
         clearTime[1].GetComponent<scoreSprite>().SetNumber(OneMin);
         clearTime[2].GetComponent<scoreSprite>().SetNumber(TenSec);
         clearTime[3].GetComponent<scoreSprite>().SetNumber(OneSec);
-        clearTime[4].GetComponent<scoreSprite>().SetNumber(OneDec);
-        clearTime[5].GetComponent<scoreSprite>().SetNumber(TwoDec);
+//        clearTime[4].GetComponent<scoreSprite>().SetNumber(OneDec);
+//        clearTime[5].GetComponent<scoreSprite>().SetNumber(TwoDec);
         
     }
     public int CalcMinute(float time)
