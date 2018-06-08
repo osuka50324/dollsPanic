@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Move : MonoBehaviour {
-    private float MovePow = 10;
+    private float MovePow = 2;
     private Rigidbody rb;
     private bool MoveFlag;
     // Use this for initialization
@@ -24,21 +24,21 @@ public class Move : MonoBehaviour {
         {
             if (Input.GetKey(KeyCode.UpArrow))
             {
-                rb.AddForce(transform.forward * MovePow);
+                rb.AddForce(transform.forward * MovePow, ForceMode.Impulse);
             }
             else if (Input.GetKey(KeyCode.DownArrow))
             {
-                rb.AddForce(transform.forward * -MovePow);
+                rb.AddForce(transform.forward * -MovePow, ForceMode.Impulse);
             }
         }else
         {
             if (Input.GetKey(KeyCode.UpArrow))
             {
-                rb.AddForce(transform.forward * MovePow / 5);
+                rb.AddForce(transform.forward * MovePow / 5, ForceMode.Impulse);
             }
             else if (Input.GetKey(KeyCode.DownArrow))
             {
-                rb.AddForce(transform.forward * -MovePow / 5);
+                rb.AddForce(transform.forward * -MovePow / 5, ForceMode.Impulse);
             }
         }
     }
