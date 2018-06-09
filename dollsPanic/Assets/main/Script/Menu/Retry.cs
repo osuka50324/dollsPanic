@@ -12,14 +12,14 @@ public class Retry : MonoBehaviour
         {
             case 0:
             case 1:
-                g_Number = 2;
+                g_Number = 1;
                 break;
             case 2:
                 g_Number = 1;
                 break;
         }
         
-        transform.parent.GetComponent<OptionScript>().GetImageObject(gameObject,g_Number);
+        transform.parent.GetComponent<OptionScript>().GetImageObject(this.gameObject,g_Number);
     }
 
     // Update is called once per frame

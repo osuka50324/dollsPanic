@@ -20,7 +20,7 @@ public class Help : MonoBehaviour
                 break;
         }
 
-        transform.parent.GetComponent<OptionScript>().GetImageObject(gameObject, g_Number);
+        transform.parent.GetComponent<OptionScript>().GetImageObject(this.gameObject, g_Number);
     }
 
     // Update is called once per frame
