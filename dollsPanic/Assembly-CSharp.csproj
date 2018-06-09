@@ -51,16 +51,33 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\main\Script\Ability.cs" />
-     <Compile Include="Assets\main\Script\CameraMove.cs" />
-     <Compile Include="Assets\main\Script\Jump.cs" />
-     <Compile Include="Assets\main\Script\Move.cs" />
-     <Compile Include="Assets\main\Script\Player.cs" />
-     <Compile Include="Assets\main\Script\PlayerArea.cs" />
-     <Compile Include="Assets\main\Script\Turn.cs" />
-     <Compile Include="Assets\script\SceneObject.cs" />
-     <Compile Include="Assets\script\stageSelect.cs" />
-     <Compile Include="Assets\script\title.cs" />
+     <Compile Include="Assets\P_Oosuka\script\gameDataManager.cs" />
+     <Compile Include="Assets\P_Oosuka\script\SceneObject.cs" />
+     <Compile Include="Assets\P_Oosuka\script\scoreSprite.cs" />
+     <Compile Include="Assets\P_Oosuka\script\stageSelect.cs" />
+     <Compile Include="Assets\P_Oosuka\script\title.cs" />
+     <Compile Include="Assets\P_Takeichi\main\Script\Ability.cs" />
+     <Compile Include="Assets\P_Takeichi\main\Script\CameraMove.cs" />
+     <Compile Include="Assets\P_Takeichi\main\Script\gameClear.cs" />
+     <Compile Include="Assets\P_Takeichi\main\Script\GODManager.cs" />
+     <Compile Include="Assets\P_Takeichi\main\Script\ImageSlide.cs" />
+     <Compile Include="Assets\P_Takeichi\main\Script\Jump.cs" />
+     <Compile Include="Assets\P_Takeichi\main\Script\Menu\Game.cs" />
+     <Compile Include="Assets\P_Takeichi\main\Script\Menu\Help.cs" />
+     <Compile Include="Assets\P_Takeichi\main\Script\Menu\MenuTop.cs" />
+     <Compile Include="Assets\P_Takeichi\main\Script\Menu\Next.cs" />
+     <Compile Include="Assets\P_Takeichi\main\Script\Menu\OptionManager.cs" />
+     <Compile Include="Assets\P_Takeichi\main\Script\Menu\OptionScript.cs" />
+     <Compile Include="Assets\P_Takeichi\main\Script\Menu\Retry.cs" />
+     <Compile Include="Assets\P_Takeichi\main\Script\Menu\Select.cs" />
+     <Compile Include="Assets\P_Takeichi\main\Script\Menu\Title.cs" />
+     <Compile Include="Assets\P_Takeichi\main\Script\Move.cs" />
+     <Compile Include="Assets\P_Takeichi\main\Script\Player.cs" />
+     <Compile Include="Assets\P_Takeichi\main\Script\PlayerArea.cs" />
+     <Compile Include="Assets\P_Takeichi\main\Script\Timer\Timer.cs" />
+     <Compile Include="Assets\P_Takeichi\main\Script\Turn.cs" />
+     <Compile Include="Assets\P_Takeichi\ながとも\ImageSlide.cs" />
+     <None Include="Assets\Datas\仕様表.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
