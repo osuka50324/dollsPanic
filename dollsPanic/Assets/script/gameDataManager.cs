@@ -47,4 +47,10 @@ public class gameDataManager {
     {
         PlayerPrefs.DeleteAll();
     }
+
+    // 現在の最高スコア取得
+    public float GetHighScore(int stageNumber)
+    {
+        return PlayerPrefs.GetFloat(stageNumber.ToString(), 0.0f);
+    }
 }
