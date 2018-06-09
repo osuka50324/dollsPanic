@@ -1672,7 +1672,7 @@ Transform:
   m_GameObject: {fileID: 1231552959066814}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.59, y: -1.48, z: 5.63}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4604510335636854}
   m_Father: {fileID: 0}
@@ -2465,7 +2465,7 @@ Transform:
   m_GameObject: {fileID: 1837730842347558}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children:
   - {fileID: 4169490219854354}
   - {fileID: 4660939580741334}
@@ -3166,9 +3166,9 @@ MonoBehaviour:
   - Scripts: {fileID: 11500000, guid: 8c50385f6b5b07d4fa8948fecbb266b2, type: 3}
     Num: 1
   - Scripts: {fileID: 11500000, guid: 16611603703cbe040bc4a64cbd82c1f7, type: 3}
-    Num: 1
+    Num: 5
   - Scripts: {fileID: 11500000, guid: 215ac5fac80685f4db1de6ec5115a7af, type: 3}
-    Num: 1
+    Num: 3
 --- !u!137 &137600398279511996
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
