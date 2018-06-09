@@ -113,6 +113,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+<<<<<<< HEAD
 --- !u!1001 &1014644291
 Prefab:
   m_ObjectHideFlags: 0
@@ -201,6 +202,8 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2a2b3d3ddccd1574f8f8f354b2d9b500, type: 2}
   m_IsPrefabParent: 0
+=======
+>>>>>>> stage調整
 --- !u!1001 &1258437064
 Prefab:
   m_ObjectHideFlags: 0
@@ -238,6 +241,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4462170224483772, guid: 051e900c2dea4fd43b50f5fc8cab6805, type: 2}
       propertyPath: m_RootOrder
+<<<<<<< HEAD
       value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -368,6 +372,12 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a896c38a35533af4d9a66f2efe27de8b, type: 2}
+=======
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 051e900c2dea4fd43b50f5fc8cab6805, type: 2}
+>>>>>>> stage調整
   m_IsPrefabParent: 0
 --- !u!1001 &1629770240
 Prefab:
@@ -406,7 +416,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4722995836282030, guid: f3993852d7d134f43b3bcacd1a0879cf, type: 2}
       propertyPath: m_RootOrder
+<<<<<<< HEAD
       value: 9
+=======
+      value: 3
+>>>>>>> stage調整
       objectReference: {fileID: 0}
     - target: {fileID: 1689035731005044, guid: f3993852d7d134f43b3bcacd1a0879cf, type: 2}
       propertyPath: m_Name
@@ -415,6 +429,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f3993852d7d134f43b3bcacd1a0879cf, type: 2}
   m_IsPrefabParent: 0
+<<<<<<< HEAD
 --- !u!1001 &1669785430
 Prefab:
   m_ObjectHideFlags: 0
@@ -461,6 +476,8 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0095fc9c2f0a2b7428fdc2c83d1bd80b, type: 2}
   m_IsPrefabParent: 0
+=======
+>>>>>>> stage調整
 --- !u!1 &1745418588
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,6 +596,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4990141274536746, guid: df94e85d7cee2b348b39e6963f12d921, type: 2}
       propertyPath: m_RootOrder
+<<<<<<< HEAD
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4650036256995130, guid: df94e85d7cee2b348b39e6963f12d921, type: 2}
@@ -668,10 +686,30 @@ Prefab:
     - target: {fileID: 4154029147883590, guid: df94e85d7cee2b348b39e6963f12d921, type: 2}
       propertyPath: m_LocalScale.y
       value: 1.0000002
+=======
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4650036256995130, guid: df94e85d7cee2b348b39e6963f12d921, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 42.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4395525026769928, guid: df94e85d7cee2b348b39e6963f12d921, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -45.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152638260986628, guid: df94e85d7cee2b348b39e6963f12d921, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 43.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4879928335022252, guid: df94e85d7cee2b348b39e6963f12d921, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -44.8
+>>>>>>> stage調整
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: df94e85d7cee2b348b39e6963f12d921, type: 2}
   m_IsPrefabParent: 0
+<<<<<<< HEAD
 --- !u!1001 &1836254853
 Prefab:
   m_ObjectHideFlags: 0
@@ -718,6 +756,8 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8f828f1c7a1c4394f9b1705e36dfe55d, type: 2}
   m_IsPrefabParent: 0
+=======
+>>>>>>> stage調整
 --- !u!1001 &2097268121
 Prefab:
   m_ObjectHideFlags: 0
@@ -763,7 +803,11 @@ Prefab:
     - target: {fileID: 224367593118288310, guid: 112aef441b435624289a4a71402fda64,
         type: 2}
       propertyPath: m_RootOrder
+<<<<<<< HEAD
       value: 8
+=======
+      value: 2
+>>>>>>> stage調整
       objectReference: {fileID: 0}
     - target: {fileID: 224367593118288310, guid: 112aef441b435624289a4a71402fda64,
         type: 2}

@@ -126,7 +126,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4132076664687600, guid: dbe40572215520f47b279083f6bd2940, type: 2}
       propertyPath: m_LocalPosition.y
+<<<<<<< HEAD
       value: -0.35
+=======
+      value: 0.96
+>>>>>>> stage調整
       objectReference: {fileID: 0}
     - target: {fileID: 4132076664687600, guid: dbe40572215520f47b279083f6bd2940, type: 2}
       propertyPath: m_LocalPosition.z
@@ -150,7 +154,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4132076664687600, guid: dbe40572215520f47b279083f6bd2940, type: 2}
       propertyPath: m_RootOrder
+<<<<<<< HEAD
       value: 11
+=======
+      value: 12
+>>>>>>> stage調整
       objectReference: {fileID: 0}
     - target: {fileID: 4132076664687600, guid: dbe40572215520f47b279083f6bd2940, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -196,7 +204,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4553905805604776, guid: 8f828f1c7a1c4394f9b1705e36dfe55d, type: 2}
       propertyPath: m_RootOrder
+<<<<<<< HEAD
       value: 10
+=======
+      value: 11
+>>>>>>> stage調整
       objectReference: {fileID: 0}
     - target: {fileID: 1304625499862688, guid: 8f828f1c7a1c4394f9b1705e36dfe55d, type: 2}
       propertyPath: m_Name
@@ -302,7 +314,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4321044384167964, guid: 731732e559474844a84fe53cdabb0000, type: 2}
       propertyPath: m_LocalPosition.y
+<<<<<<< HEAD
       value: 389.6
+=======
+      value: 390.3
+>>>>>>> stage調整
       objectReference: {fileID: 0}
     - target: {fileID: 4321044384167964, guid: 731732e559474844a84fe53cdabb0000, type: 2}
       propertyPath: m_LocalPosition.z
@@ -331,6 +347,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 731732e559474844a84fe53cdabb0000, type: 2}
   m_IsPrefabParent: 0
+<<<<<<< HEAD
 --- !u!1 &387860222 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1325428550910588, guid: df94e85d7cee2b348b39e6963f12d921,
@@ -348,6 +365,8 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10.000002, y: 1.4233059e-13, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> stage調整
 --- !u!1001 &569210597
 Prefab:
   m_ObjectHideFlags: 0
@@ -385,7 +404,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4501409553500194, guid: 0095fc9c2f0a2b7428fdc2c83d1bd80b, type: 2}
       propertyPath: m_RootOrder
+<<<<<<< HEAD
       value: 12
+=======
+      value: 13
+>>>>>>> stage調整
       objectReference: {fileID: 0}
     - target: {fileID: 1734122763259288, guid: 0095fc9c2f0a2b7428fdc2c83d1bd80b, type: 2}
       propertyPath: m_Name
@@ -525,7 +548,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4869682109182500, guid: 88a4ec2c9d51e6943b1e74e3fbd37164, type: 2}
       propertyPath: m_LocalPosition.y
+<<<<<<< HEAD
       value: 22.5
+=======
+      value: 23.21
+>>>>>>> stage調整
       objectReference: {fileID: 0}
     - target: {fileID: 4869682109182500, guid: 88a4ec2c9d51e6943b1e74e3fbd37164, type: 2}
       propertyPath: m_LocalPosition.z
@@ -549,11 +576,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4869682109182500, guid: 88a4ec2c9d51e6943b1e74e3fbd37164, type: 2}
       propertyPath: m_RootOrder
+<<<<<<< HEAD
       value: 9
+=======
+      value: 10
+>>>>>>> stage調整
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 88a4ec2c9d51e6943b1e74e3fbd37164, type: 2}
   m_IsPrefabParent: 0
+<<<<<<< HEAD
 --- !u!1001 &1338651399
 Prefab:
   m_ObjectHideFlags: 0
@@ -659,6 +691,8 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10, y: 2.2204466e-16, z: 10.000002}
   m_Center: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> stage調整
 --- !u!1001 &1556507297
 Prefab:
   m_ObjectHideFlags: 0
@@ -841,8 +875,43 @@ Prefab:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4395525026769928, guid: df94e85d7cee2b348b39e6963f12d921, type: 2}
+<<<<<<< HEAD
       propertyPath: m_LocalPosition.x
       value: -39.4
+=======
+      propertyPath: m_LocalPosition.x
+      value: -56.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152638260986628, guid: df94e85d7cee2b348b39e6963f12d921, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 63
+      objectReference: {fileID: 0}
+    - target: {fileID: 4879928335022252, guid: df94e85d7cee2b348b39e6963f12d921, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -49.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4650036256995130, guid: df94e85d7cee2b348b39e6963f12d921, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 55.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154029147883590, guid: df94e85d7cee2b348b39e6963f12d921, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 43.3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: df94e85d7cee2b348b39e6963f12d921, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &1921324674
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4407593776157948, guid: f0c960afb02e0c940ad90d436fe8d140, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 448.4
+>>>>>>> stage調整
       objectReference: {fileID: 0}
     - target: {fileID: 4152638260986628, guid: df94e85d7cee2b348b39e6963f12d921, type: 2}
       propertyPath: m_LocalPosition.z
@@ -858,11 +927,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4154029147883590, guid: df94e85d7cee2b348b39e6963f12d921, type: 2}
       propertyPath: m_LocalPosition.y
+<<<<<<< HEAD
       value: 39.5
+=======
+      value: 392.6
+>>>>>>> stage調整
       objectReference: {fileID: 0}
     - target: {fileID: 4650036256995130, guid: df94e85d7cee2b348b39e6963f12d921, type: 2}
       propertyPath: m_LocalPosition.z
+<<<<<<< HEAD
       value: -2.2
+=======
+      value: -113.8
+>>>>>>> stage調整
       objectReference: {fileID: 0}
     - target: {fileID: 4650036256995130, guid: df94e85d7cee2b348b39e6963f12d921, type: 2}
       propertyPath: m_LocalScale.x
@@ -888,6 +965,7 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 4395525026769928, guid: df94e85d7cee2b348b39e6963f12d921, type: 2}
       propertyPath: m_LocalPosition.z
       value: -1.7
@@ -903,6 +981,11 @@ Prefab:
     - target: {fileID: 4152638260986628, guid: df94e85d7cee2b348b39e6963f12d921, type: 2}
       propertyPath: m_LocalScale.x
       value: 9
+=======
+    - target: {fileID: 4407593776157948, guid: f0c960afb02e0c940ad90d436fe8d140, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+>>>>>>> stage調整
       objectReference: {fileID: 0}
     - target: {fileID: 4152638260986628, guid: df94e85d7cee2b348b39e6963f12d921, type: 2}
       propertyPath: m_LocalPosition.x
@@ -948,15 +1031,27 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4407593776157948, guid: f0c960afb02e0c940ad90d436fe8d140, type: 2}
       propertyPath: m_LocalPosition.x
+<<<<<<< HEAD
       value: 448.4
+=======
+      value: 474
+>>>>>>> stage調整
       objectReference: {fileID: 0}
     - target: {fileID: 4407593776157948, guid: f0c960afb02e0c940ad90d436fe8d140, type: 2}
       propertyPath: m_LocalPosition.y
+<<<<<<< HEAD
       value: 392.14
+=======
+      value: 397.8
+>>>>>>> stage調整
       objectReference: {fileID: 0}
     - target: {fileID: 4407593776157948, guid: f0c960afb02e0c940ad90d436fe8d140, type: 2}
       propertyPath: m_LocalPosition.z
+<<<<<<< HEAD
       value: -113.8
+=======
+      value: -113.5
+>>>>>>> stage調整
       objectReference: {fileID: 0}
     - target: {fileID: 4407593776157948, guid: f0c960afb02e0c940ad90d436fe8d140, type: 2}
       propertyPath: m_LocalRotation.x
@@ -976,7 +1071,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4407593776157948, guid: f0c960afb02e0c940ad90d436fe8d140, type: 2}
       propertyPath: m_RootOrder
+<<<<<<< HEAD
       value: 8
+=======
+      value: 9
+>>>>>>> stage調整
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f0c960afb02e0c940ad90d436fe8d140, type: 2}
