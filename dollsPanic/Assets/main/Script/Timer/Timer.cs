@@ -77,8 +77,8 @@ public class Timer : MonoBehaviour {
                         break;
                 }
             }
-            image[i].GetComponent<Image>().preserveAspect = true;
-            image[i].GetComponent<Image>().SetNativeSize();
+            //image[i].GetComponent<Image>().preserveAspect = true;
+            //image[i].GetComponent<Image>().SetNativeSize();
             if (g_fCurrentTime <= 0.000f)
             {
                 g_fCurrentTime = 0.000f;
@@ -93,11 +93,6 @@ public class Timer : MonoBehaviour {
     public void SetMaxTime(float fMaxTime)
     {
         g_fCurrentTime = g_fMaxTime = fMaxTime;
-        for (int i = 0; i < 7; i++)
-        {
-            image[i].GetComponent<RectTransform>().anchoredPosition = new Vector3(-100 + i * 28, 100, 0);
-            image[i].GetComponent<RectTransform>().localScale = new Vector3(0.2f, 0.2f, 0.2f);
-        }
 
     }
     public void StartTimer()
