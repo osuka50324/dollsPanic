@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class OptionScript : MonoBehaviour
 {
@@ -38,7 +39,7 @@ public class OptionScript : MonoBehaviour
     {
         if (EnterButton && EffectTime != 0)
         {
-            g_OptionButton[CurrentButtonNumber].GetComponent<Renderer>().material.color = new Color(Random.value, Random.value, Random.value);
+            g_OptionButton[CurrentButtonNumber].GetComponent<Image>().color = new Color(Random.value, Random.value, Random.value);
             EffectTime--;
             if (EffectTime == 0)
             {
@@ -60,8 +61,8 @@ public class OptionScript : MonoBehaviour
         }
         if (OldButtonNumber != CurrentButtonNumber)
         {
-            g_OptionButton[CurrentButtonNumber].GetComponent<Renderer>().material.color = Color.red;
-            g_OptionButton[OldButtonNumber].GetComponent<Renderer>().material.color = Color.white;
+            g_OptionButton[CurrentButtonNumber].GetComponent<Image>().color = Color.red;
+            g_OptionButton[OldButtonNumber].GetComponent<Image>().color = Color.white;
         }
         if (Input.GetKeyDown(KeyCode.Return))
         {
@@ -75,7 +76,7 @@ public class OptionScript : MonoBehaviour
         g_OptionButton[Number] = Button;
         if (Number == 0)
         {
-            g_OptionButton[Number].GetComponent<Renderer>().material.color = Color.red;
+            g_OptionButton[Number].GetComponent<Image>().color = Color.red;
         }
     }
     public void GetMenuTop(GameObject Top)
