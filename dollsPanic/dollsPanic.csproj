@@ -235,9 +235,34 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\script\SceneObject.cs" />
-    <Compile Include="Assets\script\stageSelect.cs" />
-    <Compile Include="Assets\script\title.cs" />
+    <Compile Include="Assets\P_Nagai\ImageSlide.cs" />
+    <Compile Include="Assets\P_Oosuka\script\gameDataManager.cs" />
+    <Compile Include="Assets\P_Oosuka\script\SceneObject.cs" />
+    <Compile Include="Assets\P_Oosuka\script\scoreSprite.cs" />
+    <Compile Include="Assets\P_Oosuka\script\stageSelect.cs" />
+    <Compile Include="Assets\P_Oosuka\script\title.cs" />
+    <Compile Include="Assets\P_Takeichi\main\Script\Ability.cs" />
+    <Compile Include="Assets\P_Takeichi\main\Script\CameraMove.cs" />
+    <Compile Include="Assets\P_Takeichi\main\Script\gameClear.cs" />
+    <Compile Include="Assets\P_Takeichi\main\Script\GODManager.cs" />
+    <Compile Include="Assets\P_Takeichi\main\Script\Jump.cs" />
+    <Compile Include="Assets\P_Takeichi\main\Script\Move.cs" />
+    <Compile Include="Assets\P_Takeichi\main\Script\Player.cs" />
+    <Compile Include="Assets\P_Takeichi\main\Script\PlayerArea.cs" />
+    <Compile Include="Assets\P_Takeichi\main\Script\Turn.cs" />
+    <Compile Include="Assets\P_Yamaguchi\Menu\Game.cs" />
+    <Compile Include="Assets\P_Yamaguchi\Menu\Help.cs" />
+    <Compile Include="Assets\P_Yamaguchi\Menu\MenuTop.cs" />
+    <Compile Include="Assets\P_Yamaguchi\Menu\Next.cs" />
+    <Compile Include="Assets\P_Yamaguchi\Menu\OptionScript.cs" />
+    <Compile Include="Assets\P_Yamaguchi\Menu\Retry.cs" />
+    <Compile Include="Assets\P_Yamaguchi\Menu\Select.cs" />
+    <Compile Include="Assets\P_Yamaguchi\Menu\Title.cs" />
+    <Compile Include="Assets\P_Yamaguchi\Timer\Timer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Datas\仕様表.txt" />
+    <None Include="Assets\P_Yamaguchi\あいえええええええええええええええええええええええ.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
