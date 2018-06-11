@@ -6,6 +6,7 @@ public class Player : MonoBehaviour {
     private List<GameObject> TargetList = new List<GameObject>();
     private int TargetNo = 0;
     private GameObject MyArea;
+    private GameObject MyEffect;
     private GameObject TargetEffect;
     // Use this for initialization
     void Start () {
@@ -19,10 +20,16 @@ public class Player : MonoBehaviour {
         
         GetComponent<Ability>().SetScript();
         GetComponent<Collider>().material = Resources.Load("PhysicMaterial/Player") as PhysicMaterial;
+        MyEffect = Resources.Load("Effect/PlayerEffect") as GameObject;
+        MyEffect = Instantiate(MyEffect) as GameObject;
+        MyEffect.transform.parent = this.transform;
+        MyEffect.transform.localPosition = Vector3.zero;
+        MyEffect.transform.localScale = Vector3.one;
         TargetEffect = Resources.Load("Effect/Target") as GameObject;
         TargetEffect = Instantiate(TargetEffect) as GameObject;
         TargetEffect.transform.parent = this.transform;
         TargetEffect.transform.localPosition = Vector3.zero;
+        TargetEffect.transform.localScale = Vector3.one;
         TargetEffect.SetActive(false);
         GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraMove>().SetPlayer(this.gameObject);
     }
@@ -44,6 +51,8 @@ public class Player : MonoBehaviour {
                 GetComponent<Collider>().material = null;
                 GetComponent<Ability>().UnSetScript();
                 Destroy(MyArea);
+                MyEffect.transform.parent = null;
+                Destroy(MyEffect);
                 TargetEffect.transform.parent = null;
                 Destroy(TargetEffect);
                 Destroy(this);

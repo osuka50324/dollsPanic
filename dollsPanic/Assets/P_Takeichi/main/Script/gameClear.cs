@@ -1,4 +1,4 @@
-ï»¿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,9 +7,9 @@ using UnityEngine.SceneManagement;
 
 /**************************************
 
-    ç¾çŠ¶ã¯ãƒ™ãƒƒãƒ‰ã«è§¦ã‚ŒãŸçŠ¶æ…‹ã§ã‚¨ãƒ³ã‚¿ãƒ¼ã§ã‚¯ãƒªã‚¢
-    æœ¬å½“ã¯å­ä¾›ã«è§¦ã‚ŒãŸçŠ¶æ…‹ã§ã‚¨ãƒ³ã‚¿ãƒ¼ã§ã‚¯ãƒªã‚¢ã«å¤‰æ›´ã™ã‚‹å¿…è¦ãŒã‚ã‚‹
-    ã‚¹ã‚¯ãƒªãƒ—ãƒˆã®ã‚¢ã‚¿ãƒƒãƒã‚’ãƒ™ãƒƒãƒ‰ã‹ã‚‰å­ä¾›ã«å¤‰æ›´ã™ã‚‹ã“ã¨ã§å¯¾å¿œå¯èƒ½
+    Œ»ó‚Íƒxƒbƒh‚ÉG‚ê‚½ó‘Ô‚ÅƒGƒ“ƒ^[‚ÅƒNƒŠƒA
+    –{“–‚Íq‹Ÿ‚ÉG‚ê‚½ó‘Ô‚ÅƒGƒ“ƒ^[‚ÅƒNƒŠƒA‚É•ÏX‚·‚é•K—v‚ª‚ ‚é
+    ƒXƒNƒŠƒvƒg‚ÌƒAƒ^ƒbƒ`‚ğƒxƒbƒh‚©‚çq‹Ÿ‚É•ÏX‚·‚é‚±‚Æ‚Å‘Î‰‰Â”\
 
 */
 
@@ -28,30 +28,37 @@ public class gameClear : MonoBehaviour {
 		
 	}
 
-    void OnCollisionStay()
+    void OnCollisionStay(Collision other)
     {
         if(Input.GetKeyDown(KeyCode.Return))
         {
+            if (other.transform.tag != "Player")
+            {
+                return;
+            }
             string name = SceneManager.GetActiveScene().name;
             char[] cName = name.ToCharArray();
             char cName2 = cName[5];
             int stageNumber = int.Parse(cName2.ToString());
 
-            // ã‚¹ã‚³ã‚¢æ›´æ–°
+            // ƒXƒRƒAXV
             float highScore = gameDataManager.Instance.GetHighScore(stageNumber);
+            
+            GameObject canvas = GameObject.Find("Canvas");
+            Timer timer = canvas.GetComponent<Timer>();
 
-            float time = GameObject.Find("Canvas").GetComponent<Timer>().GetCurrentTime();
-            float maxTime = GameObject.Find("Canvas").GetComponent<Timer>().g_fMaxTime;
+            float time = timer.GetCurrentTime();
+            float maxTime = timer.g_fMaxTime;
             float clearTime = maxTime - time;
-            if(highScore > clearTime)
+            if (highScore > clearTime)
             {
                 highScore = clearTime;
             }
 
-            // ã‚»ãƒ¼ãƒ–
+            // ƒZ[ƒu
             gameDataManager.Instance.Save(stageNumber, highScore);
             
-            // é·ç§»
+            // ‘JˆÚ
             SceneManager.LoadScene(nextScene);
         }
     }
