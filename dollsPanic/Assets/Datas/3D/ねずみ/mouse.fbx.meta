@@ -1,24 +1,49 @@
 fileFormatVersion: 2
-guid: e715df2f08854bd40b0b48b9f4225bfc
-timeCreated: 1528649243
+guid: 8aa8e62973281fa48af5e65d68b9c1f5
+timeCreated: 1528866872
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: polySurface49
-    100004: polySurface192
-    400000: //RootNode
-    400002: polySurface49
-    400004: polySurface192
-    2100000: polySurface49Mat
-    2100002: polySurface192Mat
-    2300000: polySurface49
-    2300002: polySurface192
-    3300000: polySurface49
-    3300002: polySurface192
-    4300000: polySurface49
-    4300002: polySurface192
+    100000: joint1
+    100002: joint10
+    100004: joint11
+    100006: joint12
+    100008: joint13
+    100010: joint14
+    100012: joint15
+    100014: joint2
+    100016: joint3
+    100018: joint4
+    100020: joint5
+    100022: joint6
+    100024: joint7
+    100026: joint8
+    100028: joint9
+    100030: //RootNode
+    100032: pSphere3
+    400000: joint1
+    400002: joint10
+    400004: joint11
+    400006: joint12
+    400008: joint13
+    400010: joint14
+    400012: joint15
+    400014: joint2
+    400016: joint3
+    400018: joint4
+    400020: joint5
+    400022: joint6
+    400024: joint7
+    400026: joint8
+    400028: joint9
+    400030: //RootNode
+    400032: pSphere3
+    2100000: lambert2
+    4300000: pSphere3
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: pSphere3
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -93,7 +118,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
