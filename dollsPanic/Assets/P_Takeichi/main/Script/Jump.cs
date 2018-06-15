@@ -7,10 +7,13 @@ public class Jump : MonoBehaviour
     private float JumpPow = 400;
     private Rigidbody rb;
     private bool jump = false;
+    public GameObject model;
+    private Animator animator;
     // Use this for initialization
     void Start ()
     {
         rb = GetComponent<Rigidbody>();
+        animator = this.GetComponent<myBody>().Body.GetComponent<Animator>();
     }
 
     public void JumpSet(float Num)
@@ -26,6 +29,7 @@ public class Jump : MonoBehaviour
         {
             rb.AddForce(Vector3.up * JumpPow);
             jump = true;
+            animator.SetTrigger("OnJump");
         }
     }
 
