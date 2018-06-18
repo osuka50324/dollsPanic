@@ -1,24 +1,19 @@
 fileFormatVersion: 2
-guid: a704c82050962e743bbcf229855128df
-timeCreated: 1528649243
+guid: a623a5b61e2641346a06ae42ff156bd9
+timeCreated: 1529299054
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: polySurface11
-    100004: polySurface21
-    400000: //RootNode
-    400002: polySurface11
-    400004: polySurface21
-    2100000: polySurface11Mat
-    2100002: polySurface21Mat
-    2300000: polySurface11
-    2300002: polySurface21
-    3300000: polySurface11
-    3300002: polySurface21
-    4300000: polySurface11
-    4300002: polySurface21
+    100000: polySurface173
+    100002: //RootNode
+    400000: polySurface173
+    400002: //RootNode
+    2100000: rail
+    2300000: polySurface173
+    3300000: polySurface173
+    4300000: polySurface173
+    9500000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -93,7 +88,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
