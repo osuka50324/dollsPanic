@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class stageSelect : MonoBehaviour {
 
@@ -24,16 +23,13 @@ public class stageSelect : MonoBehaviour {
     [SerializeField]
     GameObject[] clearTime;
 
-    int widthInterval;
-    float moveValue;
+    int widthInterval = 1080;
+    float moveValue = 0.0f;
 
     //************************************
     // メソッド
     void Start ()
     {
-        widthInterval = 1080;
-        moveValue = 0.0f;
-
         // ステージ画像生成
         CreateStageImage();
     }
@@ -54,7 +50,7 @@ public class stageSelect : MonoBehaviour {
             }
             if( Input.GetKeyDown(KeyCode.Space))
             {
-                SceneManager.LoadScene(stageData[0].sceneObject);
+                SceneTransition.Instance.LoadScene(stageData[0].sceneObject);
             }
         }
         else
@@ -62,8 +58,7 @@ public class stageSelect : MonoBehaviour {
             Move();
         }
 
-        //**************************************
-        // Debug
+
 #if UNITY_EDITOR
         if (Input.GetKeyDown(KeyCode.Return))
         {
@@ -75,7 +70,6 @@ public class stageSelect : MonoBehaviour {
             gameDataManager.Instance.DeleteAll();
         }
 #endif
-        //***************************************
     }
 
     void Move()
@@ -193,16 +187,16 @@ public class stageSelect : MonoBehaviour {
         
         int Minute, TenMin, OneMin;
         int Second, TenSec, OneSec;
-        int Decimal, OneDec, TwoDec;
+//        int Decimal, OneDec, TwoDec;
         Minute = CalcMinute(time);
         TenMin = Minute / 10;
         OneMin = Minute - TenMin * 10;
         Second = CalcSecond(time);
         TenSec = Second / 10;
         OneSec = Second - TenSec * 10;
-        Decimal = CalcDecimal(time);
-        OneDec = Decimal / 100;
-        TwoDec = (Decimal - OneDec * 100) / 10;
+//        Decimal = CalcDecimal(time);
+//        OneDec = Decimal / 100;
+//        TwoDec = (Decimal - OneDec * 100) / 10;
         
         clearTime[0].GetComponent<scoreSprite>().SetNumber(TenMin);
         clearTime[1].GetComponent<scoreSprite>().SetNumber(OneMin);

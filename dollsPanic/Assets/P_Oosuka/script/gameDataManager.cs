@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -24,31 +24,31 @@ public class gameDataManager {
         }
     }
 
-    // ƒf[ƒ^ƒZ[ƒu
+    // ãƒ‡ãƒ¼ã‚¿ã‚»ãƒ¼ãƒ–
     public void Save(int stageNumber, float time)
     {
         PlayerPrefs.SetFloat(stageNumber.ToString(), time);
     }
 
-    // ƒf[ƒ^ƒ[ƒh
+    // ãƒ‡ãƒ¼ã‚¿ãƒ­ãƒ¼ãƒ‰
     public float Load(int stageNumber)
     {
         return PlayerPrefs.GetFloat(stageNumber.ToString(),0.0f);
     }
 
-    // ƒf[ƒ^ƒL[w’èíœ
+    // ãƒ‡ãƒ¼ã‚¿ã‚­ãƒ¼æŒ‡å®šå‰Šé™¤
     public void Delete(int stageNumber)
     {
         PlayerPrefs.DeleteKey(stageNumber.ToString());
     }
 
-    // ƒf[ƒ^‘Síœ
+    // ãƒ‡ãƒ¼ã‚¿å…¨å‰Šé™¤
     public void DeleteAll()
     {
         PlayerPrefs.DeleteAll();
     }
 
-    // Œ»İ‚ÌÅ‚ƒXƒRƒAæ“¾
+    // ç¾åœ¨ã®æœ€é«˜ã‚¹ã‚³ã‚¢å–å¾—
     public float GetHighScore(int stageNumber)
     {
         return PlayerPrefs.GetFloat(stageNumber.ToString(), 0.0f);
