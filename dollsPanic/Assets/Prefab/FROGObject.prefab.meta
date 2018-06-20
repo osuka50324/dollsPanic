@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:dollsPanic/Assets/Prefab/FROGObject.prefab.meta
 guid: be03083c280abc04a8f9ea1a4ba80f04
 timeCreated: 1529302171
+=======
+guid: 5c71f3b4465aa9543b363d60e1ad40fe
+timeCreated: 1529292269
+>>>>>>> master:dollsPanic/Assets/Prefab/book.prefab.meta
 licenseType: Free
 NativeFormatImporter:
   externalObjects: {}
