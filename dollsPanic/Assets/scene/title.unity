@@ -418,6 +418,16 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114827003551422394, guid: 20921a822074e8149b422cf183700b60,
+        type: 2}
+      propertyPath: maskTexture_
+      value: 
+      objectReference: {fileID: 2800000, guid: c3ce216e35bf08b4f9beafa888776cbf, type: 3}
+    - target: {fileID: 114827003551422394, guid: 20921a822074e8149b422cf183700b60,
+        type: 2}
+      propertyPath: second
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 20921a822074e8149b422cf183700b60, type: 2}
   m_IsPrefabParent: 0

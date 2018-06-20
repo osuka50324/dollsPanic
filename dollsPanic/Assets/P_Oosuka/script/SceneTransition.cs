@@ -7,6 +7,8 @@ public class SceneTransition : SingletonUIGraphics<SceneTransition>
     [SerializeField, Range(0, 1)]
     float range;
     [SerializeField]
+    float second;
+    [SerializeField]
     Texture maskTexture_ = null;
 
     public static Texture screenShotTexture_ = null;
@@ -24,7 +26,7 @@ public class SceneTransition : SingletonUIGraphics<SceneTransition>
     {
         if (range > 0.0f)
         {
-            range -= Time.deltaTime * 0.5f;
+            range -= Time.deltaTime / second;
             if (range <= 0.0f)
             {
                 range = 0.0f;
