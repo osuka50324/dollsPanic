@@ -35,8 +35,11 @@ public class Jump : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
-        jump = false;
-        animator.SetTrigger("OnJumpEnd");
+        if (jump)
+        {
+            jump = false;
+            animator.SetTrigger("OnJumpEnd");
+        }
     }
 
     void JumpOn()
