@@ -49,6 +49,19 @@ public class ImageSlide : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+        // デバッグ用トリガー
+        if (Input.GetKeyDown(KeyCode.Q))
+            StartStagingBigin();
+        if (Input.GetKeyDown(KeyCode.W))
+            StartStagingFin();
+        if (Input.GetKeyDown(KeyCode.E))
+            EndStagingBigin();
+        if (Input.GetKeyDown(KeyCode.R))
+            EndStagingFin();
+        // デバッグ用トリガー
+        
+
+
         // データなかったら入らない(enabled とかないよって言われちゃう)
         if (StartMangaImage != null)
         {
@@ -143,7 +156,7 @@ public class ImageSlide : MonoBehaviour {
                 StartMangaImage.GetComponent<RectTransform>().offsetMin = Vector2.Lerp(startFlame[nFlameCnt].GetComponent<RectTransform>().offsetMin, new Vector2(0.0f, 0.0f), t);
                 StartMangaImage.GetComponent<RectTransform>().offsetMax = Vector2.Lerp(startFlame[nFlameCnt].GetComponent<RectTransform>().offsetMax, new Vector2(0.0f, 0.0f), t);
                 if (StartMangaImage.GetComponent<RectTransform>().localScale.x > 1.0f)
-                    StartMangaImage.GetComponent<RectTransform>().localScale -= new Vector3(1.0f * Time.deltaTime, 1.0f * Time.deltaTime, 0.0f);
+                    StartMangaImage.GetComponent<RectTransform>().localScale -= new Vector3(1.4f * Time.deltaTime, 1.4f * Time.deltaTime, 0.0f);
                 if (StartMangaImage.GetComponent<RectTransform>().localScale.x <= 1.0f)
                     StartMangaImage.GetComponent<RectTransform>().localScale = new Vector3(1.0f, 1.0f, 1.0f);
             }
@@ -151,7 +164,7 @@ public class ImageSlide : MonoBehaviour {
             if(nFlameCnt >= startFlame.Length)
             {
                 if (StartMangaImage.GetComponent<RectTransform>().localScale.x > 1.0f)
-                    StartMangaImage.GetComponent<RectTransform>().localScale -= new Vector3(1.0f * Time.deltaTime, 1.0f * Time.deltaTime, 0.0f);
+                    StartMangaImage.GetComponent<RectTransform>().localScale -= new Vector3(1.5f * Time.deltaTime, 1.5f * Time.deltaTime, 0.0f);
                 if (StartMangaImage.GetComponent<RectTransform>().localScale.x <= 1.0f)
                     StartMangaImage.GetComponent<RectTransform>().localScale = new Vector3(1.0f, 1.0f, 1.0f);
             }
@@ -168,7 +181,7 @@ public class ImageSlide : MonoBehaviour {
         // 作る
         StartMangaImage = Instantiate(StartManga, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity) as GameObject;
         StartMangaImage.transform.parent = this.transform;
-        StartMangaImage.transform.localScale = new Vector3(2.0f, 2.0f, 1.0f);
+        StartMangaImage.transform.localScale = new Vector3(2.5f, 2.5f, 1.0f);
         // 位置調整
         StartMangaImage.GetComponent<RectTransform>().offsetMin = startFlame[nFlameCnt].GetComponent<RectTransform>().offsetMin;
         StartMangaImage.GetComponent<RectTransform>().offsetMax = startFlame[nFlameCnt].GetComponent<RectTransform>().offsetMax;
