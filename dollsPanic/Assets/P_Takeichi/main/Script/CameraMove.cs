@@ -22,6 +22,29 @@ public class CameraMove : MonoBehaviour
         Vector3 targetPosition = player.transform.position;
         targetPosition += player.transform.forward * -5;
         targetPosition += player.transform.up * 2;
+
+        while (true)
+        {
+            Ray ray = new Ray(targetPosition, player.transform.position);
+
+            //Rayが当たったオブジェクトの情報を入れる箱
+            RaycastHit hit;
+
+            //Rayの飛ばせる距離
+            float distance = (targetPosition - player.transform.position).magnitude;
+
+            //もしRayにオブジェクトが衝突したら
+            //                  ↓Ray  ↓Rayが当たったオブジェクト ↓距離
+            if (Physics.Raycast(ray, out hit, distance))
+            {
+                targetPosition += player.transform.forward;
+                targetPosition += player.transform.up;
+            }else
+            {
+                break;
+            }
+        }
+
         if (player.name != PlayerName)
         {
             DeltaTime = ChangeTime;
