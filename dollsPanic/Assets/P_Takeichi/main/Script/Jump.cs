@@ -25,9 +25,9 @@ public class Jump : MonoBehaviour
 	void Update ()
     {
 
-        if (Input.GetKey(KeyCode.Space) && !jump)
+        if (Input.GetKeyDown(KeyCode.Space) && !jump)
         {
-            rb.AddForce(Vector3.up * JumpPow);
+            Invoke("JumpOn",0.9f);
             jump = true;
             animator.SetTrigger("OnJump");
         }
@@ -35,6 +35,15 @@ public class Jump : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
-        jump = false;
+        if (jump)
+        {
+            jump = false;
+            animator.SetTrigger("OnJumpEnd");
+        }
+    }
+
+    void JumpOn()
+    {
+        rb.AddForce(Vector3.up * JumpPow);
     }
 }

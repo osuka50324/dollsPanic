@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Move : MonoBehaviour {
-    private float MovePow = 2;
+    private float MovePow = 1;
     private Rigidbody rb;
     private bool MoveFlag;
     private Animator animator;
+    private Vector3 Stop;
     // Use this for initialization
     void Start ()
     {
@@ -28,13 +29,11 @@ public class Move : MonoBehaviour {
             {
                 rb.AddForce(transform.forward * MovePow, ForceMode.Impulse);
                 animator.SetBool("OnWalk", true);
-            }
-            else if (Input.GetKey(KeyCode.DownArrow))
-            {
-                rb.AddForce(transform.forward * -MovePow, ForceMode.Impulse);
-                animator.SetBool("OnWalk", true);
             }else
             {
+                Stop = rb.velocity;
+                Stop.x = Stop.z = 0;
+                rb.velocity = Stop;
                 animator.SetBool("OnWalk", false);
             }
         }else
@@ -43,13 +42,11 @@ public class Move : MonoBehaviour {
             {
                 rb.AddForce(transform.forward * MovePow / 5, ForceMode.Impulse);
                 animator.SetBool("OnWalk", true);
-            }
-            else if (Input.GetKey(KeyCode.DownArrow))
-            {
-                rb.AddForce(transform.forward * -MovePow / 5, ForceMode.Impulse);
-                animator.SetBool("OnWalk", true);
             }else
             {
+                Stop = rb.velocity;
+                Stop.x = Stop.z = 0;
+                rb.velocity = Stop;
                 animator.SetBool("OnWalk", false);
             }
         }

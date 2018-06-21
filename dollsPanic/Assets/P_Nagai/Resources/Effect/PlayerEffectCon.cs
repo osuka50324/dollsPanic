@@ -11,7 +11,7 @@ public class PlayerEffectCon : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         TimeScript = GameObject.Find("Canvas") as GameObject;               // キャンバス内のタイマースクリプト取得
-        FailureEffect = (GameObject)Resources.Load("FailureEffect"); // 失敗時エフェクト取得 現状リソースフォルダ直下
+        //FailureEffect = (GameObject)Resources.Load("FailureEffect"); // 失敗時エフェクト取得 現状リソースフォルダ直下
 	}
 	
 	// Update is called once per frame
