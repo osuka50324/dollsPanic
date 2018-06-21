@@ -52,4 +52,9 @@ public class CameraMove : MonoBehaviour
     {
         player = P;
     }
+
+    public GameObject GetPlayer()
+    {
+        return player;
+    }
 }
