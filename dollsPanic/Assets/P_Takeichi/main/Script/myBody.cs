@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class myBody : MonoBehaviour {
     public GameObject Body;
+    public GameObject Sukin;
 	// Use this for initialization
 	void Start () {
 		

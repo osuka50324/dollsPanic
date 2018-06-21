@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Translucent : MonoBehaviour {
     public GameObject player;
+    private Color col;
+    private List<GameObject> objlist;
 	// Use this for initialization
 	void Start () {
 		
@@ -28,14 +30,14 @@ public class Translucent : MonoBehaviour {
         //Rayの飛ばせる距離
         float distance = (transform.position - player.transform.position).magnitude;
 
-        //Rayの可視化    ↓Rayの原点　　　　↓Rayの方向　　　　　　　　　↓Rayの色
-        Debug.DrawLine(ray.origin, ray.direction * distance, Color.red);
-
         //もしRayにオブジェクトが衝突したら
         //                  ↓Ray  ↓Rayが当たったオブジェクト ↓距離
         if (Physics.Raycast(ray, out hit, distance))
         {
-                Debug.Log("RayがPlayerに当たった");
+            Debug.Log(hit.transform.name);
+            col = hit.transform.gameObject.GetComponent<myBody>().Sukin.GetComponent<SkinnedMeshRenderer>().material.color;
+            col.a = 0.4f;
+            hit.transform.gameObject.GetComponent<myBody>().Sukin.GetComponent<SkinnedMeshRenderer>().material.color = col;
         }
     }
 

@@ -29,11 +29,6 @@ public class Move : MonoBehaviour {
             {
                 rb.AddForce(transform.forward * MovePow, ForceMode.Impulse);
                 animator.SetBool("OnWalk", true);
-            }
-            else if (Input.GetKey(KeyCode.DownArrow))
-            {
-                rb.AddForce(transform.forward * -MovePow, ForceMode.Impulse);
-                animator.SetBool("OnWalk", true);
             }else
             {
                 Stop = rb.velocity;
@@ -46,11 +41,6 @@ public class Move : MonoBehaviour {
             if (Input.GetKey(KeyCode.UpArrow))
             {
                 rb.AddForce(transform.forward * MovePow / 5, ForceMode.Impulse);
-                animator.SetBool("OnWalk", true);
-            }
-            else if (Input.GetKey(KeyCode.DownArrow))
-            {
-                rb.AddForce(transform.forward * -MovePow / 5, ForceMode.Impulse);
                 animator.SetBool("OnWalk", true);
             }else
             {

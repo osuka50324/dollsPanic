@@ -25,7 +25,7 @@ public class Jump : MonoBehaviour
 	void Update ()
     {
 
-        if (Input.GetKey(KeyCode.Space) && !jump)
+        if (Input.GetKeyDown(KeyCode.Space) && !jump)
         {
             Invoke("JumpOn",0.9f);
             jump = true;

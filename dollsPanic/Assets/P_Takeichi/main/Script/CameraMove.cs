@@ -20,7 +20,7 @@ public class CameraMove : MonoBehaviour
     void Update()
     {
         Vector3 targetPosition = player.transform.position;
-        targetPosition += player.transform.forward * -10;
+        targetPosition += player.transform.forward * -5;
         targetPosition += player.transform.up * 2;
         if (player.name != PlayerName)
         {
