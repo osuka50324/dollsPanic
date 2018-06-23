@@ -1434,9 +1434,11 @@ GameObject:
   - component: {fileID: 65495446817588820}
   - component: {fileID: 114760876896954726}
   - component: {fileID: 114788499046962346}
+  - component: {fileID: 114196146850793628}
+  - component: {fileID: 114728378234151696}
   m_Layer: 0
   m_Name: CASPERObject
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3436,7 +3438,7 @@ Transform:
   m_GameObject: {fileID: 1770293566940286}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.81, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4761872835903456}
   m_Father: {fileID: 0}
@@ -3753,8 +3755,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.19887738, y: 0.48812437, z: 0.29166216}
-  m_Center: {x: -0.000000023841858, y: 0.3405623, z: -0.12536947}
+  m_Size: {x: 0.19887738, y: 0.59100676, z: 0.2916622}
+  m_Center: {x: -0.000000023841858, y: 0.28912112, z: -0.12536947}
 --- !u!95 &95684199099286772
 Animator:
   serializedVersion: 3
@@ -3764,7 +3766,7 @@ Animator:
   m_GameObject: {fileID: 1716000546215440}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: d8e307a7c41e2d2488929529a8aa3b0f, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8144b315fc67d694697929d86ce6ce0b, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3772,6 +3774,28 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114196146850793628
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1770293566940286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74e729479e4368549b8949a0cf91c1b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114728378234151696
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1770293566940286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85765f7dd733bf54e8952f051382ff2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114760876896954726
 MonoBehaviour:
   m_ObjectHideFlags: 1
