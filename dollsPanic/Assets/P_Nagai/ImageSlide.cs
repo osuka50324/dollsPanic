@@ -11,7 +11,8 @@ public class ImageSlide : MonoBehaviour {
     public GameObject StartManga;       // 開始演出漫画画像
     public GameObject[] startFlame;     // コマ毎の配置
 
-    public GameObject EndManga;         // 終了演出
+    public GameObject TrueEndManga;     // 終了クリア演出
+    public GameObject BadEndManga;      // 終了失敗演出
 
     GameObject StartMangaImage;         // 内部で使う用の入れ物
     GameObject EndMangaImage;           // 
@@ -50,14 +51,18 @@ public class ImageSlide : MonoBehaviour {
 	void Update () {
 
         // デバッグ用トリガー
+#if UNITY_EDITOR
         if (Input.GetKeyDown(KeyCode.Q))
             StartStagingBigin();
         if (Input.GetKeyDown(KeyCode.W))
             StartStagingFin();
         if (Input.GetKeyDown(KeyCode.E))
-            EndStagingBigin();
+            EndStagingBigin(true);
         if (Input.GetKeyDown(KeyCode.R))
+            EndStagingBigin(false);
+        if (Input.GetKeyDown(KeyCode.T))
             EndStagingFin();
+#endif
         // デバッグ用トリガー
         
 
@@ -173,6 +178,11 @@ public class ImageSlide : MonoBehaviour {
 	}
 
 
+
+
+
+    //-------------------------------------- 呼び出し関数 --------------------------------------//
+
     //=============================================================================================
     //  開始演出スタート
     //=============================================================================================
@@ -202,17 +212,20 @@ public class ImageSlide : MonoBehaviour {
 
 
     //=============================================================================================
-    //  終了演出スタート
+    //  終了演出スタート (true : トゥルーエンド(クリア)  false : バッドエンド(失敗))
     //=============================================================================================
-    public void EndStagingBigin()
+    public void EndStagingBigin(bool ClearCheck)
     {
         // 作る
-        EndMangaImage = Instantiate(EndManga, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity) as GameObject;
+        if(ClearCheck)  // トゥルーエンド
+            EndMangaImage = Instantiate(TrueEndManga, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity) as GameObject;
+        if(!ClearCheck) // バッドエンド
+            EndMangaImage = Instantiate(BadEndManga, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity) as GameObject;
         EndMangaImage.transform.parent = this.transform;
         EndMangaImage.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
         // 位置調整
         EndMangaImage.GetComponent<RectTransform>().offsetMin = new Vector2(0.0f, 0.0f);
-        EndMangaImage.GetComponent<RectTransform>().offsetMax = new Vector2(-250.0f, 0.0f);
+        EndMangaImage.GetComponent<RectTransform>().offsetMax = new Vector2(-380.0f, 0.0f);
         // 表示オフ→フェードアウト
         EndMangaImage.GetComponent<Image>().enabled = false;
         bEndFadeOut = true;
@@ -226,6 +239,8 @@ public class ImageSlide : MonoBehaviour {
         bEndFadeOut = true;
         bEndFinSequence = true;
     }
+
+
 
 
 
