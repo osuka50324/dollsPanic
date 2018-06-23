@@ -165,16 +165,16 @@ MonoBehaviour:
   g_fCurrentTime: 0
   g_bTimer: 0
   numImage:
-  - {fileID: 21300000, guid: b687df6e0d02a244fba982840cddf441, type: 3}
-  - {fileID: 21300000, guid: af62b29593e0d484db488bebc8ce35c3, type: 3}
-  - {fileID: 21300000, guid: f02e44192fc6a4a469079eaf7eca8420, type: 3}
-  - {fileID: 21300000, guid: eab6a6ca8e88d7947a76968a830078dd, type: 3}
-  - {fileID: 21300000, guid: 1f4197be4e7d1cb4da8df7b0e469b81a, type: 3}
-  - {fileID: 21300000, guid: 16e1569b135b01c49b65caced0b0eebe, type: 3}
-  - {fileID: 21300000, guid: 41104b552e22ff449b386e9cbf518fa1, type: 3}
-  - {fileID: 21300000, guid: d8a97f3ed0e48fe419bd635a07bee098, type: 3}
-  - {fileID: 21300000, guid: 65d9b329fee6fe1419301e210beddfef, type: 3}
-  - {fileID: 21300000, guid: e90e45008643f9245a75aae3a44f55f4, type: 3}
+  - {fileID: 21300000, guid: bb4991bbddbd40443bebb59c627decba, type: 3}
+  - {fileID: 21300000, guid: c73800140dbac6e4e90c2feac8409c67, type: 3}
+  - {fileID: 21300000, guid: d6cee7221fc162648af01595f22ca7b4, type: 3}
+  - {fileID: 21300000, guid: db364f30686bbb343a3ae92142bf8e5a, type: 3}
+  - {fileID: 21300000, guid: 76c9c8fcd1398524db1153bb1a4fbdc9, type: 3}
+  - {fileID: 21300000, guid: 81e0263353f04584e91ee9846c11dabe, type: 3}
+  - {fileID: 21300000, guid: 71918b39809c5db4283af43cd4a418bf, type: 3}
+  - {fileID: 21300000, guid: 2cfa09aea589e6f4fbac61dbce257740, type: 3}
+  - {fileID: 21300000, guid: 34a57fe4270b48948abae270880f48e6, type: 3}
+  - {fileID: 21300000, guid: 2cdcd2df7da678240b1ada0dc3e5a99d, type: 3}
 --- !u!114 &114073446366424716
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -258,7 +258,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1988875728138690}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb893fc6b44eec74090d7cb61f3bd0cd, type: 3}
+  m_Script: {fileID: 11500000, guid: dccc9ccc63095f74e948bc3c3b51deca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   StartManga: {fileID: 1234855736833246, guid: 3eb18ebca304886488c8834f08ea0aab, type: 2}
@@ -274,7 +274,10 @@ MonoBehaviour:
   - {fileID: 1899865523692668, guid: 3eb18ebca304886488c8834f08ea0aab, type: 2}
   - {fileID: 1866809484813086, guid: 3eb18ebca304886488c8834f08ea0aab, type: 2}
   - {fileID: 1546842276537234, guid: 3eb18ebca304886488c8834f08ea0aab, type: 2}
-  EndManga: {fileID: 1161298158569664, guid: 372424a5726721543b602d5de9dbc5da, type: 2}
+  TrueEndManga: {fileID: 1161298158569664, guid: ceec8b16978bce844b6642c9b3102139,
+    type: 2}
+  BadEndManga: {fileID: 1161298158569664, guid: f5c0edc7e85dbd44581ed7dcc6899a6f,
+    type: 2}
 --- !u!114 &114394994005711202
 MonoBehaviour:
   m_ObjectHideFlags: 1
