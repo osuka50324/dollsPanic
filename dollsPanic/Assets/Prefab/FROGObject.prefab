@@ -296,7 +296,7 @@ GameObject:
   - component: {fileID: 114500237749808234}
   m_Layer: 0
   m_Name: FROGObject
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1337,6 +1337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Body: {fileID: 1367602006862054}
+  Sukin: {fileID: 0}
 --- !u!137 &137819496909178624
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

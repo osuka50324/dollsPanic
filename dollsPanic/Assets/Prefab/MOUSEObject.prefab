@@ -161,7 +161,7 @@ GameObject:
   - component: {fileID: 114291488458013968}
   m_Layer: 0
   m_Name: MOUSEObject
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -594,6 +594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Body: {fileID: 1358543784377272}
+  Sukin: {fileID: 0}
 --- !u!114 &114625880495939442
 MonoBehaviour:
   m_ObjectHideFlags: 1
