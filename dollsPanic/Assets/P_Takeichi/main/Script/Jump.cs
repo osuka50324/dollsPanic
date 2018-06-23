@@ -7,10 +7,13 @@ public class Jump : MonoBehaviour
     private float JumpPow = 400;
     private Rigidbody rb;
     private bool jump = false;
+    public GameObject model;
+    private Animator animator;
     // Use this for initialization
     void Start ()
     {
         rb = GetComponent<Rigidbody>();
+        animator = this.GetComponent<myBody>().Body.GetComponent<Animator>();
     }
 
     public void JumpSet(float Num)
@@ -22,15 +25,25 @@ public class Jump : MonoBehaviour
 	void Update ()
     {
 
-        if (Input.GetKey(KeyCode.Space) && !jump)
+        if (Input.GetKeyDown(KeyCode.Space) && !jump)
         {
-            rb.AddForce(Vector3.up * JumpPow);
+            Invoke("JumpOn",0.9f);
             jump = true;
+            animator.SetTrigger("OnJump");
         }
     }
 
     void OnCollisionEnter(Collision col)
     {
-        jump = false;
+        if (jump)
+        {
+            jump = false;
+            animator.SetTrigger("OnJumpEnd");
+        }
+    }
+
+    void JumpOn()
+    {
+        rb.AddForce(Vector3.up * JumpPow);
     }
 }

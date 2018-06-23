@@ -8,8 +8,11 @@ public class Player : MonoBehaviour {
     private GameObject MyArea;
     private GameObject MyEffect;
     private GameObject TargetEffect;
+    private Rigidbody rb;
+    private bool deth = false;
     // Use this for initialization
     void Start () {
+        rb = GetComponent<Rigidbody>();
         MyArea = Instantiate(this.gameObject,transform.position,transform.localRotation) as GameObject;
         MyArea.transform.parent = this.transform;
         MyArea.GetComponent<Collider>().isTrigger = true;
@@ -38,7 +41,10 @@ public class Player : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-
+        if (rb.velocity.magnitude > 40)
+        {
+            deth = true;
+        }
         if (Input.GetKeyDown(KeyCode.Return))
         {
             if (TargetList.Count > 0)
@@ -105,6 +111,18 @@ public class Player : MonoBehaviour {
             TargetEffect.transform.parent = this.transform;
             TargetEffect.transform.localPosition = Vector3.zero;
             TargetEffect.SetActive(false);
+        }
+    }
+    void OnCollisionEnter(Collision col)
+    {
+        if (deth)
+        {
+            GameObject obj = GameObject.FindGameObjectWithTag("UnderObject");
+            obj.tag = "Player";
+            obj.transform.position = this.transform.position;
+            obj.transform.localRotation = this.transform.localRotation;
+            obj.AddComponent<Player>();
+            Destroy(this.gameObject);
         }
     }
 }

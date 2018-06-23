@@ -1,0 +1,20 @@
+
+OBJ　　　　　　　TGA
+
+bedandboy→  bed Futon boy
+
+book     →　boy
+
+bookshelf→　shelf
+
+shelf    →　shelf
+
+desk     →  desk
+
+Chair    →  desk
+
+floor    →  wall
+
+wall     →  wall
+
+
