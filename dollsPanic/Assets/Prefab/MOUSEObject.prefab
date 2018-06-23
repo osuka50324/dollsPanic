@@ -161,7 +161,7 @@ GameObject:
   - component: {fileID: 114291488458013968}
   m_Layer: 0
   m_Name: MOUSEObject
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -477,7 +477,7 @@ Transform:
   m_GameObject: {fileID: 1361646002983402}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.69, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4445412141308270}
   m_Father: {fileID: 0}
@@ -574,7 +574,7 @@ Animator:
   m_GameObject: {fileID: 1358543784377272}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 8aa8e62973281fa48af5e65d68b9c1f5, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: afd8c2ee6a2c2584d8497253dce3a3cf, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
