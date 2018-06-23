@@ -296,7 +296,7 @@ GameObject:
   - component: {fileID: 114500237749808234}
   m_Layer: 0
   m_Name: FROGObject
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -684,7 +684,7 @@ Transform:
   m_GameObject: {fileID: 1417631007496172}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 17.02, y: 0, z: 0}
-  m_LocalScale: {x: 35, y: 35, z: 35}
+  m_LocalScale: {x: 7, y: 7, z: 7}
   m_Children:
   - {fileID: 4322155407914078}
   m_Father: {fileID: 0}
@@ -1299,7 +1299,7 @@ Animator:
   m_GameObject: {fileID: 1367602006862054}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: c685e21adddc3de42b84b3acd0f1f341, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1a4d14c5243344a498d4868f925c36bb, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
