@@ -258,7 +258,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1988875728138690}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb893fc6b44eec74090d7cb61f3bd0cd, type: 3}
+  m_Script: {fileID: 11500000, guid: dccc9ccc63095f74e948bc3c3b51deca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   StartManga: {fileID: 1234855736833246, guid: 3eb18ebca304886488c8834f08ea0aab, type: 2}
@@ -274,7 +274,10 @@ MonoBehaviour:
   - {fileID: 1899865523692668, guid: 3eb18ebca304886488c8834f08ea0aab, type: 2}
   - {fileID: 1866809484813086, guid: 3eb18ebca304886488c8834f08ea0aab, type: 2}
   - {fileID: 1546842276537234, guid: 3eb18ebca304886488c8834f08ea0aab, type: 2}
-  EndManga: {fileID: 1161298158569664, guid: 372424a5726721543b602d5de9dbc5da, type: 2}
+  TrueEndManga: {fileID: 1161298158569664, guid: ceec8b16978bce844b6642c9b3102139,
+    type: 2}
+  BadEndManga: {fileID: 1161298158569664, guid: f5c0edc7e85dbd44581ed7dcc6899a6f,
+    type: 2}
 --- !u!114 &114394994005711202
 MonoBehaviour:
   m_ObjectHideFlags: 1
