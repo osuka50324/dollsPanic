@@ -11,6 +11,11 @@ public class Player : MonoBehaviour {
     private Rigidbody rb;
     private bool deth = false;
     // Use this for initialization
+    void Awake()
+    {
+        GetComponent<Ability>().SetScript();
+    }
+
     void Start () {
         rb = GetComponent<Rigidbody>();
         MyArea = Instantiate(this.gameObject,transform.position,transform.localRotation) as GameObject;
@@ -21,7 +26,6 @@ public class Player : MonoBehaviour {
         Destroy(MyArea.GetComponent<Ability>());
         MyArea.AddComponent<PlayerArea>();
         
-        GetComponent<Ability>().SetScript();
         GetComponent<Collider>().material = Resources.Load("PhysicMaterial/Player") as PhysicMaterial;
         MyEffect = Resources.Load("Effect/PlayerEffect") as GameObject;
         MyEffect = Instantiate(MyEffect) as GameObject;
