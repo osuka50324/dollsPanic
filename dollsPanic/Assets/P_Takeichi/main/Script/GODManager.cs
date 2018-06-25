@@ -11,6 +11,9 @@ public class GODManager : MonoBehaviour
     public float g_fMaxTime;
     bool menuFlag;
     OptionScript OS;
+    private GameObject Child;
+    private int n_MenuFlag;
+    private Ability Abi;
     
     // Use this for initialization
     void Start()
@@ -19,43 +22,57 @@ public class GODManager : MonoBehaviour
         TimeScript = Canvas.GetComponent<Timer>();
         IS = Canvas.GetComponent<ImageSlide>();
         TimeScript.SetMaxTime(g_fMaxTime);
-        TimeScript.StartTimer();
+        TimeScript.StopTimer();
+        IS.StartStagingBigin();
+        Abi = GameObject.FindGameObjectWithTag("Player").GetComponent<Ability>();
+        Abi.UnSetScript();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Y))
         {
-            TimeScript.StopTimer();
-        }
-        if (Input.GetKeyDown(KeyCode.W))
-        {
+            IS.StartStagingFin();
             TimeScript.StartTimer();
+            Abi = GameObject.FindGameObjectWithTag("Player").GetComponent<Ability>();
+            Abi.SetScript();
         }
-        if(TimeScript == null)
+        if(TimeScript == null && OS == null)
         {
             //時間切れ
+            IS.EndStagingBigin(false);
+            DrawOver();
+            TimeScript.StopTimer();
+            menuFlag = true;
+            Abi = GameObject.FindGameObjectWithTag("Player").GetComponent<Ability>();
+            Abi.UnSetScript();
         }
+
 
 
         if (menuFlag)
         {
-            for (int i = 0; i < 4; i++) {
-                if(OS.bDestroy[i] == true)
+            for (int i = 0; i < 4; i++)
+            {
+                if (OS.bDestroy[i] == true)
                 {
-                    switch(OS.g_nMode)
+                    switch (OS.g_nMode)
                     {
                         case 0:
                             switch (i)
                             {
                                 case 0://ゲームに戻る
+                                    n_MenuFlag = 1;
                                     break;
                                 case 1://リトライ
+                                    n_MenuFlag = 2;
                                     break;
                                 case 2://ステージセレクトに遷移
+                                    n_MenuFlag = 3;
                                     break;
                                 case 3://ヘルプの表示
+                                    n_MenuFlag = 4;
                                     break;
                             }
                             break;
@@ -63,12 +80,16 @@ public class GODManager : MonoBehaviour
                             switch (i)
                             {
                                 case 0://次のステージへ
+                                    n_MenuFlag = 5;
                                     break;
                                 case 1://リトライ
+                                    n_MenuFlag = 6;
                                     break;
                                 case 2://ステージセレクトへ
+                                    n_MenuFlag = 7;
                                     break;
                                 case 3://タイトルへ
+                                    n_MenuFlag = 8;
                                     break;
                             }
                             break;
@@ -76,54 +97,119 @@ public class GODManager : MonoBehaviour
                             switch (i)
                             {
                                 case 0://リトライ
+                                    n_MenuFlag = 9;
                                     break;
                                 case 1://ヘルプの表示
+                                    n_MenuFlag = 10;
                                     break;
                                 case 2://ステージセレクトへ
+                                    n_MenuFlag = 11;
                                     break;
                                 case 3://タイトルへ
+                                    n_MenuFlag = 12;
                                     break;
                             }
                             break;
                     }
+                    menuFlag = false;
+                    OS = null;
                 }
             }
             return;
         }
-        if (Input.GetKeyDown(KeyCode.M))
+        if(Child == null)
         {
-            DrawPause();
-            menuFlag = true;
+            if(n_MenuFlag > 0)
+            {
+                switch (n_MenuFlag)
+                {
+                    case 1:
+                        TimeScript.StartTimer();
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        break;
+                    case 5:
+                        break;
+                    case 6:
+                        break;
+                    case 7:
+                        break;
+                    case 8:
+                        break;
+                    case 9:
+                        break;
+                    case 10:
+                        break;
+                    case 11:
+                        break;
+                    case 12:
+                        break;
+                }
+                n_MenuFlag = 0;
+                Abi.SetScript();
+            }
         }
-        if (Input.GetKeyDown(KeyCode.C))
+        if (TimeScript.g_bTimer)
         {
-            DrawClear();
-            menuFlag = true;
+            if (Input.GetKeyDown(KeyCode.M))
+            {
+                DrawPause();
+                TimeScript.StopTimer();
+                menuFlag = true;
+                Abi = GameObject.FindGameObjectWithTag("Player").GetComponent<Ability>();
+                Abi.UnSetScript();
+            }
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                DrawClear();
+                TimeScript.StopTimer();
+                menuFlag = true;
+                Abi = GameObject.FindGameObjectWithTag("Player").GetComponent<Ability>();
+                Abi.UnSetScript();
+            }
+            if (Input.GetKeyDown(KeyCode.O))
+            {
+                DrawOver();
+                TimeScript.StopTimer();
+                menuFlag = true;
+                Abi = GameObject.FindGameObjectWithTag("Player").GetComponent<Ability>();
+                Abi.UnSetScript();
+            }
         }
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            DrawOver();
-            menuFlag = true;
-        }
+    }
+
+    public void GameClear()
+    {
+        Debug.Log("fadsfasdfas;ojfoiajgoakapokakgpakpakfpokef");
+        IS.EndStagingBigin(true);
+        DrawClear();
+        TimeScript.StopTimer();
+        menuFlag = true;
+        Abi = GameObject.FindGameObjectWithTag("Player").GetComponent<Ability>();
+        Abi.UnSetScript();
     }
 
     public void DrawPause()
     {
-        GameObject Child = Instantiate(Resources.Load("Pause", typeof(GameObject))) as GameObject;
+        Child = Instantiate(Resources.Load("Pause", typeof(GameObject))) as GameObject;
         Child.transform.parent = Canvas.transform;
         OS = Child.transform.GetComponent<OptionScript>();
         OS.g_nMode = 0;
     }
     public void DrawClear()
     {
-        GameObject Child = Instantiate(Resources.Load("Clear", typeof(GameObject))) as GameObject;
+        Child = Instantiate(Resources.Load("Clear", typeof(GameObject))) as GameObject;
         Child.transform.parent = Canvas.transform;
         OS = Child.transform.GetComponent<OptionScript>();
         OS.g_nMode = 1;
     }
     public void DrawOver()
     {
-        GameObject Child = Instantiate(Resources.Load("Over", typeof(GameObject))) as GameObject;
+        Child = Instantiate(Resources.Load("Over", typeof(GameObject))) as GameObject;
         Child.transform.parent = Canvas.transform;
         OS = Child.transform.GetComponent<OptionScript>();
         OS.g_nMode = 2;

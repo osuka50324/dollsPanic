@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class ImageSlide : MonoBehaviour {
+public class ImageSlide : MonoBehaviour
+{
 
     // public GameObject canvas;   // Canvas と Image を親子関係にするために利用
 
@@ -43,12 +44,14 @@ public class ImageSlide : MonoBehaviour {
 
 
 
-	// Use this for initialization
-	void Start () {
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    // Use this for initialization
+    void Start()
+    {
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
 
         // デバッグ用トリガー
 #if UNITY_EDITOR
@@ -64,7 +67,7 @@ public class ImageSlide : MonoBehaviour {
             EndStagingFin();
 #endif
         // デバッグ用トリガー
-        
+
 
 
         // データなかったら入らない(enabled とかないよって言われちゃう)
@@ -122,9 +125,75 @@ public class ImageSlide : MonoBehaviour {
 
 
         // フェードインアウト処理
-        if (bStartFadeIn)   StartFadeIn();
-        if (bStartFadeOut)  StartFadeOut();
-        if (bEndFadeIn)     EndFadeIn();
+        if (bStartFadeIn) StartFadeIn();
+        if (bStartFadeOut) StartFadeOut();
+        if (bEndFadeIn) EndFadeIn();
+        if (bEndFadeOut) EndFadeOut();
+
+
+
+        // 開始演出スタート
+        if (bStartStaging)
+        {
+            // タイマーカウント
+            Timer += Time.deltaTime;
+            // 加速
+            if (Input.GetKey(KeyCode.Z))
+                Timer += (Time.deltaTime * 2);
+
+            float t = Timer / MaxTimer;
+            if (Timer > MaxTimer * 2)
+            {
+                nFlameCnt += 1;     // フレーム数Up
+                Timer = 0.0f;
+                t = 0.0f;
+
+            }
+
+            // 線形補間
+            if (nFlameCnt < startFlame.Length - 1)
+            {
+                StartMangaImage.GetComponent<RectTransform>().offsetMin = Vector2.Lerp(startFlame[nFlameCnt].GetComponent<RectTransform>().offsetMin,
+                                                                                  startFlame[nFlameCnt + 1].GetComponent<RectTransform>().offsetMin, t);
+                StartMangaImage.GetComponent<RectTransform>().offsetMax = Vector2.Lerp(startFlame[nFlameCnt].GetComponent<RectTransform>().offsetMax,
+                                                                                  startFlame[nFlameCnt + 1].GetComponent<RectTransform>().offsetMax, t);
+            }
+            // 移動しきったら縮小しつつ引く
+            if (nFlameCnt == startFlame.Length - 1)
+            {
+                StartMangaImage.GetComponent<RectTransform>().offsetMin = Vector2.Lerp(startFlame[nFlameCnt].GetComponent<RectTransform>().offsetMin, new Vector2(0.0f, 0.0f), t);
+                StartMangaImage.GetComponent<RectTransform>().offsetMax = Vector2.Lerp(startFlame[nFlameCnt].GetComponent<RectTransform>().offsetMax, new Vector2(0.0f, 0.0f), t);
+                if (StartMangaImage.GetComponent<RectTransform>().localScale.x > 1.0f)
+                    StartMangaImage.GetComponent<RectTransform>().localScale -= new Vector3(1.4f * Time.deltaTime, 1.4f * Time.deltaTime, 0.0f);
+                if (StartMangaImage.GetComponent<RectTransform>().localScale.x <= 1.0f)
+                    StartMangaImage.GetComponent<RectTransform>().localScale = new Vector3(1.0f, 1.0f, 1.0f);
+            }
+            // 早送りした場合縮小が終わりきらないので
+            if (nFlameCnt >= startFlame.Length)
+            {
+                if (StartMangaImage.GetComponent<RectTransform>().localScale.x > 1.0f)
+                    StartMangaImage.GetComponent<RectTransform>().localScale -= new Vector3(1.5f * Time.deltaTime, 1.5f * Time.deltaTime, 0.0f);
+                if (StartMangaImage.GetComponent<RectTransform>().localScale.x <= 1.0f)
+                    StartMangaImage.GetComponent<RectTransform>().localScale = new Vector3(1.0f, 1.0f, 1.0f);
+            }
+        }   // 開始演出
+
+    }
+
+
+
+
+
+    //-------------------------------------- 呼び出し関数 --------------------------------------//
+
+    //=============================================================================================
+    //  開始演出スタート
+    //=============================================================================================
+    public void StartStagingBigin()
+    {
+        // 作る
+        StartMangaImage = Instantiate(StartManga, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity) as GameObject;
+        StartMangaImage.transform.parent = this.transform;
         StartMangaImage.transform.localScale = new Vector3(2.5f, 2.5f, 1.0f);
         // 位置調整
         StartMangaImage.GetComponent<RectTransform>().offsetMin = startFlame[nFlameCnt].GetComponent<RectTransform>().offsetMin;
@@ -137,7 +206,7 @@ public class ImageSlide : MonoBehaviour {
     //  開始演出エンド
     //=============================================================================================
     public void StartStagingFin()
-    { 
+    {
         // フェード開始フラグON
         bStartFadeOut = true;
         // 終了シーケンスフラグオン
@@ -146,6 +215,20 @@ public class ImageSlide : MonoBehaviour {
 
 
     //=============================================================================================
+    //  終了演出スタート (true : トゥルーエンド(クリア)  false : バッドエンド(失敗))
+    //=============================================================================================
+    public void EndStagingBigin(bool ClearCheck)
+    {
+        // 作る
+        if (ClearCheck)  // トゥルーエンド
+            EndMangaImage = Instantiate(TrueEndManga, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity) as GameObject;
+        if (!ClearCheck) // バッドエンド
+            EndMangaImage = Instantiate(BadEndManga, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity) as GameObject;
+        EndMangaImage.transform.parent = this.transform;
+        EndMangaImage.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+        // 位置調整
+        EndMangaImage.GetComponent<RectTransform>().offsetMin = new Vector2(0.0f, 0.0f);
+        EndMangaImage.GetComponent<RectTransform>().offsetMax = new Vector2(-380.0f, 0.0f);
         // 表示オフ→フェードアウト
         EndMangaImage.GetComponent<Image>().enabled = false;
         bEndFadeOut = true;
@@ -157,6 +240,22 @@ public class ImageSlide : MonoBehaviour {
     {
         // フェード開始フラグON
         bEndFadeOut = true;
+        bEndFinSequence = true;
+    }
+
+
+
+
+
+
+
+    //  フェードインアウト処理
+    void StartFadeIn()
+    {
+        alpha += FadeSpead;
+        StartMangaImage.GetComponent<Image>().color = new Color(1, 1, 1, alpha);
+
+        if (alpha >= 1)
         {
             bStartFadeIn = false;
         }

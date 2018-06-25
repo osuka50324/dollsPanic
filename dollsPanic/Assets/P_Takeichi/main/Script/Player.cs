@@ -11,7 +11,17 @@ public class Player : MonoBehaviour {
     private Rigidbody rb;
     private bool deth = false;
     // Use this for initialization
+    void Awake()
+    {
+        GetComponent<Ability>().SetScript();
+    }
+
     void Start () {
+        GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraMove>().SetPlayer(this.gameObject);
+        if(transform.name == "boy")
+        {
+            return;
+        }
         rb = GetComponent<Rigidbody>();
         MyArea = Instantiate(this.gameObject,transform.position,transform.localRotation) as GameObject;
         MyArea.transform.parent = this.transform;
@@ -21,7 +31,6 @@ public class Player : MonoBehaviour {
         Destroy(MyArea.GetComponent<Ability>());
         MyArea.AddComponent<PlayerArea>();
         
-        GetComponent<Ability>().SetScript();
         GetComponent<Collider>().material = Resources.Load("PhysicMaterial/Player") as PhysicMaterial;
         MyEffect = Resources.Load("Effect/PlayerEffect") as GameObject;
         MyEffect = Instantiate(MyEffect) as GameObject;
@@ -34,7 +43,6 @@ public class Player : MonoBehaviour {
         TargetEffect.transform.localPosition = Vector3.zero;
         TargetEffect.transform.localScale = Vector3.one;
         TargetEffect.SetActive(false);
-        GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraMove>().SetPlayer(this.gameObject);
     }
     
 
