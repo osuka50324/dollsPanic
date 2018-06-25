@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GODManager : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class GODManager : MonoBehaviour
     private GameObject Child;
     private int n_MenuFlag;
     private Ability Abi;
+
+    [SerializeField]
+    private int maxStage_;
     
     // Use this for initialization
     void Start()
@@ -127,26 +131,41 @@ public class GODManager : MonoBehaviour
                         TimeScript.StartTimer();
                         break;
                     case 2://リトライ
+                        SceneTransition.Instance.LoadScene(SceneManager.GetActiveScene().name);
                         break;
                     case 3://ステージセレクトに遷移
+                        SceneTransition.Instance.LoadScene("stageSelect");
                         break;
                     case 4:
                         break;
                     case 5://次のステージへ
+                        int stageNumber = int.Parse(SceneManager.GetActiveScene().name.ToCharArray()[5].ToString());
+                        stageNumber++;
+                        if(stageNumber > maxStage_)
+                        {
+                            break;
+                        }
+                        SceneTransition.Instance.LoadScene("stage" + stageNumber);
                         break;
                     case 6://リトライ
+                        SceneTransition.Instance.LoadScene(SceneManager.GetActiveScene().name);
                         break;
                     case 7://ステージセレクトへ
+                        SceneTransition.Instance.LoadScene("stageSelect");
                         break;
                     case 8://タイトルへ
+                        SceneTransition.Instance.LoadScene("title");
                         break;
                     case 9://リトライ
+                        SceneTransition.Instance.LoadScene(SceneManager.GetActiveScene().name);
                         break;
                     case 10:
                         break;
                     case 11://ステージセレクトへ
+                        SceneTransition.Instance.LoadScene("stageSelect");
                         break;
                     case 12://タイトルへ
+                        SceneTransition.Instance.LoadScene("title");
                         break;
                 }
                 n_MenuFlag = 0;
