@@ -13,4 +13,9 @@ public class Shot : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    void OnTriggerEnter(Collider other)
+    {
+        other.Get
+    }
 }
