@@ -15,51 +15,36 @@ using UnityEngine.SceneManagement;
 
 public class gameClear : MonoBehaviour {
 
-    [SerializeField]
-    SceneObject nextScene;
-
     // Use this for initialization
     void Start () {
 		
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
-	}
-
-    void OnCollisionStay(Collision other)
+	void Update ()
     {
-        if(Input.GetKeyDown(KeyCode.Return))
+        Debug.Log(GameObject.FindGameObjectWithTag("GOD"));
+        GameObject.FindGameObjectWithTag("GOD").GetComponent<GODManager>().GameClear();
+
+        char[] cName = name.ToCharArray();
+        char cName2 = cName[5];
+        int stageNumber = int.Parse(cName2.ToString());
+
+        // スコア更新
+        float highScore = gameDataManager.Instance.GetHighScore(stageNumber);
+
+        GameObject canvas = GameObject.Find("Canvas");
+        Timer timer = canvas.GetComponent<Timer>();
+
+        float time = timer.GetCurrentTime();
+        float maxTime = timer.g_fMaxTime;
+        float clearTime = maxTime - time;
+        if (highScore > clearTime)
         {
-            if (other.transform.tag != "Player")
-            {
-                return;
-            }
-            string name = SceneManager.GetActiveScene().name;
-            char[] cName = name.ToCharArray();
-            char cName2 = cName[5];
-            int stageNumber = int.Parse(cName2.ToString());
-
-            // スコア更新
-            float highScore = gameDataManager.Instance.GetHighScore(stageNumber);
-            
-            GameObject canvas = GameObject.Find("Canvas");
-            Timer timer = canvas.GetComponent<Timer>();
-
-            float time = timer.GetCurrentTime();
-            float maxTime = timer.g_fMaxTime;
-            float clearTime = maxTime - time;
-            if (highScore > clearTime)
-            {
-                highScore = clearTime;
-            }
-
-            // セーブ
-            gameDataManager.Instance.Save(stageNumber, highScore);
-            
-            // 遷移
-            SceneManager.LoadScene(nextScene);
+            highScore = clearTime;
         }
+
+        // セーブ
+        gameDataManager.Instance.Save(stageNumber, highScore);
     }
 }
