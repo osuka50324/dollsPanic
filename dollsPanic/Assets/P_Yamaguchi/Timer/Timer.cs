@@ -27,10 +27,57 @@ public class Timer : MonoBehaviour {
         {
             return;
         }
+        g_fCurrentTime -= Time.deltaTime;
+        CalcTime(g_fCurrentTime);
+        if (g_fCurrentTime <= 0.000f)
+        {
+            g_fCurrentTime = 0.000f;
+            image[4].GetComponent<Image>().sprite = numImage[0];
+            image[5].GetComponent<Image>().sprite = numImage[0];
+            image[6].GetComponent<Image>().sprite = numImage[0];
+            g_bTimer = false;
+            Destroy(this);
+        }
+    }
+    public void SetMaxTime(float fMaxTime)
+    {
+        g_fCurrentTime = g_fMaxTime = fMaxTime;
+        CalcTime(g_fCurrentTime);
+    }
+    public void StartTimer()
+    {
+        g_bTimer = true;
+    }
+    public void StopTimer()
+    {
+        g_bTimer = false;
+    }
+    public float GetCurrentTime()
+    {
+        return g_fCurrentTime;
+    }
+    public int CalcMinute(float fTime)
+    {
+        int nTime = Mathf.FloorToInt(fTime);
+        nTime = nTime / 60;
+        return nTime;
+    }
+    public int CalcSecond(float fTime)
+    {
+        int nTime = Mathf.FloorToInt(fTime);
+        nTime = nTime % 60;
+        return nTime;
+    }
+    public int CalcDecimal(float fTime)
+    {
+        int nTime = Mathf.FloorToInt(fTime *1000 - Mathf.FloorToInt(fTime) * 1000);
+        return nTime;
+    }
+    public void CalcTime(float fTime)
+    {
         int nMinute, nTenMin, nOneMin;
         int nSecond, nTenSec, nOneSec;
         int nDecimal, nOneDec, nTwoDec, nThrDec;
-        g_fCurrentTime -= Time.deltaTime;
         nMinute = CalcMinute(g_fCurrentTime);
         nTenMin = nMinute / 10;
         nOneMin = nMinute - nTenMin * 10;
@@ -77,51 +124,6 @@ public class Timer : MonoBehaviour {
                         break;
                 }
             }
-            //image[i].GetComponent<Image>().preserveAspect = true;
-            //image[i].GetComponent<Image>().SetNativeSize();
-            if (g_fCurrentTime <= 0.000f)
-            {
-                g_fCurrentTime = 0.000f;
-                image[4].GetComponent<Image>().sprite = numImage[0];
-                image[5].GetComponent<Image>().sprite = numImage[0];
-                image[6].GetComponent<Image>().sprite = numImage[0];
-                g_bTimer = false;
-                Destroy(this);
-            }
         }
-    }
-    public void SetMaxTime(float fMaxTime)
-    {
-        g_fCurrentTime = g_fMaxTime = fMaxTime;
-
-    }
-    public void StartTimer()
-    {
-        g_bTimer = true;
-    }
-    public void StopTimer()
-    {
-        g_bTimer = false;
-    }
-    public float GetCurrentTime()
-    {
-        return g_fCurrentTime;
-    }
-    public int CalcMinute(float fTime)
-    {
-        int nTime = Mathf.FloorToInt(fTime);
-        nTime = nTime / 60;
-        return nTime;
-    }
-    public int CalcSecond(float fTime)
-    {
-        int nTime = Mathf.FloorToInt(fTime);
-        nTime = nTime % 60;
-        return nTime;
-    }
-    public int CalcDecimal(float fTime)
-    {
-        int nTime = Mathf.FloorToInt(fTime *1000 - Mathf.FloorToInt(fTime) * 1000);
-        return nTime;
     }
 }
