@@ -22,6 +22,8 @@ public class stageSelect : MonoBehaviour {
     List<StageData> stageData;
     [SerializeField]
     GameObject[] clearTime;
+    [SerializeField]
+    Sprite padSprite;
 
     int widthInterval = 1080;
     float moveValue = 0.0f;
@@ -113,7 +115,8 @@ public class stageSelect : MonoBehaviour {
         Transform canvas = GameObject.Find("Canvas").transform;
         for (int i = 0; i < stageData.Count; i++)
         {
-            // オブジェクト生成
+            //**********************************************************
+            // 画像の枠生成
             GameObject empty = new GameObject("Stage" + (i + 1));
 
             // レイヤー変更
@@ -140,6 +143,39 @@ public class stageSelect : MonoBehaviour {
             tmp.gameObject = empty;
             tmp.stageNumber = i + 1;    // ステージ番号セット
             stageData[i] = tmp;
+            //*************************************************************
+            // 肉球セット
+            // 画像の枠生成
+            for (int j = 0; j < i; j++)
+            {
+                GameObject catPad = new GameObject("" + j);
+
+                // レイヤー変更
+                catPad.layer = LayerMask.NameToLayer("UI");
+
+                // コンポーネント設定
+                Destroy(catPad.GetComponent<Transform>());
+                catPad.AddComponent<RectTransform>();
+                catPad.AddComponent<CanvasRenderer>();
+
+                // 画像設定
+                Image image2 = catPad.AddComponent<Image>();
+                image2.sprite = padSprite;
+
+                // 親設定
+                catPad.transform.SetParent(empty.transform);
+
+                // スケール設定
+                RectTransform rect2 = catPad.GetComponent<RectTransform>();
+                rect2.sizeDelta = new Vector2(125, 125);
+
+                Vector2 anchoredPosition = new Vector2(370, -250 + j * 100);
+                if (j % 2 == 0)
+                {
+                    anchoredPosition.x = 470;
+                }
+                rect2.anchoredPosition = anchoredPosition;
+            }
         }
 
         // 座標のセット
@@ -150,11 +186,12 @@ public class stageSelect : MonoBehaviour {
     {
         StageRotation(count);
 
+        float positionY = 200.0f;
         for (int i = 0; i < stageData.Count - 1; i++)
         {
-            stageData[i].gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(widthInterval * i, 50.0f);
+            stageData[i].gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(widthInterval * i, positionY);
         }
-        stageData[stageData.Count - 1].gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(-widthInterval, 50.0f);
+        stageData[stageData.Count - 1].gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(-widthInterval, positionY);
 
         DrawClearTime();
     }
