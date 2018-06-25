@@ -23,13 +23,14 @@ public class Punch : MonoBehaviour {
             move.enabled = false;
             jump.enabled = false;
             animator.SetTrigger("OnPunch");
-            Invoke("SetOn",2.3f);
+            Invoke("SetShot", 1.0f);
+            Invoke("SetOn", 2.3f);
         }
 	}
 
     void SetShot()
     {
-        Instantiate(Resources.Load("Object/Shot") as GameObject,transform.position,transform.localRotation);
+        Destroy(Instantiate(Resources.Load("Object/Shot") as GameObject,transform.position + transform.forward * 1,transform.localRotation),0.1f);
     }
 
     void SetOn()

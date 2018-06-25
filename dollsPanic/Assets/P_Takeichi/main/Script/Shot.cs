@@ -16,6 +16,6 @@ public class Shot : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        other.Get
+        other.GetComponent<Rigidbody>().AddForce(transform.forward * 1000);
     }
 }
