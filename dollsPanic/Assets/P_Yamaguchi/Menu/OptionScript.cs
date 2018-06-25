@@ -42,7 +42,6 @@ public class OptionScript : MonoBehaviour
             if (EffectTime % 5 == 0)
                 g_OptionButton[CurrentButtonNumber].SetActive(!g_OptionButton[CurrentButtonNumber].active);
             EffectTime--;
-            Debug.Log(EffectTime);
             if (EffectTime == 0)
             {
                 Destroy(this.gameObject);
