@@ -594,7 +594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Body: {fileID: 1358543784377272}
-  Sukin: {fileID: 0}
+  DethPow: 50
 --- !u!114 &114625880495939442
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -607,11 +607,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AbilityList:
-  - Scripts: {fileID: 11500000, guid: 8c50385f6b5b07d4fa8948fecbb266b2, type: 3}
+  - Scripts: {fileID: 11500000, guid: 2896602b14944964ca50fc12de97783c, type: 3}
     Num: 1.5
   - Scripts: {fileID: 11500000, guid: 16611603703cbe040bc4a64cbd82c1f7, type: 3}
     Num: 2
   - Scripts: {fileID: 11500000, guid: 215ac5fac80685f4db1de6ec5115a7af, type: 3}
+    Num: 1
+  - Scripts: {fileID: 11500000, guid: 219992e5e920bf74a9ac37402036367a, type: 3}
     Num: 1
 --- !u!137 &137911921729368650
 SkinnedMeshRenderer:

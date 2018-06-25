@@ -4,13 +4,33 @@ using UnityEngine;
 
 public class myBody : MonoBehaviour {
     public GameObject Body;
-	// Use this for initialization
-	void Start () {
-		
-	}
+    private Rigidbody rb;
+    private bool deth = false;
+    public float DethPow;
+    // Use this for initialization
+    void Start ()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
 	
 	// Update is called once per frame
-	void Update () {
-		
-	}
+	void Update ()
+    {
+        if (rb.velocity.magnitude > DethPow)
+        {
+            deth = true;
+        }
+    }
+    void OnCollisionEnter(Collision col)
+    {
+        if (deth)
+        {
+            GameObject obj = GameObject.FindGameObjectWithTag("UnderObject");
+            obj.tag = "Player";
+            obj.transform.position = this.transform.position;
+            obj.transform.localRotation = this.transform.localRotation;
+            obj.AddComponent<Player>();
+            Destroy(this.gameObject);
+        }
+    }
 }
