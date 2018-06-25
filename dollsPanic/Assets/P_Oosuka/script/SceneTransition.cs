@@ -1,15 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SceneTransition : SingletonUIGraphics<SceneTransition>
 {
-    [SerializeField, Range(0, 1)]
     float range;
     [SerializeField]
     float second;
     [SerializeField]
     Texture maskTexture_ = null;
+    [SerializeField]
+    GameObject Image2_;
+
+    [Tooltip("フェードが必要ならTRUE")]
+    [SerializeField]
+    bool doFade_;
 
     public static Texture screenShotTexture_ = null;
 
@@ -19,7 +25,13 @@ public class SceneTransition : SingletonUIGraphics<SceneTransition>
         {
             screenShotTexture_ = new Texture2D(Screen.width, Screen.height);
         }
-        range = 1.0f;
+
+        range = 0.0f;
+        if (doFade_)
+        {
+            range = 1.0f;
+        }
+        Image2_.GetComponent<Image>().sprite = CommonFile.Instance.GetSprite(0);
     }
 
     void Update()
@@ -33,6 +45,14 @@ public class SceneTransition : SingletonUIGraphics<SceneTransition>
                 material.SetTexture("_ScreenShotTex", null);
             }
             UpdateMaskCutout(range);
+
+            // 手前のテクスチャ更新
+            int number = (int)((1.0f - range)* 180);
+            if(number >= 180)
+            {
+                number = 180 - 1;
+            }
+            Image2_.GetComponent<Image>().sprite = CommonFile.Instance.GetSprite(number);
         }
     }
 
