@@ -126,27 +126,27 @@ public class GODManager : MonoBehaviour
                     case 1:
                         TimeScript.StartTimer();
                         break;
-                    case 2:
+                    case 2://リトライ
                         break;
-                    case 3:
+                    case 3://ステージセレクトに遷移
                         break;
                     case 4:
                         break;
-                    case 5:
+                    case 5://次のステージへ
                         break;
-                    case 6:
+                    case 6://リトライ
                         break;
-                    case 7:
+                    case 7://ステージセレクトへ
                         break;
-                    case 8:
+                    case 8://タイトルへ
                         break;
-                    case 9:
+                    case 9://リトライ
                         break;
                     case 10:
                         break;
-                    case 11:
+                    case 11://ステージセレクトへ
                         break;
-                    case 12:
+                    case 12://タイトルへ
                         break;
                 }
                 n_MenuFlag = 0;
