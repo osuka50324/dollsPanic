@@ -7,6 +7,7 @@ public class myBody : MonoBehaviour {
     private Rigidbody rb;
     private bool deth = false;
     public float DethPow;
+    public float MaxSpeed;
     // Use this for initialization
     void Start ()
     {
