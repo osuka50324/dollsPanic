@@ -26,6 +26,7 @@ public class gameClear : MonoBehaviour {
         Debug.Log(GameObject.FindGameObjectWithTag("GOD"));
         GameObject.FindGameObjectWithTag("GOD").GetComponent<GODManager>().GameClear();
 
+        string name = SceneManager.GetActiveScene().name;
         char[] cName = name.ToCharArray();
         char cName2 = cName[5];
         int stageNumber = int.Parse(cName2.ToString());
