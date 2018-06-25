@@ -27,6 +27,11 @@ public class Punch : MonoBehaviour {
         }
 	}
 
+    void SetShot()
+    {
+        Instantiate(Resources.Load("Object/Shot") as GameObject,transform.position,transform.localRotation);
+    }
+
     void SetOn()
     {
         move.enabled = true;
