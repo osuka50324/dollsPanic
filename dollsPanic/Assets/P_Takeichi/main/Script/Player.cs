@@ -26,6 +26,7 @@ public class Player : MonoBehaviour {
         MyArea.GetComponent<Rigidbody>().useGravity = false;
         Destroy(MyArea.GetComponent<Player>());
         Destroy(MyArea.GetComponent<Ability>());
+        Destroy(MyArea.GetComponent<myBody>());
         MyArea.AddComponent<PlayerArea>();
         
         GetComponent<Collider>().material = Resources.Load("PhysicMaterial/Player") as PhysicMaterial;
