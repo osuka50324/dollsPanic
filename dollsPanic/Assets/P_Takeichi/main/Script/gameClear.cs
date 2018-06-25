@@ -23,6 +23,9 @@ public class gameClear : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        Debug.Log(GameObject.FindGameObjectWithTag("GOD"));
+        GameObject.FindGameObjectWithTag("GOD").GetComponent<GODManager>().GameClear();
+
         char[] cName = name.ToCharArray();
         char cName2 = cName[5];
         int stageNumber = int.Parse(cName2.ToString());

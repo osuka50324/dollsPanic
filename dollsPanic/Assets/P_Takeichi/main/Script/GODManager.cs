@@ -38,9 +38,15 @@ public class GODManager : MonoBehaviour
             Abi = GameObject.FindGameObjectWithTag("Player").GetComponent<Ability>();
             Abi.SetScript();
         }
-        if(TimeScript == null)
+        if(TimeScript == null && OS == null)
         {
             //時間切れ
+            IS.EndStagingBigin(false);
+            DrawOver();
+            TimeScript.StopTimer();
+            menuFlag = true;
+            Abi = GameObject.FindGameObjectWithTag("Player").GetComponent<Ability>();
+            Abi.UnSetScript();
         }
 
 
@@ -174,6 +180,17 @@ public class GODManager : MonoBehaviour
                 Abi.UnSetScript();
             }
         }
+    }
+
+    public void GameClear()
+    {
+        Debug.Log("fadsfasdfas;ojfoiajgoakapokakgpakpakfpokef");
+        IS.EndStagingBigin(true);
+        DrawClear();
+        TimeScript.StopTimer();
+        menuFlag = true;
+        Abi = GameObject.FindGameObjectWithTag("Player").GetComponent<Ability>();
+        Abi.UnSetScript();
     }
 
     public void DrawPause()
