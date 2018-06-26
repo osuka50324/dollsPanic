@@ -15,7 +15,7 @@ public class NoMotionJump : MonoBehaviour
         animator = this.GetComponent<myBody>().Body.GetComponent<Animator>();
     }
 
-    public void JumpSet(float Num)
+    public void NoMotionJumpSet(float Num)
     {
         JumpPow *= Num;
     }

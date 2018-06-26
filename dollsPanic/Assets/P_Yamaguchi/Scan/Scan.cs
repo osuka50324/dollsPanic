@@ -11,10 +11,13 @@ public class Scan : MonoBehaviour {
     void Start () {
         g_nTime = 0;
         g_nMaxTime = 300;
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    }
+    public void ScanSet(float Num)
+    {
+    }
+
+    // Update is called once per frame
+    void Update () {
         if (Input.GetKeyDown(KeyCode.P) && g_nTime == 0)
         {
             SonarJudge = Instantiate(Resources.Load("SonarJudge", typeof(GameObject))) as GameObject;
