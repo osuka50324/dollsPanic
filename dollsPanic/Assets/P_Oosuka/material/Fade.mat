@@ -74,7 +74,11 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+<<<<<<< HEAD
+    - _Range: 0.117777765
+=======
     - _Range: 0.22888887
+>>>>>>> master
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1

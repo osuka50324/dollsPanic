@@ -220,6 +220,7 @@ public class GODManager : MonoBehaviour
 
     public void DrawPause()
     {
+        GameObject.FindGameObjectWithTag("SEManager").GetComponent<SEManager>().OnSE("Clear");
         Child = Instantiate(Resources.Load("Pause", typeof(GameObject))) as GameObject;
         Child.transform.parent = Canvas.transform;
         OS = Child.transform.GetComponent<OptionScript>();
@@ -227,6 +228,7 @@ public class GODManager : MonoBehaviour
     }
     public void DrawClear()
     {
+        GameObject.FindGameObjectWithTag("SEManager").GetComponent<SEManager>().OnSE("NotClear");
         Child = Instantiate(Resources.Load("Clear", typeof(GameObject))) as GameObject;
         Child.transform.parent = Canvas.transform;
         OS = Child.transform.GetComponent<OptionScript>();

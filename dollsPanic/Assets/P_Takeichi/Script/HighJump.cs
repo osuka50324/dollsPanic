@@ -44,6 +44,7 @@ public class HighJump : MonoBehaviour
 
     void JumpOn()
     {
+        GameObject.FindGameObjectWithTag("SEManager").GetComponent<SEManager>().OnSE("HighJump");
         rb.AddForce(Vector3.up * JumpPow * 1.5f);
     }
 }
