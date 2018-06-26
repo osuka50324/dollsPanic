@@ -8,7 +8,7 @@ public class Move : MonoBehaviour {
     private bool MoveFlag;
     private Animator animator;
     private Vector3 Stop;
-    private float MaxSpeed;
+    public float MaxSpeed;
     // Use this for initialization
     void Start ()
     {

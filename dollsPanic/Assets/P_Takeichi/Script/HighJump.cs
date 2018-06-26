@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HighJump : MonoBehaviour
 {
-    private float JumpPow = 400;
+    private float JumpPow = 500;
     private Rigidbody rb;
     private bool jump = false;
     public GameObject model;
@@ -16,7 +16,7 @@ public class HighJump : MonoBehaviour
         animator = this.GetComponent<myBody>().Body.GetComponent<Animator>();
     }
 
-    public void JumpSet(float Num)
+    public void HighJumpSet(float Num)
     {
         JumpPow *= Num;
     }
@@ -25,7 +25,7 @@ public class HighJump : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Space) && !jump)
+        if (Input.GetKeyDown(KeyCode.P) && !jump)
         {
             Invoke("JumpOn", 0.9f);
             jump = true;
