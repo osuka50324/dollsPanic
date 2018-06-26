@@ -15,9 +15,12 @@ public class Punch : MonoBehaviour {
         move = GetComponent<Move>();
         jump = GetComponent<Jump>();
     }
-	
-	// Update is called once per frame
-	void Update () {
+    public void PunchSet(float Num)
+    {
+    }
+
+    // Update is called once per frame
+    void Update () {
 		if(Input.GetKeyDown(KeyCode.P) && rb.velocity.magnitude < 1)
         {
             move.enabled = false;

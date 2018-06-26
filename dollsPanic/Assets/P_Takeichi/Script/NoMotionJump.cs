@@ -7,7 +7,6 @@ public class NoMotionJump : MonoBehaviour
     private float JumpPow = 400;
     private Rigidbody rb;
     private bool jump = false;
-    public GameObject model;
     private Animator animator;
     // Use this for initialization
     void Start()
@@ -16,7 +15,7 @@ public class NoMotionJump : MonoBehaviour
         animator = this.GetComponent<myBody>().Body.GetComponent<Animator>();
     }
 
-    public void JumpSet(float Num)
+    public void NoMotionJumpSet(float Num)
     {
         JumpPow *= Num;
     }

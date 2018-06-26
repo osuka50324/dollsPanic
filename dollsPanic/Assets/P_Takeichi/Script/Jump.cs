@@ -7,7 +7,6 @@ public class Jump : MonoBehaviour
     private float JumpPow = 400;
     private Rigidbody rb;
     private bool jump = false;
-    public GameObject model;
     private Animator animator;
     // Use this for initialization
     void Start ()
