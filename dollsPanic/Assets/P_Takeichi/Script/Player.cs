@@ -9,26 +9,24 @@ public class Player : MonoBehaviour {
     private GameObject MyEffect;
     private GameObject TargetEffect;
     // Use this for initialization
-    void Awake()
-    {
-        GetComponent<Ability>().SetScript();
-    }
 
-    void Start () {
+    void Start ()
+    {
         GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraMove>().SetPlayer(this.gameObject);
-        if(transform.name == "boy")
+        if (transform.name == "boy")
         {
             return;
         }
-        MyArea = Instantiate(this.gameObject,transform.position,transform.localRotation) as GameObject;
+        MyArea = Instantiate(this.gameObject, transform.position, transform.localRotation) as GameObject;
         MyArea.transform.parent = this.transform;
         MyArea.GetComponent<Collider>().isTrigger = true;
         MyArea.GetComponent<Rigidbody>().useGravity = false;
         Destroy(MyArea.GetComponent<Player>());
         Destroy(MyArea.GetComponent<Ability>());
         Destroy(MyArea.GetComponent<myBody>());
+        Destroy(MyArea.GetComponent<Casper>());
         MyArea.AddComponent<PlayerArea>();
-        
+
         GetComponent<Collider>().material = Resources.Load("PhysicMaterial/Player") as PhysicMaterial;
         MyEffect = Resources.Load("Effect/PlayerEffect") as GameObject;
         MyEffect = Instantiate(MyEffect) as GameObject;
@@ -41,6 +39,7 @@ public class Player : MonoBehaviour {
         TargetEffect.transform.localPosition = Vector3.zero;
         TargetEffect.transform.localScale = Vector3.one;
         TargetEffect.SetActive(false);
+        GetComponent<Ability>().SetScript();
     }
     
 

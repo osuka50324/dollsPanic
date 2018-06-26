@@ -28,9 +28,15 @@ public class GODManager : MonoBehaviour
         TimeScript.SetMaxTime(g_fMaxTime);
         TimeScript.StopTimer();
         IS.StartStagingBigin();
+        Invoke("NoStart",0.2f);
+    }
+
+    void NoStart()
+    {
         Abi = GameObject.FindGameObjectWithTag("Player").GetComponent<Ability>();
         Abi.UnSetScript();
     }
+
 
     // Update is called once per frame
     void Update()
