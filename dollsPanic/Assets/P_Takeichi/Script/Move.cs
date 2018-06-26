@@ -30,9 +30,9 @@ public class Move : MonoBehaviour {
             if (Input.GetKey(KeyCode.UpArrow))
             {
                 rb.AddForce(transform.forward * MovePow, ForceMode.Impulse);
-                if(rb.velocity.magnitude > 30)
+                if(rb.velocity.magnitude > MaxSpeed)
                 {
-                    rb.velocity = rb.velocity.normalized * 30;
+                    rb.velocity = rb.velocity.normalized * MaxSpeed;
                 }
                 animator.SetBool("OnWalk", true);
             }else
@@ -47,10 +47,14 @@ public class Move : MonoBehaviour {
             if (Input.GetKey(KeyCode.UpArrow))
             {
                 rb.AddForce(transform.forward * MovePow / 5, ForceMode.Impulse);
-                if (rb.velocity.magnitude > MaxSpeed)
+                Stop = rb.velocity;
+                Stop.y = 0;
+                if (rb.velocity.magnitude > MaxSpeed / 2)
                 {
-                    rb.velocity = rb.velocity.normalized * MaxSpeed;
+                    Stop = Stop.normalized * MaxSpeed / 2;
                 }
+                Stop.y = rb.velocity.y;
+                rb.velocity = Stop;
                 animator.SetBool("OnWalk", true);
             }else
             {
