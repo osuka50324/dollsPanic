@@ -53,3 +53,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Canvas: {fileID: 0}
   g_fMaxTime: 10
+  maxStage_: 4
