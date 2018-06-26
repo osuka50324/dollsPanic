@@ -516,6 +516,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 1700221442123068, guid: 27f0da588d563c04b945f549a6c247e1, type: 2}
+      propertyPath: m_TagString
+      value: SEManager
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 27f0da588d563c04b945f549a6c247e1, type: 2}
   m_IsPrefabParent: 0
@@ -835,6 +839,23 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 875558f1792067a4d9bd19591dedc5f1, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1504020833 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1335308452743364, guid: 875558f1792067a4d9bd19591dedc5f1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1504020832}
+--- !u!114 &1504020834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1504020833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0156917ee0455b48bc418fe3ef9a037, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Audio: []
 --- !u!1001 &1946847832
 Prefab:
   m_ObjectHideFlags: 0

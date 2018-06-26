@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Object
+  - Cat
+  - GOD
+  - SEManager
   layers:
   - Default
   - TransparentFX
