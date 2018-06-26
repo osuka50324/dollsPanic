@@ -1340,6 +1340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Body: {fileID: 1367602006862054}
   DethPow: 50
+  MaxSpeed: 0
 --- !u!137 &137819496909178624
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

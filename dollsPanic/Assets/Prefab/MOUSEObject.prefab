@@ -595,6 +595,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Body: {fileID: 1358543784377272}
   DethPow: 50
+  MaxSpeed: 0
 --- !u!114 &114625880495939442
 MonoBehaviour:
   m_ObjectHideFlags: 1
