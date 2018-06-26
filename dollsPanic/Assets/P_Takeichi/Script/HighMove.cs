@@ -4,46 +4,27 @@ using UnityEngine;
 
 public class HighMove : MonoBehaviour
 {
-    private float JumpPow = 500;
-    private Rigidbody rb;
-    private bool jump = false;
-    public GameObject model;
-    private Animator animator;
     // Use this for initialization
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        animator = this.GetComponent<myBody>().Body.GetComponent<Animator>();
     }
 
-    public void JumpSet(float Num)
+    public void HighMoveSet(float Num)
     {
-        JumpPow *= Num;
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Space) && !jump)
+        if (Input.GetKeyDown(KeyCode.P))
         {
-            Invoke("JumpOn", 0.9f);
-            jump = true;
-            animator.SetTrigger("OnJump");
+            this.GetComponent<Move>().MaxSpeed = this.GetComponent<Move>().MaxSpeed * 1.5f;
         }
-    }
 
-    void OnCollisionEnter(Collision col)
-    {
-        if (jump)
+        if (Input.GetKeyUp(KeyCode.P))
         {
-            jump = false;
-            animator.SetTrigger("OnJumpEnd");
+            this.GetComponent<Move>().MaxSpeed = this.GetComponent<myBody>().MaxSpeed;
         }
-    }
-
-    void JumpOn()
-    {
-        rb.AddForce(Vector3.up * JumpPow);
     }
 }

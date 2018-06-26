@@ -14,7 +14,6 @@ using UnityEngine.SceneManagement;
 */
 
 public class gameClear : MonoBehaviour {
-
     // Use this for initialization
     void Start () {
 		
