@@ -763,11 +763,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114819534262817926, guid: 4cffb73086622204885eff2d45804312,
-        type: 2}
-      propertyPath: AbilityList.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4722166506641896, guid: 4cffb73086622204885eff2d45804312, type: 2}
       propertyPath: m_LocalPosition.x
       value: -26.2
@@ -799,21 +794,6 @@ Prefab:
     - target: {fileID: 4722166506641896, guid: 4cffb73086622204885eff2d45804312, type: 2}
       propertyPath: m_RootOrder
       value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 1461869377315906, guid: 4cffb73086622204885eff2d45804312, type: 2}
-      propertyPath: m_TagString
-      value: Object
-      objectReference: {fileID: 0}
-    - target: {fileID: 114819534262817926, guid: 4cffb73086622204885eff2d45804312,
-        type: 2}
-      propertyPath: AbilityList.Array.data[0].Scripts
-      value: 
-      objectReference: {fileID: 11500000, guid: e2da297f055f6b643be729af0549cbe7,
-        type: 3}
-    - target: {fileID: 114819534262817926, guid: 4cffb73086622204885eff2d45804312,
-        type: 2}
-      propertyPath: AbilityList.Array.data[0].Num
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4cffb73086622204885eff2d45804312, type: 2}
@@ -909,11 +889,6 @@ Prefab:
       propertyPath: Canvas
       value: 
       objectReference: {fileID: 177517543}
-    - target: {fileID: 114929809345856046, guid: 051e900c2dea4fd43b50f5fc8cab6805,
-        type: 2}
-      propertyPath: g_fMaxTime
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 051e900c2dea4fd43b50f5fc8cab6805, type: 2}
   m_IsPrefabParent: 0
