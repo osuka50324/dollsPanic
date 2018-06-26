@@ -13,10 +13,16 @@ public class Ability : MonoBehaviour {
     }
     public ScriptList[] AbilityList;
     private List<Component> ComponentList = new List<Component>();
+
+
+    private Animator animator;
+
     // Use this for initialization
-    void Start () {
-		
-	}
+    void Start ()
+    {
+        animator = this.GetComponent<myBody>().Body.GetComponent<Animator>();
+        animator.enabled = false;
+    }
 	
 	// Update is called once per frame
 	void Update () {

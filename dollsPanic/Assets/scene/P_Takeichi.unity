@@ -649,6 +649,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1106729205607360, guid: 0061ca1771b9bb448ad0e6d1d8a17e89, type: 2}
+      propertyPath: m_TagString
+      value: Cat
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114135503310152582, guid: 0061ca1771b9bb448ad0e6d1d8a17e89, type: 2}
     - {fileID: 114830125773220242, guid: 0061ca1771b9bb448ad0e6d1d8a17e89, type: 2}

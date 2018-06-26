@@ -8,6 +8,7 @@ public class Player : MonoBehaviour {
     private GameObject MyArea;
     private GameObject MyEffect;
     private GameObject TargetEffect;
+    private Animator animator;
     // Use this for initialization
 
     void Start ()
@@ -40,6 +41,8 @@ public class Player : MonoBehaviour {
         TargetEffect.transform.localScale = Vector3.one;
         TargetEffect.SetActive(false);
         GetComponent<Ability>().SetScript();
+        animator = this.GetComponent<myBody>().Body.GetComponent<Animator>();
+        animator.enabled = true;
     }
     
 
@@ -55,6 +58,7 @@ public class Player : MonoBehaviour {
                 target.tag = "Player";
                 target.AddComponent<Player>();
                 transform.tag = "Object";
+                animator.enabled = false;
                 GetComponent<Collider>().material = null;
                 GetComponent<Ability>().UnSetScript();
                 Destroy(MyArea);
