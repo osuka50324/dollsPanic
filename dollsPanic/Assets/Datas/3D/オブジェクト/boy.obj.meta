@@ -7,12 +7,18 @@ ModelImporter:
   fileIDToRecycleName:
     100000: //RootNode
     100002: polySurface9
+    100004: boy:boy:polySurface9
     400000: //RootNode
     400002: polySurface9
+    400004: boy:boy:polySurface9
     2100000: polySurface9Mat
+    2100002: boy_boy_polySurface9Mat
     2300000: polySurface9
+    2300002: boy:boy:polySurface9
     3300000: polySurface9
+    3300002: boy:boy:polySurface9
     4300000: polySurface9
+    4300002: boy:boy:polySurface9
   externalObjects: {}
   materials:
     importMaterials: 1

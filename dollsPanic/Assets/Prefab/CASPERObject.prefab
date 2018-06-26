@@ -3437,8 +3437,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1770293566940286}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.81, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalPosition: {x: -22.41, y: 10.48, z: -23.68}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 4761872835903456}
   m_Father: {fileID: 0}
@@ -3808,11 +3808,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AbilityList:
-  - Scripts: {fileID: 11500000, guid: 8c50385f6b5b07d4fa8948fecbb266b2, type: 3}
+  - Scripts: {fileID: 11500000, guid: 2896602b14944964ca50fc12de97783c, type: 3}
     Num: 1.5
   - Scripts: {fileID: 11500000, guid: 16611603703cbe040bc4a64cbd82c1f7, type: 3}
     Num: 2
   - Scripts: {fileID: 11500000, guid: 215ac5fac80685f4db1de6ec5115a7af, type: 3}
+    Num: 1
+  - Scripts: {fileID: 11500000, guid: 63117a810048be948afa1a43aeb03323, type: 3}
     Num: 1
 --- !u!114 &114788499046962346
 MonoBehaviour:
@@ -3826,6 +3828,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Body: {fileID: 1716000546215440}
+  DethPow: 50
 --- !u!137 &137422510275896638
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

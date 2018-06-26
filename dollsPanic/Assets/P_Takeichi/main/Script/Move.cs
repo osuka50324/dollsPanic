@@ -8,11 +8,13 @@ public class Move : MonoBehaviour {
     private bool MoveFlag;
     private Animator animator;
     private Vector3 Stop;
+    private float MaxSpeed;
     // Use this for initialization
     void Start ()
     {
         rb = GetComponent<Rigidbody>();
         animator = this.GetComponent<myBody>().Body.GetComponent<Animator>();
+        MaxSpeed = this.GetComponent<myBody>().MaxSpeed;
     }
 
     public void MoveSet(float Num)
@@ -45,9 +47,9 @@ public class Move : MonoBehaviour {
             if (Input.GetKey(KeyCode.UpArrow))
             {
                 rb.AddForce(transform.forward * MovePow / 5, ForceMode.Impulse);
-                if (rb.velocity.magnitude > 30)
+                if (rb.velocity.magnitude > MaxSpeed)
                 {
-                    rb.velocity = rb.velocity.normalized * 30;
+                    rb.velocity = rb.velocity.normalized * MaxSpeed;
                 }
                 animator.SetBool("OnWalk", true);
             }else

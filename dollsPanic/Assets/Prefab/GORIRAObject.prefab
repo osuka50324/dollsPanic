@@ -841,7 +841,7 @@ Transform:
   m_GameObject: {fileID: 1420534657821054}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 21.66, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalScale: {x: 35, y: 35, z: 35}
   m_Children:
   - {fileID: 4982950494533958}
   m_Father: {fileID: 0}
@@ -1440,6 +1440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Body: {fileID: 1206881827953416}
+  DethPow: 50
 --- !u!137 &137652523302323040
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

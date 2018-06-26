@@ -74,11 +74,21 @@ Shader "UI/Fade"
 			{
 				fixed4 color = tex2D(_ScreenShotTex, IN.texcoord);
 			
-				//アルファ値だけマスク利用			
-				half mask = tex2D(_MaskTex, IN.texcoord).a - (-1 + _Range * 2);	// 0 ⇒ a+1	1 ⇒ a-1
-//				half mask = tex2D(_MaskTex, IN.texcoord).a - ( 1 - _Range * 2);	// 0 ⇒ a-1	1 ⇒ a+1
+				half mask = tex2D(_MaskTex, IN.texcoord).a;
 
-				color.a = mask;
+				// 徐々にフェードする部分
+				if (mask >= 1.0f)
+				{
+					color.a = tex2D(_MaskTex, IN.texcoord).a - (-1 + _Range * 2);
+				}
+				else if (mask < _Range)
+				{
+					color.a = 0.0f;
+				}
+				else
+				{
+					color.a = 1.0f;
+				}
 				return color;
 			}
 		ENDCG

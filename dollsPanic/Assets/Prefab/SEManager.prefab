@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1700221442123068}
+  m_IsPrefabParent: 1
+--- !u!1 &1700221442123068
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4133486715006324}
+  - component: {fileID: 114029699471076572}
+  m_Layer: 0
+  m_Name: SEManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4133486715006324
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1700221442123068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 29.9, y: 24.57, z: -2.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114029699471076572
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1700221442123068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 104f8fb7d6a084a43aeb4d5eeeeb5016, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cancel: {fileID: 8300000, guid: 480e2c10961e11a4f9d931e7eea307a6, type: 3}
+  GoriraPunch: {fileID: 8300000, guid: 2b701d16f2057e04c8da0cb80aa86c10, type: 3}
+  Jump: {fileID: 8300000, guid: cdb94e35f1fbfee42a2fc187f5353475, type: 3}
+  Clear: {fileID: 0}
+  NotClear: {fileID: 8300000, guid: a52e53a1f89cbae41926dda281845614, type: 3}
+  Sonar: {fileID: 0}
+  SonarHit: {fileID: 0}
+  HighJump: {fileID: 8300000, guid: 19618f1cbd7cc014e95dbfed827a9ed9, type: 3}
+  PunchHit: {fileID: 8300000, guid: 9540a83637400cb40886cf4a92214140, type: 3}
+  RailGo: {fileID: 0}
+  Cursor: {fileID: 8300000, guid: 5f9ca70fd9584cb489142caa7c96f7c3, type: 3}
+  CatPunchHit: {fileID: 8300000, guid: 21333cd2fc3f74a41a2b36dff5aac88d, type: 3}
+  Enter: {fileID: 8300000, guid: dcfe08df4dd2139409d12e5ab3403308, type: 3}
+  HighFall: {fileID: 8300000, guid: 18d311b201822dc43a4be23f18ae6bd8, type: 3}
+  Extend: {fileID: 8300000, guid: 845b3c0d29ce844498b000429fd7bc89, type: 3}
+  Fall: {fileID: 8300000, guid: 43922ac09ededed499aeb6979baa6c64, type: 3}
+  CatPunch: {fileID: 8300000, guid: 6c0d4bbce91ab1940a694a779727cbf1, type: 3}

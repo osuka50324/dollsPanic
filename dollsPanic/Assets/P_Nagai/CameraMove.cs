@@ -8,6 +8,8 @@ public class CameraMove : MonoBehaviour
     private const float MoveSpeed = 10;
     private const float RotateSpeed = 10;
     private float DilayTime;
+
+
     // Use this for initialization
     void Start()
     {
@@ -28,21 +30,27 @@ public class CameraMove : MonoBehaviour
             RaycastHit hit;
 
             //Rayの飛ばせる距離
-            float distance = (targetPosition - player.transform.position).magnitude;
-
+            float distance = (targetPosition - player.transform.position).magnitude - 1.0f;
+            
             //もしRayにオブジェクトが衝突したら
             //                  ↓Ray  ↓Rayが当たったオブジェクト ↓距離
-            if (Physics.Raycast(ray, out hit, distance))
+            if (Physics.Raycast(player.transform.position, targetPosition - player.transform.position, out hit, distance))
             {
+                // プレイヤーとのレイは省く
+                if (hit.collider.tag == "Player")
+                {
+                    break;
+                }
                 targetPosition += player.transform.forward;
                 targetPosition += player.transform.up;
                 DilayTime = 1.0f;
-            }else
+            }
+            else
             {
                 break;
             }
         }
-        
+
         if (DilayTime > 0)
         {
             transform.position = Vector3.MoveTowards(this.transform.position, targetPosition, MoveSpeed * (Time.deltaTime * 3.5f));
@@ -50,8 +58,10 @@ public class CameraMove : MonoBehaviour
             DilayTime -= Time.deltaTime;
             return;
         }
+        // 場所反映
         transform.position = Vector3.MoveTowards(this.transform.position, targetPosition, MoveSpeed);
         transform.localRotation = Quaternion.Lerp(this.transform.localRotation, Quaternion.LookRotation(player.transform.position - this.transform.position), RotateSpeed);
+        
         //if (transform.position.z < 0)
         //{
         //    transform.position = new Vector3(10, 2, 0);
@@ -61,7 +71,10 @@ public class CameraMove : MonoBehaviour
         //{
         //    transform.position = new Vector3(10, 2, 18);
         //}
+
     }
+
+
 
     public void SetPlayer(GameObject P)
     {
