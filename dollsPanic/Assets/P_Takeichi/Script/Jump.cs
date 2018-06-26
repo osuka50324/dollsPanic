@@ -36,6 +36,7 @@ public class Jump : MonoBehaviour
     {
         if (jump)
         {
+            GameObject.FindGameObjectWithTag("SEManager").GetComponent<SEManager>().OnSE("Fall");
             jump = false;
             animator.SetTrigger("OnJumpEnd");
         }
@@ -44,5 +45,6 @@ public class Jump : MonoBehaviour
     void JumpOn()
     {
         rb.AddForce(Vector3.up * JumpPow);
+        GameObject.FindGameObjectWithTag("SEManager").GetComponent<SEManager>().OnSE("Jump");
     }
 }

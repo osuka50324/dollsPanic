@@ -31,6 +31,11 @@ public class NoMotionJump : MonoBehaviour
             animator.SetTrigger("OnJump");
         }
     }
+    void JumpOn()
+    {
+        rb.AddForce(Vector3.up * JumpPow);
+        GameObject.FindGameObjectWithTag("SEManager").GetComponent<SEManager>().OnSE("Jump");
+    }
 
     void OnCollisionEnter(Collision col)
     {

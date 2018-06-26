@@ -16,6 +16,7 @@ public class Player : MonoBehaviour {
         GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraMove>().SetPlayer(this.gameObject);
         if (transform.name == "boy")
         {
+            GetComponent<Ability>().SetScript();
             return;
         }
         MyArea = Instantiate(this.gameObject, transform.position, transform.localRotation) as GameObject;
@@ -53,6 +54,7 @@ public class Player : MonoBehaviour {
         {
             if (TargetList.Count > 0)
             {
+                GameObject.FindGameObjectWithTag("SEManager").GetComponent<SEManager>().OnSE("Extend");
                 GameObject target = TargetList[TargetNo];
                 TargetList.Clear();
                 target.tag = "Player";

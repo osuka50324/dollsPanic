@@ -23,7 +23,7 @@ public class SEManager : MonoBehaviour {
 
     public GameObject SoundGroup;
     private SEGroup SEG;
-    private List<AudioClip> SE;
+    private List<AudioClip> SE = new List<AudioClip>();
 	// Use this for initialization
 	void Start () {
         SE.Add(Cancel);
@@ -51,7 +51,7 @@ public class SEManager : MonoBehaviour {
 		
 	}
 
-    public void OnSE(string[] name)
+    public void OnSE(string name)
     {
         foreach (var n in SE)
         {

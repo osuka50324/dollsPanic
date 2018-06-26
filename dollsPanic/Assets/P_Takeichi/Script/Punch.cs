@@ -33,7 +33,10 @@ public class Punch : MonoBehaviour {
 
     void SetShot()
     {
-        Destroy(Instantiate(Resources.Load("Object/Shot") as GameObject,transform.position + transform.forward * 1,transform.localRotation),0.1f);
+        GameObject shot = Instantiate(Resources.Load("Object/Shot") as GameObject, transform.position + transform.forward * 1, transform.localRotation);
+        shot.GetComponent<Shot>().Player = true;
+        Destroy(shot,0.1f);
+        GameObject.FindGameObjectWithTag("SEManager").GetComponent<SEManager>().OnSE("GoriraPunch");
     }
 
     void SetOn()
