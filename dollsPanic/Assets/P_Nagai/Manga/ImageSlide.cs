@@ -125,10 +125,47 @@ public class ImageSlide : MonoBehaviour
 
 
         // フェードインアウト処理
-        if (bStartFadeIn) StartFadeIn();
-        if (bStartFadeOut) StartFadeOut();
-        if (bEndFadeIn) EndFadeIn();
-        if (bEndFadeOut) EndFadeOut();
+        if (bStartFadeIn)
+        {
+            // フェード中にフェードアウトが呼ばれた時用
+            if (!bStartFadeOut)
+                StartFadeIn();
+            else
+            {
+                bStartFadeIn = false;
+                StartFadeOut();
+            }
+        }
+        if (bStartFadeOut)
+        {
+            if (!bStartFadeIn)
+                StartFadeOut();
+            else
+            {
+                bStartFadeOut = false;
+                StartFadeIn();
+            }
+        }
+        if (bEndFadeIn)
+        {
+            if (!bEndFadeOut)
+                EndFadeIn();
+            else
+            {
+                bEndFadeIn = false;
+                EndFadeOut();
+            }
+        }
+        if (bEndFadeOut)
+        {
+            if (!bEndFadeIn)
+                EndFadeOut();
+            else
+            {
+                bEndFadeOut = false;
+                EndFadeIn();
+            }
+        }
 
 
 
