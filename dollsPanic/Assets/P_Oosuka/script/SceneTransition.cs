@@ -96,4 +96,27 @@ public class SceneTransition : SingletonUIGraphics<SceneTransition>
         // シーン遷移
         SceneManager.LoadScene(scene);
     }
+
+    public void LoadScene(string name)
+    {
+        StartCoroutine(LoadSceneCoroutine(name));
+    }
+
+    IEnumerator LoadSceneCoroutine(string name)
+    {
+        yield return new WaitForEndOfFrame();
+
+        Texture2D texture2D = null;
+        texture2D = new Texture2D(Screen.width, Screen.height);
+        texture2D.ReadPixels(new Rect(0, 0, Screen.width, Screen.height), 0, 0);
+        texture2D.Apply();
+
+        // テクスチャ保存
+        screenShotTexture_ = (Texture)texture2D;
+
+        material.SetTexture("_ScreenShotTex", screenShotTexture_);
+
+        // シーン遷移
+        SceneManager.LoadScene(name);
+    }
 }

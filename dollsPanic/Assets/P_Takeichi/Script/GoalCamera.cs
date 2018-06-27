@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class myBody : MonoBehaviour {
-    public GameObject Body;
+public class GoalCamera : MonoBehaviour {
+    public Vector3 pos;
 	// Use this for initialization
 	void Start () {
 		

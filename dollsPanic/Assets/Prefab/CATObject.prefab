@@ -81,11 +81,10 @@ GameObject:
   - component: {fileID: 4586904808031200}
   - component: {fileID: 54750668035212108}
   - component: {fileID: 65085806218143086}
-  - component: {fileID: 114135503310152582}
-  - component: {fileID: 114830125773220242}
+  - component: {fileID: 114311938182902532}
   m_Layer: 0
   m_Name: CATObject
-  m_TagString: Untagged
+  m_TagString: Cat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -918,8 +917,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1106729205607360}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -29.8, y: 0, z: -29.7}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.82, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children:
   - {fileID: 4240027793498992}
@@ -1105,7 +1104,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114135503310152582
+--- !u!114 &114311938182902532
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1113,30 +1112,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1106729205607360}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f201e2716480f9429e061fb7a83d120, type: 3}
+  m_Script: {fileID: 11500000, guid: b10eafc95b159b245b8ab53cab72cc44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AbilityList:
-  - Scripts: {fileID: 11500000, guid: 8c50385f6b5b07d4fa8948fecbb266b2, type: 3}
-    Num: 1.5
-  - Scripts: {fileID: 11500000, guid: 16611603703cbe040bc4a64cbd82c1f7, type: 3}
-    Num: 2
-  - Scripts: {fileID: 11500000, guid: 215ac5fac80685f4db1de6ec5115a7af, type: 3}
-    Num: 1
-  - Scripts: {fileID: 11500000, guid: e314d2abbee0f1e478990b8b96cd3e27, type: 3}
-    Num: 1
---- !u!114 &114830125773220242
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1106729205607360}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f903b516370f24343a0e160e78c449ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Body: {fileID: 1920282230311658}
 --- !u!137 &137188143224229270
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

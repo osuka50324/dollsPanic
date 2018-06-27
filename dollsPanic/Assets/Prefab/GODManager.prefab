@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114929809345856046}
   m_Layer: 0
   m_Name: GODManager
-  m_TagString: Untagged
+  m_TagString: GOD
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52,4 +52,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Canvas: {fileID: 0}
-  g_fMaxTime: 10
+  g_fMaxTime: 1000
+  maxStage_: 4

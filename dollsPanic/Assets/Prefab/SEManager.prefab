@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114029699471076572}
   m_Layer: 0
   m_Name: SEManager
-  m_TagString: Untagged
+  m_TagString: SEManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68,3 +68,4 @@ MonoBehaviour:
   Extend: {fileID: 8300000, guid: 845b3c0d29ce844498b000429fd7bc89, type: 3}
   Fall: {fileID: 8300000, guid: 43922ac09ededed499aeb6979baa6c64, type: 3}
   CatPunch: {fileID: 8300000, guid: 6c0d4bbce91ab1940a694a779727cbf1, type: 3}
+  SoundGroup: {fileID: 0}

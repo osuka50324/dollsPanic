@@ -42,7 +42,6 @@ public class OptionScript : MonoBehaviour
             if (EffectTime % 5 == 0)
                 g_OptionButton[CurrentButtonNumber].SetActive(!g_OptionButton[CurrentButtonNumber].active);
             EffectTime--;
-            Debug.Log(EffectTime);
             if (EffectTime == 0)
             {
                 Destroy(this.gameObject);
@@ -51,12 +50,14 @@ public class OptionScript : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
+            GameObject.FindGameObjectWithTag("SEManager").GetComponent<SEManager>().OnSE("Cursor");
             CurrentButtonNumber--;
             if (CurrentButtonNumber < 0)
                 CurrentButtonNumber = 3;
         }
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
+            GameObject.FindGameObjectWithTag("SEManager").GetComponent<SEManager>().OnSE("Cursor");
             CurrentButtonNumber++;
             if (CurrentButtonNumber > 3)
                 CurrentButtonNumber = 0;
@@ -68,6 +69,7 @@ public class OptionScript : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Return))
         {
+            GameObject.FindGameObjectWithTag("SEManager").GetComponent<SEManager>().OnSE("Enter");
             EnterButton = true;
             bDestroy[CurrentButtonNumber] = true;
         }

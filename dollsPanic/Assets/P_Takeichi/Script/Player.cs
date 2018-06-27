@@ -8,29 +8,27 @@ public class Player : MonoBehaviour {
     private GameObject MyArea;
     private GameObject MyEffect;
     private GameObject TargetEffect;
-    private Rigidbody rb;
-    private bool deth = false;
+    private Animator animator;
     // Use this for initialization
-    void Awake()
-    {
-        GetComponent<Ability>().SetScript();
-    }
 
-    void Start () {
+    void Start ()
+    {
         GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraMove>().SetPlayer(this.gameObject);
-        if(transform.name == "boy")
+        if (transform.name == "boy")
         {
+            GetComponent<Ability>().SetScript();
             return;
         }
-        rb = GetComponent<Rigidbody>();
-        MyArea = Instantiate(this.gameObject,transform.position,transform.localRotation) as GameObject;
+        MyArea = Instantiate(this.gameObject, transform.position, transform.localRotation) as GameObject;
         MyArea.transform.parent = this.transform;
         MyArea.GetComponent<Collider>().isTrigger = true;
         MyArea.GetComponent<Rigidbody>().useGravity = false;
         Destroy(MyArea.GetComponent<Player>());
         Destroy(MyArea.GetComponent<Ability>());
+        Destroy(MyArea.GetComponent<myBody>());
+        Destroy(MyArea.GetComponent<Casper>());
         MyArea.AddComponent<PlayerArea>();
-        
+
         GetComponent<Collider>().material = Resources.Load("PhysicMaterial/Player") as PhysicMaterial;
         MyEffect = Resources.Load("Effect/PlayerEffect") as GameObject;
         MyEffect = Instantiate(MyEffect) as GameObject;
@@ -43,25 +41,26 @@ public class Player : MonoBehaviour {
         TargetEffect.transform.localPosition = Vector3.zero;
         TargetEffect.transform.localScale = Vector3.one;
         TargetEffect.SetActive(false);
+        GetComponent<Ability>().SetScript();
+        animator = this.GetComponent<myBody>().Body.GetComponent<Animator>();
+        animator.enabled = true;
     }
     
 
     // Update is called once per frame
     void Update()
     {
-        if (rb.velocity.magnitude > 40)
-        {
-            deth = true;
-        }
         if (Input.GetKeyDown(KeyCode.Return))
         {
             if (TargetList.Count > 0)
             {
+                GameObject.FindGameObjectWithTag("SEManager").GetComponent<SEManager>().OnSE("Extend");
                 GameObject target = TargetList[TargetNo];
                 TargetList.Clear();
                 target.tag = "Player";
                 target.AddComponent<Player>();
                 transform.tag = "Object";
+                animator.enabled = false;
                 GetComponent<Collider>().material = null;
                 GetComponent<Ability>().UnSetScript();
                 Destroy(MyArea);
@@ -119,18 +118,6 @@ public class Player : MonoBehaviour {
             TargetEffect.transform.parent = this.transform;
             TargetEffect.transform.localPosition = Vector3.zero;
             TargetEffect.SetActive(false);
-        }
-    }
-    void OnCollisionEnter(Collision col)
-    {
-        if (deth)
-        {
-            GameObject obj = GameObject.FindGameObjectWithTag("UnderObject");
-            obj.tag = "Player";
-            obj.transform.position = this.transform.position;
-            obj.transform.localRotation = this.transform.localRotation;
-            obj.AddComponent<Player>();
-            Destroy(this.gameObject);
         }
     }
 }
