@@ -1,14 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 
 public class Ability : MonoBehaviour {
 
     [System.Serializable]
     public struct ScriptList
     {
-        public MonoScript Scripts;
+        public GameObject Scripts;
         public float Num;
     }
     public ScriptList[] AbilityList;
