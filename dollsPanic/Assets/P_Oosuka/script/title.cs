@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
+using System.Collections;
 using UnityEngine.Video;
-using UnityEngine.UI;
 
 public class title : MonoBehaviour {
     
@@ -22,6 +22,8 @@ public class title : MonoBehaviour {
     SceneObject nextScene;
     [SerializeField]
     GameObject[] buttons;
+    [SerializeField]
+    GameObject audioManager;
 
     bool isInputOK_;
 
@@ -79,6 +81,7 @@ public class title : MonoBehaviour {
                 titleState = TitleState.NEW_GAME;
             }
             SetColor((int)titleState);
+            audioManager.GetComponent<titleAudio>().PlayCursor();
         }
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
@@ -88,22 +91,34 @@ public class title : MonoBehaviour {
                 titleState = TitleState.END_GAME;
             }
             SetColor((int)titleState);
+            audioManager.GetComponent<titleAudio>().PlayCursor();
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            switch (titleState)
-            {
-                case TitleState.NEW_GAME:
-                    gameDataManager.Instance.DeleteAll();
-                    SceneTransition.Instance.LoadScene(nextScene);
-                    break;
-                case TitleState.CONTINUE_GAME:
-                    SceneTransition.Instance.LoadScene(nextScene);
-                    break;
-                case TitleState.END_GAME:
-                    Application.Quit();
-                    break;
-            }
+            audioManager.GetComponent<titleAudio>().PlayEnter();
+            StartCoroutine(EnterMode());
+        }
+    } 
+
+    IEnumerator EnterMode()
+    {
+        // 初期値 - (待ち時間 / deltaTime)
+        audioManager.GetComponent<titleAudio>().BGMvolume(0.1f - (1.0f / 60.0f));
+
+        yield return new WaitForSeconds(1.0f);
+
+        switch (titleState)
+        {
+            case TitleState.NEW_GAME:
+                gameDataManager.Instance.DeleteAll();
+                SceneTransition.Instance.LoadScene(nextScene);
+                break;
+            case TitleState.CONTINUE_GAME:
+                SceneTransition.Instance.LoadScene(nextScene);
+                break;
+            case TitleState.END_GAME:
+                Application.Quit();
+                break;
         }
     }
 }
