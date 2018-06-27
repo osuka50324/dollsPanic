@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
+using System.Collections;
+using UnityEngine.Video;
 
 public class title : MonoBehaviour {
     
@@ -14,60 +13,66 @@ public class title : MonoBehaviour {
     TitleState titleState;
 
     [SerializeField]
+    VideoPlayer videoPlayer;
+    [SerializeField]
+    GameObject sprites;
+    [SerializeField]
+    GameObject camera;
+    [SerializeField]
     SceneObject nextScene;
-
     [SerializeField]
-    GameObject[] buttonImage;
-
+    GameObject[] buttons;
     [SerializeField]
-    GameObject[] titleCharacter_;
+    GameObject audioManager;
 
-    int animationCurrentIndex_;
+    bool isInputOK_;
 
     void Start()
     {
         titleState = TitleState.CONTINUE_GAME;
-        SetColor((int)titleState);
-
-        for (int i = 0; i < titleCharacter_.Length; i++)
-        {
-            titleCharacter_[i].GetComponent<Animator>().speed = 0.0f;
-        }
-        animationCurrentIndex_ = 0;
-        PlayAnimation();
+        sprites.SetActive(false);
+        camera.GetComponent<Animator>().enabled = false;
+        isInputOK_ = false;
     }
 
     void Update()
     {
-        SelectMode();
-
-        Animator animator = titleCharacter_[animationCurrentIndex_].GetComponent<Animator>();
-        AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
-        if(stateInfo.normalizedTime >= 1.0f)
+        if(videoPlayer.enabled)
         {
-            animator.speed = 0.0f;
-
-            animationCurrentIndex_++;
-            if(animationCurrentIndex_ >= titleCharacter_.Length)
+            if ((ulong)videoPlayer.frame == videoPlayer.frameCount)
             {
-                animationCurrentIndex_ = 0;
+                videoPlayer.enabled = false;
+                sprites.SetActive(true);
+                camera.GetComponent<Animator>().enabled = true;
+
+                isInputOK_ = true;
+                SetColor((int)titleState);
             }
-            PlayAnimation();
         }
-        
+
+        SelectMode();      
     }
 
     void SetColor(int index)
     {
-        for (int i = 0; i < buttonImage.Length; i++)
+        for (int i = 0; i < buttons.Length; i++)
         {
-            buttonImage[i].GetComponent<Image>().color = Color.white;
+            buttons[i].GetComponent<SpriteRenderer>().color = Color.white;
+            buttons[i].GetComponent<Animator>().Play(buttons[i].name, 0, 0.0f);
+            buttons[i].GetComponent<Animator>().speed = 0.0f;
+            
         }
-        buttonImage[index].GetComponent<Image>().color = Color.red;
+        buttons[index].GetComponent<SpriteRenderer>().color = Color.red;
+        buttons[index].GetComponent<Animator>().speed = 1.0f;
     }
 
     void SelectMode()
     {
+        if(!isInputOK_)
+        {
+            return;
+        }
+
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             titleState--;
@@ -76,6 +81,7 @@ public class title : MonoBehaviour {
                 titleState = TitleState.NEW_GAME;
             }
             SetColor((int)titleState);
+            audioManager.GetComponent<titleAudio>().PlayCursor();
         }
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
@@ -85,31 +91,34 @@ public class title : MonoBehaviour {
                 titleState = TitleState.END_GAME;
             }
             SetColor((int)titleState);
+            audioManager.GetComponent<titleAudio>().PlayCursor();
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            switch (titleState)
-            {
-                case TitleState.NEW_GAME:
-                    gameDataManager.Instance.DeleteAll();
-                    SceneTransition.Instance.LoadScene(nextScene);
-                    break;
-                case TitleState.CONTINUE_GAME:
-                    SceneTransition.Instance.LoadScene(nextScene);
-                    break;
-                case TitleState.END_GAME:
-                    Application.Quit();
-                    break;
-            }
+            audioManager.GetComponent<titleAudio>().PlayEnter();
+            StartCoroutine(EnterMode());
         }
-    }
+    } 
 
-    void PlayAnimation()
+    IEnumerator EnterMode()
     {
-        Animator animator = titleCharacter_[animationCurrentIndex_].GetComponent<Animator>();
-        string name = titleCharacter_[animationCurrentIndex_].name;
+        // 初期値 - (待ち時間 / deltaTime)
+        audioManager.GetComponent<titleAudio>().BGMvolume(0.1f - (1.0f / 60.0f));
 
-        animator.Play(name, 0, 0.0f);
-        animator.speed = 1.0f;
+        yield return new WaitForSeconds(1.0f);
+
+        switch (titleState)
+        {
+            case TitleState.NEW_GAME:
+                gameDataManager.Instance.DeleteAll();
+                SceneTransition.Instance.LoadScene(nextScene);
+                break;
+            case TitleState.CONTINUE_GAME:
+                SceneTransition.Instance.LoadScene(nextScene);
+                break;
+            case TitleState.END_GAME:
+                Application.Quit();
+                break;
+        }
     }
 }

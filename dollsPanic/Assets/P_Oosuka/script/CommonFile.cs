@@ -4,31 +4,79 @@ using UnityEngine;
 
 public class CommonFile : SingletonMonoBehaviour<CommonFile>
 {
-    Sprite[] sprits;
+    Sprite[,] sprits;
+
+    int index_;
+    int type_;
 
     protected override void Awake()
     {
         DontDestroyOnLoad(this);
-
-        sprits = new Sprite[180];
-        for (int i = 0; i < 180; i++)
-        {
-            Texture2D temp = Resources.Load("animation/result" + i) as Texture2D;
-            sprits[i] = Sprite.Create(temp, new Rect(0, 0, temp.width, temp.height), Vector2.zero);
-        }
+        sprits = new Sprite[180, 3];
     }
-	
-	public Sprite GetSprite(int index)
+
+    void Start()
     {
-        if(sprits == null)
+        index_ = 0;
+        type_ = 0;
+        StartCoroutine(LoadAsync());
+    }
+
+    public Sprite GetSprite(int index, int type)
+    {
+        if (sprits == null)
         {
             return null;
         }
 
-        if(index > sprits.Length)
+        if (index > sprits.Length)
         {
             index = sprits.Length - 1;
         }
-        return sprits[index];
+
+        // 読み込んでなければ読み込む
+        if (sprits[index,type] == null)
+        {
+            string pass = "animation" + type + "/result" + index;
+            Texture2D temp = Resources.Load(pass) as Texture2D;
+            sprits[index, type] = Sprite.Create(temp, new Rect(0, 0, temp.width, temp.height), Vector2.zero);
+
+#if UNITY_EDITOR
+            Debug.Log("動的読み込み");
+#endif
+        }
+        
+        return sprits[index, type];
+    }
+
+    private IEnumerator LoadAsync()
+    {
+        string path = "animation" + type_ + "/result" + index_;
+
+        //非同期ロード開始
+        ResourceRequest resourceRequest = Resources.LoadAsync<Texture2D>(path);
+
+        //ロードが終わるまで待機(resourceRequest.progressで進捗率を確認出来る)
+        while (!resourceRequest.isDone)
+        {
+            yield return 0;
+        }
+
+        //ロード完了、resourceRequest.assetからロードしたアセットを取得
+        Texture2D temp = resourceRequest.asset as Texture2D;
+        sprits[index_, type_] = Sprite.Create(temp, new Rect(0, 0, temp.width, temp.height), Vector2.zero);
+
+        index_++;
+        if (index_ >= 179)
+        {
+            index_ = 0;
+            type_++;
+            if (type_ >= 3)
+            {
+                yield break;
+            }
+        }
+
+        StartCoroutine(LoadAsync());
     }
 }

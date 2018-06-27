@@ -9,14 +9,15 @@ public class SceneTransition : SingletonUIGraphics<SceneTransition>
     [SerializeField]
     float second;
     [SerializeField]
-    Texture maskTexture_ = null;
-    [SerializeField]
     GameObject Image2_;
-
     [Tooltip("フェードが必要ならTRUE")]
     [SerializeField]
     bool doFade_;
-
+    [SerializeField]
+    Sprite doFadeSprite;
+    
+    Texture maskTexture_;
+    int textureType = 0;
     public static Texture screenShotTexture_ = null;
 
     protected override void Start()
@@ -31,7 +32,12 @@ public class SceneTransition : SingletonUIGraphics<SceneTransition>
         {
             range = 1.0f;
         }
-        Image2_.GetComponent<Image>().sprite = CommonFile.Instance.GetSprite(0);
+        UpdateMaskCutout(range);
+
+        textureType = Random.Range(0, 3);
+        maskTexture_ = Resources.Load("animation" + textureType + "/result") as Texture2D;
+        UpdateMaskTexture(maskTexture_);
+        Image2_.GetComponent<Image>().sprite = doFadeSprite;
     }
 
     void Update()
@@ -52,7 +58,7 @@ public class SceneTransition : SingletonUIGraphics<SceneTransition>
             {
                 number = 180 - 1;
             }
-            Image2_.GetComponent<Image>().sprite = CommonFile.Instance.GetSprite(number);
+            Image2_.GetComponent<Image>().sprite = CommonFile.Instance.GetSprite(number, textureType);
         }
     }
 
@@ -65,14 +71,6 @@ public class SceneTransition : SingletonUIGraphics<SceneTransition>
     {
         material.SetTexture("_MaskTex", texture);
     }
-
-#if UNITY_EDITOR
-    protected override void OnValidate()
-    {
-        UpdateMaskCutout(range);
-        UpdateMaskTexture(maskTexture_);
-    }
-#endif
 
     public void LoadScene(SceneObject scene)
     {
