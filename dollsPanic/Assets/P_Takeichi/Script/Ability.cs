@@ -16,11 +16,15 @@ public class Ability : MonoBehaviour {
 
     private Animator animator;
 
-    // Use this for initialization
-    void Start ()
+    void Awake()
     {
         animator = this.GetComponent<myBody>().Body.GetComponent<Animator>();
         animator.enabled = false;
+    }
+
+    // Use this for initialization
+    void Start ()
+    {
     }
 	
 	// Update is called once per frame
