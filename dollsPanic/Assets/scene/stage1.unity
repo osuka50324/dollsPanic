@@ -215,6 +215,11 @@ Prefab:
       propertyPath: MaxSpeed
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 114321208648486732, guid: 4991a2bcfd72f5b449a7c4250e7a2d65,
+        type: 2}
+      propertyPath: AbilityList.Array.data[0].Num
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4991a2bcfd72f5b449a7c4250e7a2d65, type: 2}
   m_IsPrefabParent: 0
