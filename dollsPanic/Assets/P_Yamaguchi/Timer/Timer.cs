@@ -7,7 +7,7 @@ public class Timer : MonoBehaviour {
     public float g_fCurrentTime;
     public bool g_bTimer = false;
     public Sprite[] numImage;
-    GameObject[] image = new GameObject[9];
+    GameObject[] image = new GameObject[7];
     // Use this for initialization
     void Awake ()
     {
@@ -18,8 +18,6 @@ public class Timer : MonoBehaviour {
         image[4] = GameObject.Find("number4");
         image[5] = GameObject.Find("number5");
         image[6] = GameObject.Find("number6");
-        image[7] = GameObject.Find("colon");
-        image[8] = GameObject.Find("dot");
     }
 
     // Update is called once per frame
