@@ -13,7 +13,7 @@ public class SceneTransition : SingletonUIGraphics<SceneTransition>
     [Tooltip("フェードが必要ならTRUE")]
     [SerializeField]
     bool doFade_;
-
+    
     Texture maskTexture_;
     int textureType = 0;
     public static Texture screenShotTexture_ = null;
@@ -29,6 +29,10 @@ public class SceneTransition : SingletonUIGraphics<SceneTransition>
         if (doFade_)
         {
             range = 1.0f;
+        }
+        else
+        {
+            material.SetTexture("_ScreenShotTex", null);
         }
 
         textureType = Random.Range(0, 3);
