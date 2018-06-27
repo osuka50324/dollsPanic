@@ -1319,13 +1319,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AbilityList:
-  - Scripts: {fileID: 11500000, guid: 8c50385f6b5b07d4fa8948fecbb266b2, type: 3}
+  - Scripts: {fileID: 1321656570820408, guid: a132eb4688e12f2458de793afd452b7a, type: 2}
     Num: 1.5
-  - Scripts: {fileID: 11500000, guid: 16611603703cbe040bc4a64cbd82c1f7, type: 3}
+  - Scripts: {fileID: 1258019271729768, guid: 331dd528a73516b47bbdb51e79d9fca8, type: 2}
     Num: 2
-  - Scripts: {fileID: 11500000, guid: 215ac5fac80685f4db1de6ec5115a7af, type: 3}
+  - Scripts: {fileID: 1302840343191854, guid: bcce16db8d132ad40b7ebda1bc25efcb, type: 2}
     Num: 1
-  - Scripts: {fileID: 11500000, guid: 6dfd807594b601246b4364fc9712c046, type: 3}
+  - Scripts: {fileID: 1194455502326808, guid: 12c557feaa8bcad4f86e63637a4b5d1b, type: 2}
     Num: 1
 --- !u!114 &114500237749808234
 MonoBehaviour:
