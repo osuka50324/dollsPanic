@@ -1290,6 +1290,11 @@ Prefab:
       propertyPath: doFade_
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114770890831258844, guid: 18f4f1f45aae8d14a8ea506833b41b26,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18f4f1f45aae8d14a8ea506833b41b26, type: 2}
   m_IsPrefabParent: 0
