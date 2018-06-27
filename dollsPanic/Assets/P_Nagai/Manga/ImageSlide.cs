@@ -229,8 +229,7 @@ public class ImageSlide : MonoBehaviour
     public void StartStagingBigin()
     {
         // 作る
-        StartMangaImage = Instantiate(StartManga, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity) as GameObject;
-        StartMangaImage.transform.parent = this.transform;
+        StartMangaImage = Instantiate(StartManga,this.transform) as GameObject;
         StartMangaImage.transform.localScale = new Vector3(2.5f, 2.5f, 1.0f);
         // 位置調整
         StartMangaImage.GetComponent<RectTransform>().offsetMin = startFlame[nFlameCnt].GetComponent<RectTransform>().offsetMin;
@@ -258,17 +257,13 @@ public class ImageSlide : MonoBehaviour
     {
         // 作る
         if (ClearCheck)  // トゥルーエンド
-            EndMangaImage = Instantiate(TrueEndManga, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity) as GameObject;
+            EndMangaImage = Instantiate(TrueEndManga,this.transform) as GameObject;
         if (!ClearCheck) // バッドエンド
-            EndMangaImage = Instantiate(BadEndManga, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity) as GameObject;
-        EndMangaImage.transform.parent = this.transform;
-        EndMangaImage.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+            EndMangaImage = Instantiate(BadEndManga, this.transform) as GameObject;
         // 位置調整
-        EndMangaImage.GetComponent<RectTransform>().offsetMin = new Vector2(0.0f, 0.0f);
-        EndMangaImage.GetComponent<RectTransform>().offsetMax = new Vector2(-380.0f, 0.0f);
         // 表示オフ→フェードアウト
         EndMangaImage.GetComponent<Image>().enabled = false;
-        bEndFadeOut = true;
+        bEndFadeOut = false;
     }
     //=============================================================================================
     //  終了演出エンド
@@ -309,7 +304,7 @@ public class ImageSlide : MonoBehaviour
     }
     void EndFadeIn()
     {
-        alpha += FadeSpead;
+        //alpha += FadeSpead;
         EndMangaImage.GetComponent<Image>().color = new Color(1, 1, 1, alpha);
 
         if (alpha >= 1)
@@ -319,7 +314,7 @@ public class ImageSlide : MonoBehaviour
     }
     void EndFadeOut()
     {
-        alpha -= FadeSpead;
+        //alpha -= FadeSpead;
         EndMangaImage.GetComponent<Image>().color = new Color(1, 1, 1, alpha);
 
         if (alpha <= 0)
