@@ -22,7 +22,7 @@ public class Shot : MonoBehaviour {
             {
 
                 GameObject.FindGameObjectWithTag("SEManager").GetComponent<SEManager>().OnSE("PunchHit");
-                other.GetComponent<Rigidbody>().AddForce(transform.forward * 1000);
+                other.GetComponent<Rigidbody>().AddForce(transform.forward * 10000);
             }
         }else
         {
@@ -30,7 +30,7 @@ public class Shot : MonoBehaviour {
             {
 
                 GameObject.FindGameObjectWithTag("SEManager").GetComponent<SEManager>().OnSE("CatPunchHit");
-                other.GetComponent<Rigidbody>().AddForce(transform.forward * 1000);
+                other.GetComponent<Rigidbody>().AddForce(transform.forward * 10000);
             }
         }
     }
