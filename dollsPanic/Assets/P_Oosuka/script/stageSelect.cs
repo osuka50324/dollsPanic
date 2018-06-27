@@ -24,6 +24,8 @@ public class stageSelect : MonoBehaviour {
     GameObject[] clearTime;
     [SerializeField]
     Sprite padSprite;
+    [SerializeField]
+    GameObject frame;
 
     int widthInterval = 1080;
     float moveValue = 0.0f;
@@ -143,9 +145,12 @@ public class stageSelect : MonoBehaviour {
             tmp.gameObject = empty;
             tmp.stageNumber = i + 1;    // ステージ番号セット
             stageData[i] = tmp;
+            //**********************************************************
+            // フレーム
+            Instantiate(frame, empty.transform);
+
             //*************************************************************
             // 肉球セット
-            // 画像の枠生成
             for (int j = 0; j < i; j++)
             {
                 GameObject catPad = new GameObject("" + j);
