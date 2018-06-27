@@ -1285,10 +1285,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 1269953484291742, guid: 18f4f1f45aae8d14a8ea506833b41b26, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 114773767533015630, guid: 18f4f1f45aae8d14a8ea506833b41b26,
         type: 2}
       propertyPath: doFade_

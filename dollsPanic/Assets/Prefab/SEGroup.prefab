@@ -83,6 +83,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4359274899319112}
+  - component: {fileID: 114482287423936400}
   m_Layer: 0
   m_Name: SEGroup
   m_TagString: Untagged
@@ -1139,3 +1140,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &114482287423936400
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1335308452743364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0156917ee0455b48bc418fe3ef9a037, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Audio:
+  - {fileID: 1390130372059868}
+  - {fileID: 1452953966141832}
+  - {fileID: 1217379976295064}
+  - {fileID: 1495382951356234}
+  - {fileID: 1808475966368132}
+  - {fileID: 1372910091140954}
+  - {fileID: 1037075262413910}
+  - {fileID: 1966614442785636}
+  - {fileID: 1281108464657076}
+  - {fileID: 1321307678759178}

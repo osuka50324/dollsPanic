@@ -144,22 +144,22 @@ MonoBehaviour:
   - stageNumber: 0
     sceneObject:
       m_SceneName: stage0
-    sprite: {fileID: 21300000, guid: e76fa67c370ca754ea02c01244870c76, type: 3}
+    sprite: {fileID: 21300000, guid: 1a3cdb7151b1c374dbd395e1ce266375, type: 3}
     gameObject: {fileID: 0}
-  - stageNumber: 0
+  - stageNumber: 1
     sceneObject:
       m_SceneName: stage1
-    sprite: {fileID: 21300000, guid: e76fa67c370ca754ea02c01244870c76, type: 3}
+    sprite: {fileID: 21300000, guid: 227980d6293ba2d47a937d82770ccfe8, type: 3}
     gameObject: {fileID: 0}
-  - stageNumber: 0
+  - stageNumber: 2
     sceneObject:
       m_SceneName: stage2
-    sprite: {fileID: 21300000, guid: e76fa67c370ca754ea02c01244870c76, type: 3}
+    sprite: {fileID: 21300000, guid: 4d3e625e62299df428f02bf7ca16427a, type: 3}
     gameObject: {fileID: 0}
-  - stageNumber: 0
+  - stageNumber: 3
     sceneObject:
       m_SceneName: stage3
-    sprite: {fileID: 21300000, guid: e76fa67c370ca754ea02c01244870c76, type: 3}
+    sprite: {fileID: 21300000, guid: 094fedf2561cb234f833d98f2b7eb069, type: 3}
     gameObject: {fileID: 0}
   clearTime:
   - {fileID: 825084327}
@@ -169,6 +169,7 @@ MonoBehaviour:
   - {fileID: 733102809}
   - {fileID: 664005396}
   padSprite: {fileID: 21300000, guid: f8f05433c48022e46aec71e23d4ebedf, type: 3}
+  frame: {fileID: 1490673580553126, guid: 60b94e5330e58db48a51ed95939b2d35, type: 2}
 --- !u!4 &77084684
 Transform:
   m_ObjectHideFlags: 0
@@ -272,7 +273,7 @@ GameObject:
   - component: {fileID: 639902646}
   - component: {fileID: 639902645}
   m_Layer: 5
-  m_Name: New Sprite
+  m_Name: BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -313,7 +314,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 17d0623b92717bc49a352aa873a967cc, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.627451, g: 1, b: 0.7058824, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -333,7 +334,7 @@ Transform:
   m_LocalScale: {x: 1.08, y: 1.08, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &664005396
 GameObject:
@@ -665,7 +666,7 @@ GameObject:
   - component: {fileID: 843705633}
   - component: {fileID: 843705632}
   m_Layer: 5
-  m_Name: New Sprite (1)
+  m_Name: SideCharacter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -726,7 +727,7 @@ Transform:
   m_LocalScale: {x: 1.08, y: 1.08, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1040825908
 GameObject:
@@ -833,7 +834,7 @@ RectTransform:
   m_GameObject: {fileID: 1226967187}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.95, y: 0.95, z: 0.95}
   m_Children:
   - {fileID: 825084328}
   - {fileID: 145815267}
@@ -846,7 +847,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -325}
+  m_AnchoredPosition: {x: 0, y: -340}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1226967189
@@ -1115,7 +1116,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4014920923662290, guid: 18f4f1f45aae8d14a8ea506833b41b26, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1269953484291742, guid: 18f4f1f45aae8d14a8ea506833b41b26, type: 2}
       propertyPath: m_IsActive
