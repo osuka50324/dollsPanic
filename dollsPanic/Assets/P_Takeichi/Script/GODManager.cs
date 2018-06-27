@@ -221,23 +221,20 @@ public class GODManager : MonoBehaviour
     public void DrawPause()
     {
         GameObject.FindGameObjectWithTag("SEManager").GetComponent<SEManager>().OnSE("Clear");
-        Child = Instantiate(Resources.Load("Pause", typeof(GameObject))) as GameObject;
-        Child.transform.parent = Canvas.transform;
+        Child = Instantiate(Resources.Load("Pause", typeof(GameObject)), Canvas.transform) as GameObject;
         OS = Child.transform.GetComponent<OptionScript>();
         OS.g_nMode = 0;
     }
     public void DrawClear()
     {
         GameObject.FindGameObjectWithTag("SEManager").GetComponent<SEManager>().OnSE("NotClear");
-        Child = Instantiate(Resources.Load("Clear", typeof(GameObject))) as GameObject;
-        Child.transform.parent = Canvas.transform;
+        Child = Instantiate(Resources.Load("Clear", typeof(GameObject)), Canvas.transform) as GameObject;
         OS = Child.transform.GetComponent<OptionScript>();
         OS.g_nMode = 1;
     }
     public void DrawOver()
     {
-        Child = Instantiate(Resources.Load("Over", typeof(GameObject))) as GameObject;
-        Child.transform.parent = Canvas.transform;
+        Child = Instantiate(Resources.Load("Over", typeof(GameObject)), Canvas.transform) as GameObject;
         OS = Child.transform.GetComponent<OptionScript>();
         OS.g_nMode = 2;
     }

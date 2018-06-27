@@ -52,7 +52,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\P_Nagai\CameraMove.cs" />
-     <Compile Include="Assets\P_Nagai\ImageSlide.cs" />
+     <Compile Include="Assets\P_Nagai\Manga\ImageSlide.cs" />
      <Compile Include="Assets\P_Nagai\Resources\Effect\PlayerEffectCon.cs" />
      <Compile Include="Assets\P_Oosuka\script\CommonFile.cs" />
      <Compile Include="Assets\P_Oosuka\script\gameDataManager.cs" />
@@ -105,6 +105,7 @@
      <Compile Include="Assets\P_Takeichi\Script\Casper.cs" />
      <Compile Include="Assets\P_Takeichi\Script\Cat.cs" />
      <Compile Include="Assets\P_Takeichi\Script\gameClear.cs" />
+     <Compile Include="Assets\P_Takeichi\Script\GoalCamera.cs" />
      <Compile Include="Assets\P_Takeichi\Script\GODManager.cs" />
      <Compile Include="Assets\P_Takeichi\Script\HighJump.cs" />
      <Compile Include="Assets\P_Takeichi\Script\HighMove.cs" />
