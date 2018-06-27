@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NoMotionJump : MonoBehaviour
+public class HighJump : MonoBehaviour
 {
-    private float JumpPow = 400;
+    private float JumpPow = 500;
     private Rigidbody rb;
     private bool jump = false;
     public GameObject model;
@@ -16,7 +16,7 @@ public class NoMotionJump : MonoBehaviour
         animator = this.GetComponent<myBody>().Body.GetComponent<Animator>();
     }
 
-    public void JumpSet(float Num)
+    public void HighJumpSet(float Num)
     {
         JumpPow *= Num;
     }
@@ -25,9 +25,9 @@ public class NoMotionJump : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Space) && !jump)
+        if (Input.GetKeyDown(KeyCode.P) && !jump)
         {
-            rb.AddForce(Vector3.up * JumpPow);
+            Invoke("JumpOn", 0.9f);
             jump = true;
             animator.SetTrigger("OnJump");
         }
@@ -40,5 +40,11 @@ public class NoMotionJump : MonoBehaviour
             jump = false;
             animator.SetTrigger("OnJumpEnd");
         }
+    }
+
+    void JumpOn()
+    {
+        GameObject.FindGameObjectWithTag("SEManager").GetComponent<SEManager>().OnSE("HighJump");
+        rb.AddForce(Vector3.up * JumpPow * 1.5f);
     }
 }

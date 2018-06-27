@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shot : MonoBehaviour {
-
+public class GoalCamera : MonoBehaviour {
+    public Vector3 pos;
 	// Use this for initialization
 	void Start () {
 		
@@ -13,9 +13,4 @@ public class Shot : MonoBehaviour {
 	void Update () {
 		
 	}
-
-    void OnTriggerEnter(Collider other)
-    {
-        other.GetComponent<Rigidbody>().AddForce(transform.forward * 1000);
-    }
 }

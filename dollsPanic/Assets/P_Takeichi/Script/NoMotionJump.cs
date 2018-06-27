@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HighJump : MonoBehaviour
+public class NoMotionJump : MonoBehaviour
 {
     private float JumpPow = 400;
     private Rigidbody rb;
     private bool jump = false;
-    public GameObject model;
     private Animator animator;
     // Use this for initialization
     void Start()
@@ -16,7 +15,7 @@ public class HighJump : MonoBehaviour
         animator = this.GetComponent<myBody>().Body.GetComponent<Animator>();
     }
 
-    public void JumpSet(float Num)
+    public void NoMotionJumpSet(float Num)
     {
         JumpPow *= Num;
     }
@@ -27,10 +26,15 @@ public class HighJump : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && !jump)
         {
-            Invoke("JumpOn", 0.9f);
+            rb.AddForce(Vector3.up * JumpPow);
             jump = true;
             animator.SetTrigger("OnJump");
         }
+    }
+    void JumpOn()
+    {
+        rb.AddForce(Vector3.up * JumpPow);
+        GameObject.FindGameObjectWithTag("SEManager").GetComponent<SEManager>().OnSE("Jump");
     }
 
     void OnCollisionEnter(Collision col)
@@ -40,10 +44,5 @@ public class HighJump : MonoBehaviour
             jump = false;
             animator.SetTrigger("OnJumpEnd");
         }
-    }
-
-    void JumpOn()
-    {
-        rb.AddForce(Vector3.up * JumpPow * 1.5f);
     }
 }

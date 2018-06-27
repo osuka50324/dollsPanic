@@ -26,6 +26,7 @@ public class myBody : MonoBehaviour {
     {
         if (deth)
         {
+            GameObject.FindGameObjectWithTag("SEManager").GetComponent<SEManager>().OnSE("HighFall");
             GameObject obj = GameObject.FindGameObjectWithTag("UnderObject");
             obj.tag = "Player";
             obj.transform.position = this.transform.position;

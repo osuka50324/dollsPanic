@@ -15,9 +15,12 @@ public class Punch : MonoBehaviour {
         move = GetComponent<Move>();
         jump = GetComponent<Jump>();
     }
-	
-	// Update is called once per frame
-	void Update () {
+    public void PunchSet(float Num)
+    {
+    }
+
+    // Update is called once per frame
+    void Update () {
 		if(Input.GetKeyDown(KeyCode.P) && rb.velocity.magnitude < 1)
         {
             move.enabled = false;
@@ -30,7 +33,10 @@ public class Punch : MonoBehaviour {
 
     void SetShot()
     {
-        Destroy(Instantiate(Resources.Load("Object/Shot") as GameObject,transform.position + transform.forward * 1,transform.localRotation),0.1f);
+        GameObject shot = Instantiate(Resources.Load("Object/Shot") as GameObject, transform.position + transform.forward * 1, transform.localRotation);
+        shot.GetComponent<Shot>().Player = true;
+        Destroy(shot,0.1f);
+        GameObject.FindGameObjectWithTag("SEManager").GetComponent<SEManager>().OnSE("GoriraPunch");
     }
 
     void SetOn()

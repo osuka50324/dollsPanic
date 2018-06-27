@@ -7,7 +7,6 @@ public class Jump : MonoBehaviour
     private float JumpPow = 400;
     private Rigidbody rb;
     private bool jump = false;
-    public GameObject model;
     private Animator animator;
     // Use this for initialization
     void Start ()
@@ -37,6 +36,7 @@ public class Jump : MonoBehaviour
     {
         if (jump)
         {
+            GameObject.FindGameObjectWithTag("SEManager").GetComponent<SEManager>().OnSE("Fall");
             jump = false;
             animator.SetTrigger("OnJumpEnd");
         }
@@ -45,5 +45,6 @@ public class Jump : MonoBehaviour
     void JumpOn()
     {
         rb.AddForce(Vector3.up * JumpPow);
+        GameObject.FindGameObjectWithTag("SEManager").GetComponent<SEManager>().OnSE("Jump");
     }
 }
