@@ -15,7 +15,7 @@ public class Retry : MonoBehaviour
                 g_Number = 1;
                 break;
             case 2:
-                g_Number = 1;
+                g_Number = 0;
                 break;
         }
         
