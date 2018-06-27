@@ -144,22 +144,22 @@ MonoBehaviour:
   - stageNumber: 0
     sceneObject:
       m_SceneName: stage0
-    sprite: {fileID: 21300000, guid: 1a3cdb7151b1c374dbd395e1ce266375, type: 3}
+    sprite: {fileID: 21300000, guid: 63f9de9e6c5a6a8488a5a76027871baf, type: 3}
     gameObject: {fileID: 0}
   - stageNumber: 1
     sceneObject:
       m_SceneName: stage1
-    sprite: {fileID: 21300000, guid: 227980d6293ba2d47a937d82770ccfe8, type: 3}
+    sprite: {fileID: 21300000, guid: 9336a62d8ce8b1a40bd3016e93459450, type: 3}
     gameObject: {fileID: 0}
   - stageNumber: 2
     sceneObject:
       m_SceneName: stage2
-    sprite: {fileID: 21300000, guid: 4d3e625e62299df428f02bf7ca16427a, type: 3}
+    sprite: {fileID: 21300000, guid: 9a0576ddf2f5cfa4885397956c1afc77, type: 3}
     gameObject: {fileID: 0}
   - stageNumber: 3
     sceneObject:
       m_SceneName: stage3
-    sprite: {fileID: 21300000, guid: 094fedf2561cb234f833d98f2b7eb069, type: 3}
+    sprite: {fileID: 21300000, guid: a34b56e077ebf944eb8c150db11267af, type: 3}
     gameObject: {fileID: 0}
   clearTime:
   - {fileID: 825084327}

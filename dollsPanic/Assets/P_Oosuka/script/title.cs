@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Video;
 using UnityEngine.UI;
 
 public class title : MonoBehaviour {
@@ -14,60 +13,64 @@ public class title : MonoBehaviour {
     TitleState titleState;
 
     [SerializeField]
+    VideoPlayer videoPlayer;
+    [SerializeField]
+    GameObject sprites;
+    [SerializeField]
+    GameObject camera;
+    [SerializeField]
     SceneObject nextScene;
-
     [SerializeField]
-    GameObject[] buttonImage;
+    GameObject[] buttons;
 
-    [SerializeField]
-    GameObject[] titleCharacter_;
-
-    int animationCurrentIndex_;
+    bool isInputOK_;
 
     void Start()
     {
         titleState = TitleState.CONTINUE_GAME;
-        SetColor((int)titleState);
-
-        for (int i = 0; i < titleCharacter_.Length; i++)
-        {
-            titleCharacter_[i].GetComponent<Animator>().speed = 0.0f;
-        }
-        animationCurrentIndex_ = 0;
-        PlayAnimation();
+        sprites.SetActive(false);
+        camera.GetComponent<Animator>().enabled = false;
+        isInputOK_ = false;
     }
 
     void Update()
     {
-        SelectMode();
-
-        Animator animator = titleCharacter_[animationCurrentIndex_].GetComponent<Animator>();
-        AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
-        if(stateInfo.normalizedTime >= 1.0f)
+        if(videoPlayer.enabled)
         {
-            animator.speed = 0.0f;
-
-            animationCurrentIndex_++;
-            if(animationCurrentIndex_ >= titleCharacter_.Length)
+            if ((ulong)videoPlayer.frame == videoPlayer.frameCount)
             {
-                animationCurrentIndex_ = 0;
+                videoPlayer.enabled = false;
+                sprites.SetActive(true);
+                camera.GetComponent<Animator>().enabled = true;
+
+                isInputOK_ = true;
+                SetColor((int)titleState);
             }
-            PlayAnimation();
         }
-        
+
+        SelectMode();      
     }
 
     void SetColor(int index)
     {
-        for (int i = 0; i < buttonImage.Length; i++)
+        for (int i = 0; i < buttons.Length; i++)
         {
-            buttonImage[i].GetComponent<Image>().color = Color.white;
+            buttons[i].GetComponent<SpriteRenderer>().color = Color.white;
+            buttons[i].GetComponent<Animator>().Play(buttons[i].name, 0, 0.0f);
+            buttons[i].GetComponent<Animator>().speed = 0.0f;
+            
         }
-        buttonImage[index].GetComponent<Image>().color = Color.red;
+        buttons[index].GetComponent<SpriteRenderer>().color = Color.red;
+        buttons[index].GetComponent<Animator>().speed = 1.0f;
     }
 
     void SelectMode()
     {
+        if(!isInputOK_)
+        {
+            return;
+        }
+
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             titleState--;
@@ -102,14 +105,5 @@ public class title : MonoBehaviour {
                     break;
             }
         }
-    }
-
-    void PlayAnimation()
-    {
-        Animator animator = titleCharacter_[animationCurrentIndex_].GetComponent<Animator>();
-        string name = titleCharacter_[animationCurrentIndex_].name;
-
-        animator.Play(name, 0, 0.0f);
-        animator.speed = 1.0f;
     }
 }
