@@ -15,6 +15,7 @@ public class GODManager : MonoBehaviour
     private GameObject Child;
     private int n_MenuFlag;
     private Ability Abi;
+    private bool b_Start = false;
 
     [SerializeField]
     private int maxStage_;
@@ -41,8 +42,9 @@ public class GODManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Y))
+        if (Input.GetKeyDown(KeyCode.Y) && !b_Start)
         {
+            b_Start = true;
             IS.StartStagingFin();
             TimeScript.StartTimer();
             Abi = GameObject.FindGameObjectWithTag("Player").GetComponent<Ability>();

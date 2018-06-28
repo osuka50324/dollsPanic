@@ -63,6 +63,7 @@
      <Compile Include="Assets\P_Oosuka\script\SingletonUIGraphics.cs" />
      <Compile Include="Assets\P_Oosuka\script\stageSelect.cs" />
      <Compile Include="Assets\P_Oosuka\script\title.cs" />
+     <Compile Include="Assets\P_Oosuka\script\titleAudio.cs" />
      <Compile Include="Assets\P_Oosuka\StandardAssets\Effects\ImageEffects\Scripts\Antialiasing.cs" />
      <Compile Include="Assets\P_Oosuka\StandardAssets\Effects\ImageEffects\Scripts\Bloom.cs" />
      <Compile Include="Assets\P_Oosuka\StandardAssets\Effects\ImageEffects\Scripts\BloomAndFlares.cs" />

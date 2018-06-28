@@ -79,7 +79,18 @@ Shader "UI/Fade"
 				// 徐々にフェードする部分
 				if (mask >= 1.0f)
 				{
-					color.a = tex2D(_MaskTex, IN.texcoord).a - (-1 + _Range * 2);
+					if (_Range > 0.5f)
+					{
+						//	0 → 1		1 → -1
+//						color.a = tex2D(_MaskTex, IN.texcoord).a - (-1 + _Range * 2);
+
+						// 0.5 → 1		1 → -1
+						color.a = tex2D(_MaskTex, IN.texcoord).a - (-1 + (_Range + 0.5f) * 2) + 1;
+					}
+					else
+					{
+						color.a = 1.0f;
+					}
 				}
 				else if (mask < _Range)
 				{
