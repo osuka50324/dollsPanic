@@ -26,6 +26,8 @@ public class stageSelect : MonoBehaviour {
     Sprite padSprite;
     [SerializeField]
     GameObject frame;
+    [SerializeField]
+    GameObject audioManager;
 
     int widthInterval = 1080;
     float moveValue = 0.0f;
@@ -44,16 +46,19 @@ public class stageSelect : MonoBehaviour {
         {
             if (Input.GetKeyDown(KeyCode.RightArrow))
             {
+                audioManager.GetComponent<stageSelectAudio>().PlayCursor();
                 moveValue = -widthInterval;
                 StageRotation(-1);
             }
             if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
+                audioManager.GetComponent<stageSelectAudio>().PlayCursor();
                 moveValue = widthInterval;
                 StageRotation(1);
             }
             if( Input.GetKeyDown(KeyCode.Space))
             {
+                audioManager.GetComponent<stageSelectAudio>().PlayEnter();
                 SceneTransition.Instance.LoadScene(stageData[0].sceneObject);
             }
         }
