@@ -24,8 +24,8 @@ public class CameraMove : MonoBehaviour
         if (!Goal)
         {
             targetPosition = player.transform.position;
-            targetPosition += player.transform.forward * -5;
-            targetPosition += player.transform.up * 2;
+            targetPosition += player.transform.forward * -8;
+            targetPosition += player.transform.up * 10;
 
             while (true)
             {

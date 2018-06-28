@@ -12,6 +12,7 @@ public class myBody : MonoBehaviour {
     void Start ()
     {
         rb = GetComponent<Rigidbody>();
+        
     }
 	
 	// Update is called once per frame
@@ -27,6 +28,7 @@ public class myBody : MonoBehaviour {
         if (deth)
         {
             GameObject.FindGameObjectWithTag("SEManager").GetComponent<SEManager>().OnSE("HighFall");
+            Instantiate(Resources.Load("Effect/ParticleDust") as GameObject,this.transform.position,Quaternion.identity);
             GameObject obj = GameObject.FindGameObjectWithTag("UnderObject");
             obj.tag = "Player";
             obj.transform.position = this.transform.position;
