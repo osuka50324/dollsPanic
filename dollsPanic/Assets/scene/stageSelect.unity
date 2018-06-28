@@ -168,7 +168,7 @@ MonoBehaviour:
   - {fileID: 1040825908}
   - {fileID: 733102809}
   - {fileID: 664005396}
-  padSprite: {fileID: 21300000, guid: f8f05433c48022e46aec71e23d4ebedf, type: 3}
+  padSprite: {fileID: 21300000, guid: 2f40969d9eebe184888463e51a700c56, type: 3}
   frame: {fileID: 1490673580553126, guid: 60b94e5330e58db48a51ed95939b2d35, type: 2}
   audioManager: {fileID: 1020402158}
 --- !u!4 &77084684
