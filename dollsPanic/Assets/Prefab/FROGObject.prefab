@@ -682,14 +682,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1417631007496172}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9, y: 0, z: 12.5}
+  m_LocalRotation: {x: -0, y: -0.47085488, z: -0, w: 0.8822107}
+  m_LocalPosition: {x: 9, y: 0.18, z: 12.5}
   m_LocalScale: {x: 25, y: 25, z: 25}
   m_Children:
   - {fileID: 4322155407914078}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -56.180004, z: 0}
 --- !u!4 &4089425802199968
 Transform:
   m_ObjectHideFlags: 1
@@ -1288,8 +1288,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.10043593, y: 0.1646421, z: 0.08975519}
-  m_Center: {x: 0.00040279797, y: 0.08012214, z: -0.0000009536743}
+  m_Size: {x: 0.10043592, y: 0.15443942, z: 0.08975519}
+  m_Center: {x: 0.0004027986, y: 0.085223466, z: -0.0000009536847}
 --- !u!95 &95643369118930820
 Animator:
   serializedVersion: 3
@@ -1320,13 +1320,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AbilityList:
   - Scripts: {fileID: 1321656570820408, guid: a132eb4688e12f2458de793afd452b7a, type: 2}
-    Num: 1.5
+    Num: 10
   - Scripts: {fileID: 1258019271729768, guid: 331dd528a73516b47bbdb51e79d9fca8, type: 2}
-    Num: 2
+    Num: 10
   - Scripts: {fileID: 1302840343191854, guid: bcce16db8d132ad40b7ebda1bc25efcb, type: 2}
     Num: 1
   - Scripts: {fileID: 1194455502326808, guid: 12c557feaa8bcad4f86e63637a4b5d1b, type: 2}
-    Num: 1
+    Num: 10
 --- !u!114 &114500237749808234
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1339,8 +1339,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Body: {fileID: 1367602006862054}
-  DethPow: 50
-  MaxSpeed: 0
+  DethPow: 28
+  MaxSpeed: 25
 --- !u!137 &137819496909178624
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

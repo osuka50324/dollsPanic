@@ -16,7 +16,8 @@ public class Help : MonoBehaviour
             case 1:
                 break;
             case 2:
-                g_Number = 1;
+                g_Number = 3;
+                transform.gameObject.SetActive(false);
                 break;
         }
 

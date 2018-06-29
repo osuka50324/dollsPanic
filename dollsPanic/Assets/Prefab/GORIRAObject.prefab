@@ -839,14 +839,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1420534657821054}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18.019913, y: 0, z: -33.80126}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -5.2445292, y: 42.56, z: 31.962492}
   m_LocalScale: {x: 35, y: 35, z: 35}
   m_Children:
   - {fileID: 4982950494533958}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!4 &4357554928741230
 Transform:
   m_ObjectHideFlags: 1
@@ -1421,13 +1421,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AbilityList:
   - Scripts: {fileID: 1321656570820408, guid: a132eb4688e12f2458de793afd452b7a, type: 2}
-    Num: 1.5
+    Num: 5
   - Scripts: {fileID: 1258019271729768, guid: 331dd528a73516b47bbdb51e79d9fca8, type: 2}
-    Num: 2
+    Num: 10
   - Scripts: {fileID: 1302840343191854, guid: bcce16db8d132ad40b7ebda1bc25efcb, type: 2}
     Num: 1
   - Scripts: {fileID: 1861814147839034, guid: 797dba4166b02ef4da974cbc7aff0fc1, type: 2}
-    Num: 1
+    Num: 8
 --- !u!114 &114410584438320336
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1440,8 +1440,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Body: {fileID: 1206881827953416}
-  DethPow: 50
-  MaxSpeed: 0
+  DethPow: 28
+  MaxSpeed: 25
 --- !u!137 &137652523302323040
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
