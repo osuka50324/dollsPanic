@@ -14,7 +14,7 @@ public class Title : MonoBehaviour
                 break;
             case 1:
             case 2:
-                g_Number = 3;
+                g_Number = 2;
                 break;
         }
 
