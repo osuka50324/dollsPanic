@@ -14,6 +14,7 @@ public class OptionScript : MonoBehaviour
     private bool EnterButton;
     public bool[] bDestroy = new bool[4];
     public int g_nMode;
+    private int g_nCnt;
     private float fScaleX;
     private float fScaleY;
     private Vector3 vTopPos;
@@ -32,6 +33,10 @@ public class OptionScript : MonoBehaviour
         {
             bDestroy[i] = false;
         }
+        if (g_nMode == 2)
+            g_nCnt = 2;
+        else
+            g_nCnt = 3;
     }
 
     // Update is called once per frame
@@ -53,13 +58,13 @@ public class OptionScript : MonoBehaviour
             GameObject.FindGameObjectWithTag("SEManager").GetComponent<SEManager>().OnSE("Cursor");
             CurrentButtonNumber--;
             if (CurrentButtonNumber < 0)
-                CurrentButtonNumber = 3;
+                CurrentButtonNumber = g_nCnt;
         }
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             GameObject.FindGameObjectWithTag("SEManager").GetComponent<SEManager>().OnSE("Cursor");
             CurrentButtonNumber++;
-            if (CurrentButtonNumber > 3)
+            if (CurrentButtonNumber > g_nCnt)
                 CurrentButtonNumber = 0;
         }
         if (OldButtonNumber != CurrentButtonNumber)

@@ -53,7 +53,7 @@ public class GODManager : MonoBehaviour
             TimeScript.StartTimer();
             Abi.SetScript();
         }
-        if (Input.GetKeyDown(KeyCode.Y) && !b_Start)
+        if (Input.GetKeyDown(KeyCode.Return) && !b_Start)
         {
             b_Start = true;
             IS.StartStagingFin();
