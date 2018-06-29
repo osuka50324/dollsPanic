@@ -17,6 +17,9 @@ public class GODManager : MonoBehaviour
     private Ability Abi;
     private bool b_Start = false;
 
+    private bool Sousa = false;
+    private GameObject SousaObj = null;
+
     [SerializeField]
     private int maxStage_;
     
@@ -42,6 +45,14 @@ public class GODManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Sousa && Input.anyKeyDown)
+        {
+            Sousa = false;
+            Destroy(SousaObj);
+            SousaObj = null;
+            TimeScript.StartTimer();
+            Abi.SetScript();
+        }
         if (Input.GetKeyDown(KeyCode.Y) && !b_Start)
         {
             b_Start = true;
@@ -141,6 +152,7 @@ public class GODManager : MonoBehaviour
                 {
                     case 1:
                         TimeScript.StartTimer();
+                        Abi.SetScript();
                         break;
                     case 2://リトライ
                         SceneTransition.Instance.LoadScene(SceneManager.GetActiveScene().name);
@@ -149,6 +161,8 @@ public class GODManager : MonoBehaviour
                         SceneTransition.Instance.LoadScene("stageSelect");
                         break;
                     case 4:
+                        Sousa = true;
+                        SousaObj = Instantiate(Resources.Load("sousa") as GameObject,Canvas.transform) as GameObject;
                         break;
                     case 5://次のステージへ
                         int stageNumber = int.Parse(SceneManager.GetActiveScene().name.ToCharArray()[5].ToString());
@@ -181,7 +195,6 @@ public class GODManager : MonoBehaviour
                         break;
                 }
                 n_MenuFlag = 0;
-                Abi.SetScript();
             }
         }
         if (TimeScript.g_bTimer)
