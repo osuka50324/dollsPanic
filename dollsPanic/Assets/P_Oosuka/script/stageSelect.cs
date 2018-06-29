@@ -56,7 +56,7 @@ public class stageSelect : MonoBehaviour {
                 moveValue = widthInterval;
                 StageRotation(1);
             }
-            if( Input.GetKeyDown(KeyCode.Space))
+            if( Input.GetKeyDown(KeyCode.Return))
             {
                 audioManager.GetComponent<stageSelectAudio>().PlayEnter();
                 SceneTransition.Instance.LoadScene(stageData[0].sceneObject);
@@ -177,9 +177,9 @@ public class stageSelect : MonoBehaviour {
 
                 // スケール設定
                 RectTransform rect2 = catPad.GetComponent<RectTransform>();
-                rect2.sizeDelta = new Vector2(125, 125);
+                rect2.sizeDelta = new Vector2(150, 150);
 
-                Vector2 anchoredPosition = new Vector2(370, -250 + j * 100);
+                Vector2 anchoredPosition = new Vector2(350, -250 + j * 100);
                 if (j % 2 == 0)
                 {
                     anchoredPosition.x = 470;

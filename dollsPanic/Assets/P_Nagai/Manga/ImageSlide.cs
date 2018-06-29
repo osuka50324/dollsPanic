@@ -109,7 +109,7 @@ public class ImageSlide : MonoBehaviour
             // 開始の流れ
             // 画像オブジェクト作成→画像表示オフ→フェードアウト(alpha値0)→画像表示オン→フェードイン(alpha値1)
             // 表示オフ && フェードアウト終わっていたら
-            if (!EndMangaImage.GetComponent<Image>().enabled && !bEndFadeOut)
+            if (EndMangaImage.GetComponent<Image>().enabled == false && !bEndFadeOut)
             {
                 EndMangaImage.GetComponent<Image>().enabled = true;   // 表示オン
                 bEndFadeIn = true;                                    // フェードイン開始
@@ -263,7 +263,7 @@ public class ImageSlide : MonoBehaviour
         // 位置調整
         // 表示オフ→フェードアウト
         EndMangaImage.GetComponent<Image>().enabled = false;
-        bEndFadeOut = false;
+        bEndFadeOut = true;
     }
     //=============================================================================================
     //  終了演出エンド
@@ -304,7 +304,7 @@ public class ImageSlide : MonoBehaviour
     }
     void EndFadeIn()
     {
-        //alpha += FadeSpead;
+        alpha += FadeSpead;
         EndMangaImage.GetComponent<Image>().color = new Color(1, 1, 1, alpha);
 
         if (alpha >= 1)
@@ -314,7 +314,7 @@ public class ImageSlide : MonoBehaviour
     }
     void EndFadeOut()
     {
-        //alpha -= FadeSpead;
+        alpha -= FadeSpead;
         EndMangaImage.GetComponent<Image>().color = new Color(1, 1, 1, alpha);
 
         if (alpha <= 0)

@@ -102,6 +102,8 @@ public class Player : MonoBehaviour {
 
     public void OnSelect(GameObject target)
     {
+        if (target.name == "CASPERObject")
+            return;
         TargetList.Add(target);
         if(TargetList.Count == 1)
         {

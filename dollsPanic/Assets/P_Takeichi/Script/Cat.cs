@@ -42,7 +42,7 @@ public class Cat : MonoBehaviour
             }else
             {
                 Mode --;
-                ModeTime = 2.0f;
+                ModeTime = 1.0f;
                     Stop = rb.velocity;
                     Stop.x = Stop.z = 0;
                     rb.velocity = Stop;
@@ -67,7 +67,7 @@ public class Cat : MonoBehaviour
                     break;
                 }
 
-                rb.AddForce(transform.forward * 2, ForceMode.Impulse);
+                rb.AddForce(transform.forward * 10, ForceMode.Impulse);
                 if (rb.velocity.magnitude > 30)
                 {
                     rb.velocity = rb.velocity.normalized * 30;
@@ -99,7 +99,7 @@ public class Cat : MonoBehaviour
                 Invoke("SetShot", 1.0f);
             }
             Mode = 0;
-            ModeTime = 2.0f;
+            ModeTime = 1.0f;
         }
     }
     void SetShot()
