@@ -17,11 +17,11 @@ public class Help : MonoBehaviour
                 break;
             case 2:
                 g_Number = 3;
+                transform.gameObject.SetActive(false);
                 break;
         }
 
         transform.parent.GetComponent<OptionScript>().GetImageObject(this.gameObject, g_Number);
-        transform.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
