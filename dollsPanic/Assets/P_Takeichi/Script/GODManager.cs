@@ -16,6 +16,7 @@ public class GODManager : MonoBehaviour
     private int n_MenuFlag;
     private Ability Abi;
     private bool b_Start = false;
+    private bool b_End = false;
 
     private bool Sousa = false;
     private GameObject SousaObj = null;
@@ -61,8 +62,9 @@ public class GODManager : MonoBehaviour
             Abi = GameObject.FindGameObjectWithTag("Player").GetComponent<Ability>();
             Abi.SetScript();
         }
-        if(TimeScript == null && OS == null)
+        if(TimeScript == null && !b_End)
         {
+            b_End = true;
             //時間切れ
             IS.EndStagingBigin(false);
             DrawOver();
@@ -82,6 +84,7 @@ public class GODManager : MonoBehaviour
         {
             for (int i = 0; i < 4; i++)
             {
+                Debug.Log(OS.bDestroy[i] + " "+ i);
                 if (OS.bDestroy[i] == true)
                 {
                     switch (OS.g_nMode)
@@ -126,14 +129,11 @@ public class GODManager : MonoBehaviour
                                 case 0://リトライ
                                     n_MenuFlag = 9;
                                     break;
-                                case 1://ヘルプの表示
+                                case 1://ステージセレクトへ
                                     n_MenuFlag = 10;
                                     break;
-                                case 2://ステージセレクトへ
+                                case 2://タイトルへ
                                     n_MenuFlag = 11;
-                                    break;
-                                case 3://タイトルへ
-                                    n_MenuFlag = 12;
                                     break;
                             }
                             break;
@@ -185,12 +185,10 @@ public class GODManager : MonoBehaviour
                     case 9://リトライ
                         SceneTransition.Instance.LoadScene(SceneManager.GetActiveScene().name);
                         break;
-                    case 10:
-                        break;
-                    case 11://ステージセレクトへ
+                    case 10://ステージセレクトへ
                         SceneTransition.Instance.LoadScene("stageSelect");
                         break;
-                    case 12://タイトルへ
+                    case 11://タイトルへ
                         SceneTransition.Instance.LoadScene("title");
                         break;
                 }
