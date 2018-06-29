@@ -1,14 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 
 public class Ability : MonoBehaviour {
 
     [System.Serializable]
     public struct ScriptList
     {
-        public MonoScript Scripts;
+        public GameObject Scripts;
         public float Num;
     }
     public ScriptList[] AbilityList;
@@ -17,11 +16,15 @@ public class Ability : MonoBehaviour {
 
     private Animator animator;
 
-    // Use this for initialization
-    void Start ()
+    void Awake()
     {
         animator = this.GetComponent<myBody>().Body.GetComponent<Animator>();
         animator.enabled = false;
+    }
+
+    // Use this for initialization
+    void Start ()
+    {
     }
 	
 	// Update is called once per frame

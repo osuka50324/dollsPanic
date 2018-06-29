@@ -3808,13 +3808,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AbilityList:
-  - Scripts: {fileID: 11500000, guid: 2896602b14944964ca50fc12de97783c, type: 3}
+  - Scripts: {fileID: 1486104639268146, guid: cd28e513236653d43bb249c77f0cfe8f, type: 2}
     Num: 1.5
-  - Scripts: {fileID: 11500000, guid: 16611603703cbe040bc4a64cbd82c1f7, type: 3}
+  - Scripts: {fileID: 1258019271729768, guid: 331dd528a73516b47bbdb51e79d9fca8, type: 2}
     Num: 2
-  - Scripts: {fileID: 11500000, guid: 215ac5fac80685f4db1de6ec5115a7af, type: 3}
+  - Scripts: {fileID: 1302840343191854, guid: bcce16db8d132ad40b7ebda1bc25efcb, type: 2}
     Num: 1
-  - Scripts: {fileID: 11500000, guid: 63117a810048be948afa1a43aeb03323, type: 3}
+  - Scripts: {fileID: 1716172003986372, guid: 3463018407777284f8e05fb54871ca23, type: 2}
     Num: 1
 --- !u!114 &114788499046962346
 MonoBehaviour:

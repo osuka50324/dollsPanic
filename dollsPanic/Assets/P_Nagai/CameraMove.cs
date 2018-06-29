@@ -25,7 +25,7 @@ public class CameraMove : MonoBehaviour
         {
             targetPosition = player.transform.position;
             targetPosition += player.transform.forward * -5;
-            targetPosition += player.transform.up * 2;
+            targetPosition += player.transform.up * 6;
 
             while (true)
             {
@@ -55,17 +55,18 @@ public class CameraMove : MonoBehaviour
                     break;
                 }
             }
-
+            Vector3 PPos = player.transform.position;
+            PPos.y += 4;
             if (DilayTime > 0)
             {
                 transform.position = Vector3.MoveTowards(this.transform.position, targetPosition, MoveSpeed * (Time.deltaTime * 3.5f));
-                transform.localRotation = Quaternion.Lerp(this.transform.localRotation, Quaternion.LookRotation(player.transform.position - this.transform.position), RotateSpeed * (Time.deltaTime * 3.5f));
+                transform.localRotation = Quaternion.Lerp(this.transform.localRotation, Quaternion.LookRotation(PPos - this.transform.position), RotateSpeed * (Time.deltaTime * 3.5f));
                 DilayTime -= Time.deltaTime;
                 return;
             }
             // 場所反映
             transform.position = Vector3.MoveTowards(this.transform.position, targetPosition, MoveSpeed);
-            transform.localRotation = Quaternion.Lerp(this.transform.localRotation, Quaternion.LookRotation(player.transform.position - this.transform.position), RotateSpeed);
+            transform.localRotation = Quaternion.Lerp(this.transform.localRotation, Quaternion.LookRotation(PPos - this.transform.position), RotateSpeed);
 
             //if (transform.position.z < 0)
             //{

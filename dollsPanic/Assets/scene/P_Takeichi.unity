@@ -385,11 +385,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 223102648064788968, guid: 112aef441b435624289a4a71402fda64,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 112aef441b435624289a4a71402fda64, type: 2}
   m_IsPrefabParent: 0
@@ -521,26 +516,6 @@ Prefab:
       propertyPath: SoundGroup
       value: 
       objectReference: {fileID: 1504020833}
-    - target: {fileID: 114029699471076572, guid: 27f0da588d563c04b945f549a6c247e1,
-        type: 2}
-      propertyPath: Clear
-      value: 
-      objectReference: {fileID: 8300000, guid: eb1e2eb2588b7ad4fbef9cc5a59471c2, type: 3}
-    - target: {fileID: 114029699471076572, guid: 27f0da588d563c04b945f549a6c247e1,
-        type: 2}
-      propertyPath: Sonar
-      value: 
-      objectReference: {fileID: 8300000, guid: eb1e2eb2588b7ad4fbef9cc5a59471c2, type: 3}
-    - target: {fileID: 114029699471076572, guid: 27f0da588d563c04b945f549a6c247e1,
-        type: 2}
-      propertyPath: SonarHit
-      value: 
-      objectReference: {fileID: 8300000, guid: eb1e2eb2588b7ad4fbef9cc5a59471c2, type: 3}
-    - target: {fileID: 114029699471076572, guid: 27f0da588d563c04b945f549a6c247e1,
-        type: 2}
-      propertyPath: RailGo
-      value: 
-      objectReference: {fileID: 8300000, guid: eb1e2eb2588b7ad4fbef9cc5a59471c2, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 27f0da588d563c04b945f549a6c247e1, type: 2}
   m_IsPrefabParent: 0
@@ -892,7 +867,7 @@ Prefab:
     - target: {fileID: 114929809345856046, guid: 051e900c2dea4fd43b50f5fc8cab6805,
         type: 2}
       propertyPath: g_fMaxTime
-      value: 1
+      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 051e900c2dea4fd43b50f5fc8cab6805, type: 2}

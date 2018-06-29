@@ -15,6 +15,10 @@ public class GODManager : MonoBehaviour
     private GameObject Child;
     private int n_MenuFlag;
     private Ability Abi;
+    private bool b_Start = false;
+
+    private bool Sousa = false;
+    private GameObject SousaObj = null;
 
     [SerializeField]
     private int maxStage_;
@@ -41,8 +45,17 @@ public class GODManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Y))
+        if (Sousa && Input.anyKeyDown)
         {
+            Sousa = false;
+            Destroy(SousaObj);
+            SousaObj = null;
+            TimeScript.StartTimer();
+            Abi.SetScript();
+        }
+        if (Input.GetKeyDown(KeyCode.Y) && !b_Start)
+        {
+            b_Start = true;
             IS.StartStagingFin();
             TimeScript.StartTimer();
             Abi = GameObject.FindGameObjectWithTag("Player").GetComponent<Ability>();
@@ -57,6 +70,10 @@ public class GODManager : MonoBehaviour
             menuFlag = true;
             Abi = GameObject.FindGameObjectWithTag("Player").GetComponent<Ability>();
             Abi.UnSetScript();
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            GetComponent<AudioSource>().enabled = !GetComponent<AudioSource>().enabled;
         }
 
 
@@ -135,6 +152,7 @@ public class GODManager : MonoBehaviour
                 {
                     case 1:
                         TimeScript.StartTimer();
+                        Abi.SetScript();
                         break;
                     case 2://リトライ
                         SceneTransition.Instance.LoadScene(SceneManager.GetActiveScene().name);
@@ -143,6 +161,8 @@ public class GODManager : MonoBehaviour
                         SceneTransition.Instance.LoadScene("stageSelect");
                         break;
                     case 4:
+                        Sousa = true;
+                        SousaObj = Instantiate(Resources.Load("sousa") as GameObject,Canvas.transform) as GameObject;
                         break;
                     case 5://次のステージへ
                         int stageNumber = int.Parse(SceneManager.GetActiveScene().name.ToCharArray()[5].ToString());
@@ -175,7 +195,6 @@ public class GODManager : MonoBehaviour
                         break;
                 }
                 n_MenuFlag = 0;
-                Abi.SetScript();
             }
         }
         if (TimeScript.g_bTimer)
@@ -220,20 +239,20 @@ public class GODManager : MonoBehaviour
 
     public void DrawPause()
     {
-        GameObject.FindGameObjectWithTag("SEManager").GetComponent<SEManager>().OnSE("Clear");
         Child = Instantiate(Resources.Load("Pause", typeof(GameObject)), Canvas.transform) as GameObject;
         OS = Child.transform.GetComponent<OptionScript>();
         OS.g_nMode = 0;
     }
     public void DrawClear()
     {
-        GameObject.FindGameObjectWithTag("SEManager").GetComponent<SEManager>().OnSE("NotClear");
+        GameObject.FindGameObjectWithTag("SEManager").GetComponent<SEManager>().OnSE("Clear");
         Child = Instantiate(Resources.Load("Clear", typeof(GameObject)), Canvas.transform) as GameObject;
         OS = Child.transform.GetComponent<OptionScript>();
         OS.g_nMode = 1;
     }
     public void DrawOver()
     {
+        GameObject.FindGameObjectWithTag("SEManager").GetComponent<SEManager>().OnSE("NotClear");
         Child = Instantiate(Resources.Load("Over", typeof(GameObject)), Canvas.transform) as GameObject;
         OS = Child.transform.GetComponent<OptionScript>();
         OS.g_nMode = 2;

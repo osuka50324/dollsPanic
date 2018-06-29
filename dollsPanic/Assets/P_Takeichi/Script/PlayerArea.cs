@@ -8,7 +8,10 @@ public class PlayerArea : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         PlayerScript =  transform.parent.GetComponent<Player>();
-        transform.localScale *= 1.5f;
+        Vector3 scl = transform.localScale;
+        scl.x *= 1.5f;
+        scl.z *= 1.5f;
+        transform.localScale = scl;
         Destroy(transform.GetChild(0).gameObject);
     }
 	

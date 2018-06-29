@@ -839,14 +839,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1420534657821054}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 21.66, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -5.2445292, y: 42.56, z: 31.962492}
   m_LocalScale: {x: 35, y: 35, z: 35}
   m_Children:
   - {fileID: 4982950494533958}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!4 &4357554928741230
 Transform:
   m_ObjectHideFlags: 1
@@ -1371,7 +1371,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1420534657821054}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 9
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -1398,7 +1398,7 @@ Animator:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1206881827953416}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 9000000, guid: cfd2ede03e33b5c4692127068501096c, type: 3}
   m_Controller: {fileID: 9100000, guid: 946865320328f994d9b2eafa2c985207, type: 2}
   m_CullingMode: 1
@@ -1420,14 +1420,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AbilityList:
-  - Scripts: {fileID: 11500000, guid: 8c50385f6b5b07d4fa8948fecbb266b2, type: 3}
-    Num: 1.5
-  - Scripts: {fileID: 11500000, guid: 16611603703cbe040bc4a64cbd82c1f7, type: 3}
-    Num: 2
-  - Scripts: {fileID: 11500000, guid: 215ac5fac80685f4db1de6ec5115a7af, type: 3}
+  - Scripts: {fileID: 1321656570820408, guid: a132eb4688e12f2458de793afd452b7a, type: 2}
+    Num: 5
+  - Scripts: {fileID: 1258019271729768, guid: 331dd528a73516b47bbdb51e79d9fca8, type: 2}
+    Num: 10
+  - Scripts: {fileID: 1302840343191854, guid: bcce16db8d132ad40b7ebda1bc25efcb, type: 2}
     Num: 1
-  - Scripts: {fileID: 11500000, guid: e314d2abbee0f1e478990b8b96cd3e27, type: 3}
-    Num: 1
+  - Scripts: {fileID: 1861814147839034, guid: 797dba4166b02ef4da974cbc7aff0fc1, type: 2}
+    Num: 8
 --- !u!114 &114410584438320336
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1440,8 +1440,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Body: {fileID: 1206881827953416}
-  DethPow: 50
-  MaxSpeed: 0
+  DethPow: 25
+  MaxSpeed: 25
 --- !u!137 &137652523302323040
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

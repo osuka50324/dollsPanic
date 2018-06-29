@@ -50,7 +50,7 @@ public class Timer : MonoBehaviour {
                 temp = 15;
             if (i >= 4)
                 temp = 30;
-            image[i].GetComponent<RectTransform>().anchoredPosition = new Vector2(-170 + temp + i * 60, -10);
+            image[i].GetComponent<RectTransform>().anchoredPosition = new Vector2(-170 + temp + i * 60, -50);
         }
     }
     public void StartTimer()

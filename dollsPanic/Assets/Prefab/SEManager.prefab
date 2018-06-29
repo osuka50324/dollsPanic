@@ -54,13 +54,13 @@ MonoBehaviour:
   Cancel: {fileID: 8300000, guid: 480e2c10961e11a4f9d931e7eea307a6, type: 3}
   GoriraPunch: {fileID: 8300000, guid: 2b701d16f2057e04c8da0cb80aa86c10, type: 3}
   Jump: {fileID: 8300000, guid: cdb94e35f1fbfee42a2fc187f5353475, type: 3}
-  Clear: {fileID: 0}
+  Clear: {fileID: 8300000, guid: eb1e2eb2588b7ad4fbef9cc5a59471c2, type: 3}
   NotClear: {fileID: 8300000, guid: a52e53a1f89cbae41926dda281845614, type: 3}
-  Sonar: {fileID: 0}
-  SonarHit: {fileID: 0}
+  Sonar: {fileID: 8300000, guid: eb1e2eb2588b7ad4fbef9cc5a59471c2, type: 3}
+  SonarHit: {fileID: 8300000, guid: eb1e2eb2588b7ad4fbef9cc5a59471c2, type: 3}
   HighJump: {fileID: 8300000, guid: 19618f1cbd7cc014e95dbfed827a9ed9, type: 3}
   PunchHit: {fileID: 8300000, guid: 9540a83637400cb40886cf4a92214140, type: 3}
-  RailGo: {fileID: 0}
+  RailGo: {fileID: 8300000, guid: eb1e2eb2588b7ad4fbef9cc5a59471c2, type: 3}
   Cursor: {fileID: 8300000, guid: 5f9ca70fd9584cb489142caa7c96f7c3, type: 3}
   CatPunchHit: {fileID: 8300000, guid: 21333cd2fc3f74a41a2b36dff5aac88d, type: 3}
   Enter: {fileID: 8300000, guid: dcfe08df4dd2139409d12e5ab3403308, type: 3}
