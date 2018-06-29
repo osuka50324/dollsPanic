@@ -42,6 +42,6 @@ public class PlayerEffectCon : MonoBehaviour {
 
         // 位置取得(乗り移ってるキャラの中心からぽわぽわ～)
         float height = transform.parent.GetComponent<BoxCollider>().center.y;
-        transform.position = new Vector3(transform.parent.position.x, height, transform.parent.position.z);
+        transform.position = new Vector3(transform.parent.position.x,transform.parent.position.y + height, transform.parent.position.z);
 	}
 }
