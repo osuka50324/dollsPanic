@@ -13,7 +13,7 @@ public class Select : MonoBehaviour
             case 0:
             case 1:
             case 2:
-                g_Number = 2;
+                g_Number = 1;
                 break;
         }
 
