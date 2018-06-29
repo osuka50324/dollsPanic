@@ -24,5 +24,7 @@ public class SonarJudge : MonoBehaviour {
         GameObject Child = Instantiate(Resources.Load("FireParticle", typeof(GameObject))) as GameObject;
         Child.transform.parent = other.transform;
         Child.transform.position = other.transform.position;
+        Child.transform.position += new Vector3(0, 1, 0);
+        Child.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
     }
 }
