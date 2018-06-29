@@ -28,7 +28,7 @@ public class PlayerEffectCon : MonoBehaviour {
         // 猫にひっかかれた時もぼわって出す
         if(TimeScript.GetComponent<Timer>().g_fCurrentTime <= 0f)
         {
-            GameObject FEffect = Instantiate(FailureEffect, new Vector3(transform.parent.position.x, transform.parent.GetComponent<BoxCollider>().center.y, transform.parent.position.z), Quaternion.identity);
+            GameObject FEffect = Instantiate(FailureEffect, new Vector3(transform.parent.position.x, transform.parent.GetComponent<BoxCollider>().center.y * 1.5f, transform.parent.position.z), Quaternion.identity);
             FEffect.GetComponent<ParticleSystem>().Play();
 
             if(!FEffect.GetComponent<ParticleSystem>().IsAlive())
