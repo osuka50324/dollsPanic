@@ -43,11 +43,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskTex:
-<<<<<<< Updated upstream
-        m_Texture: {fileID: 2800000, guid: 66757ac29c8a19a4dbe8fabe382a7d53, type: 3}
-=======
         m_Texture: {fileID: 2800000, guid: ae2225d7a96962540a7debb4ae9859d2, type: 3}
->>>>>>> Stashed changes
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -78,7 +74,7 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Range: 0.117777765
+    - _Range: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
