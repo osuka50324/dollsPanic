@@ -18,7 +18,7 @@ public class Scan : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        if (Input.GetKeyDown(KeyCode.P) && g_nTime == 0)
+        if (Input.GetKeyDown(KeyCode.Space) && g_nTime == 0)
         {
             GameObject.FindGameObjectWithTag("SEManager").GetComponent<SEManager>().OnSE("Sonar");
             SonarJudge = Instantiate(Resources.Load("SonarJudge", typeof(GameObject))) as GameObject;
