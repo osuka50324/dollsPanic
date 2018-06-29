@@ -16,6 +16,7 @@ public class GODManager : MonoBehaviour
     private int n_MenuFlag;
     private Ability Abi;
     private bool b_Start = false;
+    private bool b_End = false;
 
     private bool Sousa = false;
     private GameObject SousaObj = null;
@@ -61,8 +62,9 @@ public class GODManager : MonoBehaviour
             Abi = GameObject.FindGameObjectWithTag("Player").GetComponent<Ability>();
             Abi.SetScript();
         }
-        if(TimeScript == null && OS == null)
+        if(TimeScript == null && !b_End)
         {
+            b_End = true;
             //時間切れ
             IS.EndStagingBigin(false);
             DrawOver();
