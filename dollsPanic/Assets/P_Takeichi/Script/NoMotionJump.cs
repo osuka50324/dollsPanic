@@ -24,7 +24,7 @@ public class NoMotionJump : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Space) && !jump)
+        if (Input.GetKeyDown(KeyCode.W) && !jump)
         {
             rb.AddForce(Vector3.up * JumpPow);
             jump = true;

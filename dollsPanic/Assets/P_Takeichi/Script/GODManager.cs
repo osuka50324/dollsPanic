@@ -60,6 +60,10 @@ public class GODManager : MonoBehaviour
             Abi = GameObject.FindGameObjectWithTag("Player").GetComponent<Ability>();
             Abi.UnSetScript();
         }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            GetComponent<AudioSource>().enabled = !GetComponent<AudioSource>().enabled;
+        }
 
 
 

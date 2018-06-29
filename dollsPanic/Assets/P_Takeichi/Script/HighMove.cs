@@ -17,12 +17,12 @@ public class HighMove : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             this.GetComponent<Move>().MaxSpeed = this.GetComponent<Move>().MaxSpeed * 1.5f;
         }
 
-        if (Input.GetKeyUp(KeyCode.P))
+        if (Input.GetKeyUp(KeyCode.Space))
         {
             this.GetComponent<Move>().MaxSpeed = this.GetComponent<myBody>().MaxSpeed;
         }

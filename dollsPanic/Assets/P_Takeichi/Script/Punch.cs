@@ -21,7 +21,7 @@ public class Punch : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-		if(Input.GetKeyDown(KeyCode.P) && rb.velocity.magnitude < 1)
+		if(Input.GetKeyDown(KeyCode.Space) && rb.velocity.magnitude < 1)
         {
             move.enabled = false;
             jump.enabled = false;
