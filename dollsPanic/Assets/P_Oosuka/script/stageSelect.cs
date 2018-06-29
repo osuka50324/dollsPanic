@@ -83,6 +83,8 @@ public class stageSelect : MonoBehaviour {
 
     void Move()
     {
+        float aspect = Screen.width / 1920.0f;
+
         // 進行方向 * 全体の移動距離 * 時間
         float move = Mathf.Sign(moveValue) * widthInterval * Time.deltaTime;
 
@@ -105,11 +107,11 @@ public class stageSelect : MonoBehaviour {
 
             position.x += move;
 
-            if (position.x > (Screen.width * 0.5f + widthInterval * 0.5f))
+            if (position.x > (Screen.width * 0.5f + widthInterval * 0.5f) / aspect)
             {
                 position.x -= widthInterval * stageData.Count;
             }
-            if (position.x < -(Screen.width * 0.5f + widthInterval * 0.5f))
+            if (position.x < -(Screen.width * 0.5f + widthInterval * 0.5f) / aspect)
             {
                 position.x += widthInterval * stageData.Count;
             }
@@ -119,6 +121,8 @@ public class stageSelect : MonoBehaviour {
 
     void CreateStageImage()
     {
+        float aspect = Screen.width / 1920.0f;
+
         Transform canvas = GameObject.Find("Canvas").transform;
         for (int i = 0; i < stageData.Count; i++)
         {
@@ -143,7 +147,7 @@ public class stageSelect : MonoBehaviour {
 
             // スケール設定
             RectTransform rect = empty.GetComponent<RectTransform>();
-            rect.sizeDelta = new Vector2(960, 540);
+            rect.sizeDelta = new Vector2(960, 540) * aspect;
 
             // オブジェクトのセット
             StageData tmp = stageData[i];
@@ -152,7 +156,8 @@ public class stageSelect : MonoBehaviour {
             stageData[i] = tmp;
             //**********************************************************
             // フレーム
-            Instantiate(frame, empty.transform);
+            GameObject frameInstans = Instantiate(frame, empty.transform);
+            frameInstans.transform.localScale *= aspect;
 
             //*************************************************************
             // 肉球セット
@@ -177,12 +182,12 @@ public class stageSelect : MonoBehaviour {
 
                 // スケール設定
                 RectTransform rect2 = catPad.GetComponent<RectTransform>();
-                rect2.sizeDelta = new Vector2(150, 150);
+                rect2.sizeDelta = new Vector2(150, 150) * aspect;
 
-                Vector2 anchoredPosition = new Vector2(350, -250 + j * 100);
+                Vector2 anchoredPosition = new Vector2(350, -250 + j * 100) * aspect;
                 if (j % 2 == 0)
                 {
-                    anchoredPosition.x = 470;
+                    anchoredPosition.x = 470 * aspect;
                 }
                 rect2.anchoredPosition = anchoredPosition;
             }
