@@ -24,6 +24,8 @@ public class title : MonoBehaviour {
     GameObject[] buttons;
     [SerializeField]
     GameObject audioManager;
+    [SerializeField]
+    GameObject particle;
 
     bool isInputOK_;
 
@@ -33,6 +35,7 @@ public class title : MonoBehaviour {
         sprites.SetActive(false);
         camera.GetComponent<Animator>().enabled = false;
         isInputOK_ = false;
+        particle.SetActive(false);
     }
 
     void Update()
@@ -44,6 +47,7 @@ public class title : MonoBehaviour {
                 videoPlayer.enabled = false;
                 sprites.SetActive(true);
                 camera.GetComponent<Animator>().enabled = true;
+                particle.SetActive(true);
 
                 isInputOK_ = true;
                 SetColor((int)titleState);

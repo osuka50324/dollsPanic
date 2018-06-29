@@ -40,10 +40,6 @@ public class CommonFile : SingletonMonoBehaviour<CommonFile>
             string pass = "animation" + type + "/result" + index;
             Texture2D temp = Resources.Load(pass) as Texture2D;
             sprits[index, type] = Sprite.Create(temp, new Rect(0, 0, temp.width, temp.height), Vector2.zero);
-
-#if UNITY_EDITOR
-            Debug.Log("動的読み込み");
-#endif
         }
         
         return sprits[index, type];
