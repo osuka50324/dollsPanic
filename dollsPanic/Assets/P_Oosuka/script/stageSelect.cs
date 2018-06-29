@@ -56,7 +56,7 @@ public class stageSelect : MonoBehaviour {
                 moveValue = widthInterval;
                 StageRotation(1);
             }
-            if( Input.GetKeyDown(KeyCode.Space))
+            if( Input.GetKeyDown(KeyCode.Return))
             {
                 audioManager.GetComponent<stageSelectAudio>().PlayEnter();
                 SceneTransition.Instance.LoadScene(stageData[0].sceneObject);
