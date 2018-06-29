@@ -12,6 +12,8 @@ public class Select : MonoBehaviour
         {
             case 0:
             case 1:
+                g_Number = 2;
+                break;
             case 2:
                 g_Number = 1;
                 break;
