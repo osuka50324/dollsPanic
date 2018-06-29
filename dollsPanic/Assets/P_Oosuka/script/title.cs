@@ -97,7 +97,7 @@ public class title : MonoBehaviour {
             SetColor((int)titleState);
             audioManager.GetComponent<titleAudio>().PlayCursor();
         }
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             audioManager.GetComponent<titleAudio>().PlayEnter();
             StartCoroutine(EnterMode());
