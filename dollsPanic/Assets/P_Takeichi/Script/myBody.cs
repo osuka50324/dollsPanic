@@ -12,6 +12,7 @@ public class myBody : MonoBehaviour {
     void Start ()
     {
         rb = GetComponent<Rigidbody>();
+        
     }
 	
 	// Update is called once per frame
@@ -20,13 +21,16 @@ public class myBody : MonoBehaviour {
         if (rb.velocity.magnitude > DethPow)
         {
             deth = true;
+            Debug.Log("しねる");
         }
     }
     void OnCollisionEnter(Collision col)
     {
         if (deth)
         {
+            Debug.Log("し");
             GameObject.FindGameObjectWithTag("SEManager").GetComponent<SEManager>().OnSE("HighFall");
+            Instantiate(Resources.Load("ParticleDust") as GameObject).transform.position = this.transform.position;
             GameObject obj = GameObject.FindGameObjectWithTag("UnderObject");
             obj.tag = "Player";
             obj.transform.position = this.transform.position;
