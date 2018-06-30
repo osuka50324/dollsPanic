@@ -11,9 +11,9 @@ public class Retry : MonoBehaviour
         switch(transform.parent.GetComponent<OptionScript>().g_nMode)
         {
             case 0:
-            case 1:
                 g_Number = 1;
                 break;
+            case 1:
             case 2:
                 g_Number = 0;
                 break;
