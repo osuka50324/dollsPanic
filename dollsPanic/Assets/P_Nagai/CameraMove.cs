@@ -27,7 +27,7 @@ public class CameraMove : MonoBehaviour
             targetPosition += player.transform.forward * -5;
             targetPosition += player.transform.up * 6;
 
-            while (true)
+            while (false)
             {
                 Ray ray = new Ray(targetPosition, player.transform.position);
 
