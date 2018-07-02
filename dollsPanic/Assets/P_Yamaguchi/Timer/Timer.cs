@@ -55,6 +55,7 @@ public class Timer : MonoBehaviour {
             image[i].GetComponent<RectTransform>().offsetMax = new Vector2(-775.0f + i * 60 + temp, -30.0f);
 
             //image[i].GetComponent<RectTransform>().anchoredPosition = new Vector2(-170 + temp + i * 60, -50);
+
         }
     }
     public void StartTimer()
